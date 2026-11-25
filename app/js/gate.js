@@ -24,15 +24,16 @@ export function parentGate() {
     const count = h('span.count', { 'aria-hidden': 'true' }, num(3));
     const hold = h('button.hold-btn', { type: 'button', 'data-test': 'gate-hold', 'aria-label': t('gateHold') + ' (3 s)' }, ring, frag(icon('parent')), h('span', t('gateHold')), count);
     let start = 0, raf = 0, held = false;
+    const now = () => (window.performance && performance.now ? performance.now() : Date.now()); // monotonic
     const tick = () => {
-      const el = Date.now() - start;
+      const el = now() - start;
       const p = Math.min(1, el / (FAST ? 300 : HOLD_MS));
       arc.setAttribute('stroke-dashoffset', String(C * (1 - p)));
       count.textContent = num(Math.max(0, Math.ceil((1 - p) * 3)));
       if (p >= 1) { held = true; audio.sfx('chime'); app.gateUntil = Date.now() + GRACE_MS; close(true); return; }
       raf = requestAnimationFrame(tick);
     };
-    const down = (e) => { if (e) e.preventDefault(); if (start) return; start = Date.now(); hold.classList.add('pressed'); raf = requestAnimationFrame(tick); };
+    const down = (e) => { if (e) e.preventDefault(); if (start) return; start = now(); hold.classList.add('pressed'); raf = requestAnimationFrame(tick); };
     const up = () => {
       if (held) return;
       cancelAnimationFrame(raf); start = 0; hold.classList.remove('pressed');

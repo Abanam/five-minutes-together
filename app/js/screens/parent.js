@@ -237,7 +237,7 @@ export function aboutScreen(root) {
     parentCard('about_privacy'),
     h('h2', t('credits')), h('div.section-card', { lang: 'en', dir: 'ltr', style: { textAlign: 'left' } },
       h('p', 'Fonts: Andika by SIL Global (SIL Open Font License 1.1, official webfonts, unmodified); Baloo Bhaijaan 2 by Ek Type / The Baloo 2 Project Authors (SIL Open Font License 1.1, Arabic subset).'),
-      h('p', 'English voice: Kokoro-82M v1.0 (hexgrad, Apache-2.0), voice "af_heart", run locally with kokoro-onnx. Letter sounds were made from IPA phoneme input and checked acoustically.'),
+      h('p', 'English voice: Kokoro-82M v1.0 (hexgrad, Apache-2.0), voice "af_heart", run locally with kokoro-onnx. Letter sounds were made from IPA phoneme input and checked acoustically; the /t/ sound comes from espeak-ng\'s phoneme mode (GPL-3.0 engine).'),
       h('p', 'Arabic voice: Meta MMS-TTS Arabic (facebook/mms-tts-ara, CC BY-NC 4.0), run locally. Used here for non-commercial education.'),
       h('p', 'All pictures, the mascot Sanad, the map and the stickers are original drawings made for this app. Sound effects are synthesised in the browser. No photos, brands or existing characters.'),
       h('p', 'Full list: CREDITS.md in the project.')),

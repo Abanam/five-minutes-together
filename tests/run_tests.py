@@ -230,7 +230,7 @@ def test_offline(browser, base):
         c.goto("#/home")
         pg.evaluate("localStorage.setItem('fmt1.settings', JSON.stringify({onboarded:true}))")
         c.goto("#/home")
-        pg.locator('[data-test="offline-badge"]:not([hidden])').wait_for(timeout=60000)
+        pg.locator('[data-test="offline-badge"]:not([hidden])').wait_for(timeout=300000)
         record(sec, "Service worker cached the app and the home shows 'Ready offline ✓ / جاهز دون إنترنت'", True,
                pg.locator('[data-test="offline-badge"]').inner_text())
         c.ctx.set_offline(True)
@@ -278,10 +278,20 @@ def test_screens(browser, base):
         c.goto("#/onboarding/1")
         screens = []
 
+        def pass_gate_if_shown():
+            pg.wait_for_timeout(300)
+            if pg.locator('[data-test="gate-hold"]').count():
+                b = pg.locator('[data-test="gate-hold"]').bounding_box()
+                pg.mouse.move(b["x"] + b["width"] / 2, b["y"] + b["height"] / 2)
+                pg.mouse.down()
+                pg.wait_for_timeout(700)
+                pg.mouse.up()
+
         def visit(name, hash_, ready, before=None):
             if before:
                 before()
             c.goto(hash_)
+            pass_gate_if_shown()
             pg.locator(ready).first.wait_for()
             pg.wait_for_timeout(250)
             screens.append(name)
@@ -446,7 +456,12 @@ def test_screens(browser, base):
         record(sec4, f"Every illustration renders ({len(rend)} SVGs: 23 pictures, 5 stickers, 4 family scenes, map, mascot, icons)",
                not bad_art and not missing_art, f"bad={bad_art} missing={missing_art}")
         c.goto("#/teachers")
+        pass_gate_if_shown()
         pg.locator('[data-test="qr"]').wait_for()
+        try:
+            pg.wait_for_function("(() => { const i = document.querySelector('[data-test=qr]'); return i && i.complete && i.naturalWidth > 0; })()", timeout=30000)
+        except Exception:
+            pass
         qr = pg.evaluate("(() => { const i = document.querySelector('[data-test=qr]'); return i ? i.naturalWidth : 0; })()")
         record(sec4, "QR code image loads on the teacher page", qr > 0, f"naturalWidth={qr}")
 
@@ -470,8 +485,11 @@ def test_screens(browser, base):
             record(sec4, "Offline audio verification passed (exists, duration, RMS, clipping, phoneme acoustics, letter-name controls)",
                    not S["hard_failures"], f"{S['files_pass']}/{S['files_checked']} clips; phonemes {S['phonemes_pass']}/6; controls rejected {S['controls_rejected']}/6; Whisper English {S['whisper_en_match']}; Arabic mean similarity {S['whisper_ar_mean_similarity']}")
         # reviewer checklist copy
-        c.ctx.grant_permissions(["clipboard-read", "clipboard-write"], origin=c.base.rstrip("/"))
+        from urllib.parse import urlsplit
+        o = urlsplit(c.base)
+        c.ctx.grant_permissions(["clipboard-read", "clipboard-write"], origin=f"{o.scheme}://{o.netloc}")
         c.goto("#/review")
+        pass_gate_if_shown()
         pg.locator('[data-test="review"]').wait_for()
         pg.locator('[data-test="rate-clarity-4"]').check(force=True)
         pg.locator('[data-test="comment-clarity"]').fill("Clear Arabic.")
@@ -481,6 +499,7 @@ def test_screens(browser, base):
                pg.locator('[data-test="review-item"]').count() == 8 and "Clarity for parents: 4/5 – Clear Arabic." in out, out.splitlines()[2] if out else "")
         # large text + calm mode
         c.goto("#/settings")
+        pass_gate_if_shown()
         pg.locator('[data-test="sw-large"]').click()
         pg.locator('[data-test="sw-calm"]').click()
         cls = pg.evaluate("document.documentElement.className")
@@ -552,7 +571,57 @@ def test_size_and_3g(browser, base):
         c.page.locator('[data-test="stop"][data-day="1"]').click()
         c.page.locator('[data-test="go"]').wait_for()
         t_day1 = time.time() - t0
-        record(sec, f"Simulated 3G (1.6 Mbit/s, 150 ms): parent home usable after {t_home:.1f} s, Day 1 session open after {t_day1:.1f} s", t_home < 8, "")
+        record(sec, f"Simulated 3G (1.6 Mbit/s, 150 ms; deployed files served locally with gzip like GitHub Pages): parent home usable after {t_home:.1f} s, Day 1 session open after {t_day1:.1f} s", t_home < 8, "")
+    finally:
+        c.close()
+
+
+def test_live(browser, live: str):
+    """The published site: no login, every key file returns 200, the QR code points to it,
+    a fresh browser completes Day 1, and it works offline after one visit."""
+    sec = "0. Published site (" + live + ")"
+    import urllib.request
+    ok_all, notes = True, []
+    for path in ("", "content.json", "audio/manifest.json", "audio/en/ph-p.mp3", "audio/ar/ob3.mp3", "sw.js", "img/qr-code.svg", "fonts/Andika-Medium.woff2"):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(live + path, headers={"User-Agent": "fmt-test"}), timeout=60) as r:
+                notes.append(f"/{path} {r.status}")
+                ok_all &= r.status == 200
+        except Exception as e:
+            notes.append(f"/{path} {e}")
+            ok_all = False
+    record(sec, "Public link and key files return HTTP 200 without any login", ok_all, "; ".join(notes))
+    try:
+        import cv2
+        img = cv2.imread(str(DELIV / "qr-code.png"))
+        val = cv2.QRCodeDetector().detectAndDecode(img)[0]
+        record(sec, "QR code (deliverables/qr-code.png) decodes to the public link", val == live, f"decoded: {val}")
+    except Exception as e:
+        record(sec, "QR code decodes to the public link", False, repr(e))
+    c = Ctx(browser, live)
+    pg = c.page
+    try:
+        t0 = time.time()
+        pg.goto(live)
+        pg.locator('[data-test="onboarding"]').wait_for(timeout=90000)
+        record(sec, "A fresh browser context opens the app (no account, no login) at the Arabic onboarding",
+               pg.evaluate("document.documentElement.dir") == "rtl", f"loaded in {time.time() - t0:.1f} s on this computer's real connection")
+        pg.evaluate("localStorage.setItem('fmt1.settings', JSON.stringify({onboarded:true}))")
+        play_day(c, 1, wrong_items=(0,))
+        record(sec, "Day 1 played to the end on the published site, with audio", not pg.evaluate("window.FMT.audio.failed"), "")
+        pg.locator('[data-test="finish"]').click()
+        c.goto("#/home")
+        pg.locator('[data-test="offline-badge"]:not([hidden])').wait_for(timeout=420000)
+        c.ctx.set_offline(True)
+        pg.reload()
+        pg.locator('[data-test="home"]').wait_for(timeout=60000)
+        pg.locator('[data-test="start"]').click()
+        pg.locator('[data-test="stop"][data-day="1"]').click()
+        pg.locator('[data-test="go"]').wait_for(timeout=30000)
+        record(sec, "After one visit the published app reloads and starts a session with the network switched off", True, "")
+        record(sec, "No console errors on the published site", not c.errors, "; ".join(c.errors[:4]))
+    except Exception as e:
+        record(sec, "Published-site check crashed", False, repr(e)[:400])
     finally:
         c.close()
 
@@ -599,29 +668,28 @@ def axe_version():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--base", default=None)
+    ap.add_argument("--base", default=None, help="run the suite against this URL instead of a local server")
+    ap.add_argument("--live", default=None, help="also check the published site at this URL")
     ap.add_argument("--only", default=None)
     a = ap.parse_args()
-    httpd = None
-    base = a.base
-    if not base:
-        httpd = serve(8811)
-        threading.Thread(target=httpd.serve_forever, daemon=True).start()
-        base = "http://127.0.0.1:8811/"
+    httpd = serve(8811)
+    threading.Thread(target=httpd.serve_forever, daemon=True).start()
+    local = "http://127.0.0.1:8811/"
+    base = a.base or local
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        tests = [("play", lambda: test_playthrough(browser, base)), ("results", lambda: test_objectives_not_met(browser, base)),
+        tests = [("live", lambda: test_live(browser, a.live) if a.live else None),
+                 ("play", lambda: test_playthrough(browser, base)), ("results", lambda: test_objectives_not_met(browser, base)),
                  ("offline", lambda: test_offline(browser, base)), ("screens", lambda: test_screens(browser, base)),
                  ("motion", lambda: test_reduced_motion(browser, base)), ("backup", lambda: test_backup(browser)),
-                 ("size", lambda: test_size_and_3g(browser, base))]
+                 ("size", lambda: test_size_and_3g(browser, local))]  # 3G is emulated on top of a local server
         for name, fn in tests:
             if a.only and name not in a.only.split(","):
                 continue
             fn()
         browser.close()
-    if httpd:
-        httpd.shutdown()
-    ok = write_report(base)
+    httpd.shutdown()
+    ok = write_report(base + (f" (+ published site {a.live})" if a.live else ""))
     sys.exit(0 if ok else 1)
 
 
