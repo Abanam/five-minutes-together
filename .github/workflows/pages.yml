@@ -1,5 +1,6 @@
 # Publishes the /app folder to GitHub Pages on every push to main.
 # (A teacher can edit app/content.json on GitHub and the site updates by itself.)
+# Two jobs (build, then deploy) so the uploaded site is complete before deployment starts.
 name: Deploy app to GitHub Pages
 
 on:
@@ -14,19 +15,24 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
           path: app
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v5
