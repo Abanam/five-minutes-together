@@ -86,7 +86,7 @@ export function flyerScreen(root) {
     h('div.row', { style: { justifyContent: 'space-between', alignItems: 'flex-start' } },
       h('div', h('h1', 'خمس دقائق معًا'), h('p.tag', 'تطبيق مجاني لتعليم أطفال الصف الأول والثاني أصوات الحروف الإنجليزية في البيت')),
       h('div', { style: { width: '42mm', flex: 'none' }, html: sanad({ anim: false }) })),
-    h('div', { style: { borderRadius: '6mm', overflow: 'hidden', margin: '2mm 0 6mm' }, html: family('mother-boy') }),
+    h('div.hero-print', { html: family('mother-boy') }),
     h('div.row', { style: { alignItems: 'flex-start' } },
       h('div', { style: { flex: '1' } },
         h('h2', { style: { fontSize: '18pt' } }, 'كيف نبدأ؟'),
@@ -109,19 +109,23 @@ export function cardsScreen(root) {
     const sounds = d.newSounds.length ? d.newSounds : d.reviewSounds;
     const words = Array.from(new Set(d.tapSay.map((x) => x.word).concat(d.blend)));
     const levelName = T(C.levels[d.level].name).ar;
-    const step = (n2, title, body) => h('div.box', h('b', n2 + '. ' + title), h('p', richText(body)));
+    const step = (n2, title, body) => h('div.box', h('b', n2 + '. ' + title), h('p', Array.isArray(body) ? body : richText(body)));
     return h('article.print-page.dcard', { lang: 'ar', dir: 'rtl', 'data-test': 'day-card' },
       h('div.row', { style: { justifyContent: 'space-between' } },
-        h('div', h('h1', 'خمس دقائق معًا — اليوم ' + num(d.day)), h('div', T(C.stops[d.stop].name).ar + ' · مستوى الدعم: ' + levelName)),
-        h('div', { style: { width: '30mm' }, html: sticker(d.sticker) })),
-      h('div.letters-big', { style: { margin: '4mm 0' } }, sounds.map((s) => letterTile(s, { size: sounds.length > 3 ? 'sm' : 'mid' }))),
+        h('div', h('h1', 'خمس دقائق معًا — اليوم ' + num(d.day)), h('div', T(C.stops[d.stop].name).ar + ' – مستوى الدعم: ' + levelName)),
+        h('div.head-sticker', { html: sticker(d.sticker) })),
+      h('div.letters-big', { style: { margin: '2mm 0' } }, sounds.map((s) => letterTile(s, { size: sounds.length > 3 ? 'xs' : 'sm' }))),
       h('div.box', { style: { marginBottom: '3mm' } }, h('b', 'تذكير: '), richText(T('tip_general').ar)),
-      h('div.dc-grid',
-        h('div.box', h('b', 'نطق أصوات اليوم'), sounds.map((s) => h('p', letterChip(s), ' ', T(C.sounds[s].tip).ar))),
-        h('div.box', h('b', 'صور تبدأ بالصوت'), h('div.words', sounds.slice(0, 3).map((s) => C.sounds[s].keywords.map((k) => h('div.wd', h('div.pic-mini', { html: picture(C.keywords[k].picture) }), en(k))))))),
+      d.hear.review
+        // review day: six tips in two columns instead of the keyword pictures
+        ? h('div.box', h('b', 'نطق الأصوات الستة'), h('div', { style: { columnCount: '2', columnGap: '6mm' } }, sounds.map((s) => h('p', letterChip(s), ' ', T(C.sounds[s].tip).ar))))
+        : h('div.dc-grid',
+          h('div.box', h('b', 'نطق أصوات اليوم'), sounds.map((s) => h('p', letterChip(s), ' ', T(C.sounds[s].tip).ar))),
+          h('div.box', h('b', 'صور تبدأ بالصوت'), h('div.words', sounds.slice(0, 3).map((s) => C.sounds[s].keywords.map((k) => h('div.wd', h('div.pic-mini', { html: picture(C.keywords[k].picture) }), en(k))))))),
       h('div', { style: { margin: '3mm 0' } },
         step('١', 'اسمع', 'قل صوت كل حرف (وليس اسمه)، واطلب من طفلك أن يكرّره. أشيرا إلى الصور التي تبدأ بالصوت.'),
-        step('٢', 'انقر وقل', 'أشر إلى كل حرف في الكلمة وقل صوته، ثم اجمع الأصوات بسرعة: ' + words.slice(0, 3).map((w) => C.words[w].sounds.join('… ') + ' = ' + w).join('، ')),
+        step('٢', 'انقر وقل', ['أشر إلى كل حرف في الكلمة وقل صوته، ثم اجمع الأصوات بسرعة: ']
+          .concat(...words.slice(0, 3).map((w, i) => [i ? '، ' : '', en(C.words[w].sounds.join('… ') + ' = ' + w)]))),
         step('٣', 'ادمج وحدك', 'دع طفلك يقرأ الكلمات وحده، وشجّعه: ' + words.join('، ')),
         step('٤', 'اسأل طفلك', d.tapSay.slice(0, 3).map((x) => T(x.ask).ar).join(' · '))),
       h('div.dc-grid',

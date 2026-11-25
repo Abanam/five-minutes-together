@@ -370,34 +370,37 @@ textarea, input[type="text"] { width: 100%; border: 2px solid var(--line); borde
 .tour-card .tour-count { font-size: .8rem; color: var(--muted); }
 
 /* print: flyer and day cards (A4) */
-.print-page { width: 210mm; min-height: 297mm; margin: 0 auto 16px; background: #fff; padding: 14mm; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+.print-page { width: 210mm; height: 297mm; margin: 0 auto 16px; background: #fff; padding: 10mm 12mm; box-shadow: var(--shadow); position: relative; overflow: hidden; }
 .print-tools { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px; margin-bottom: 12px; }
 .print-scroll { overflow-x: auto; padding-bottom: 8px; }
-.flyer h1 { font-size: 34pt; margin: 0; color: var(--deep); line-height: 1.2; }
-.flyer .tag { font-size: 16pt; margin: 4mm 0 6mm; }
-.flyer .qr { width: 62mm; height: 62mm; margin: 0 auto; }
-.flyer .steps-ol { font-size: 15pt; line-height: 1.7; }
-.flyer .feat { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 4mm; font-size: 12.5pt; }
-.flyer .feat div { background: var(--sand-2); border: 1px solid var(--sand-line); border-radius: 4mm; padding: 3mm 4mm; }
-.dcard { font-size: 12pt; }
-.dcard h1 { font-size: 22pt; margin: 0 0 2mm; color: var(--deep); }
+.flyer h1 { font-size: 30pt; margin: 0; color: var(--deep); line-height: 1.2; }
+.flyer .tag { font-size: 14pt; margin: 3mm 0 4mm; }
+.flyer .hero-print { width: 125mm; margin: 0 auto 5mm; border-radius: 6mm; overflow: hidden; }
+.flyer .qr { width: 56mm; height: 56mm; margin: 0 auto; }
+.flyer .steps-ol { font-size: 14pt; line-height: 1.65; margin: 0; list-style-type: arabic-indic; }
+.flyer .feat { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 3mm; font-size: 12pt; }
+.flyer .feat div { background: var(--sand-2); border: 1px solid var(--sand-line); border-radius: 4mm; padding: 2.5mm 4mm; }
+.dcard { font-size: 10.5pt; line-height: 1.45; }
+.dcard h1 { font-size: 18pt; margin: 0 0 1mm; color: var(--deep); }
+.dcard p { margin: 1mm 0; }
 .dcard .letters-big { display: flex; direction: ltr; justify-content: center; }
-.dcard .letters-big .tile { cursor: default; margin: 0 3mm; }
-.dcard .dc-grid { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 4mm; }
-.dcard .box { border: 1.5px solid var(--sand-line); border-radius: 4mm; padding: 3mm 4mm; background: var(--sand-2); }
+.dcard .letters-big .tile { cursor: default; margin: 0 2mm; }
+.dcard .dc-grid { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 3mm; }
+.dcard .box { border: 1.5px solid var(--sand-line); border-radius: 3mm; padding: 2mm 3mm; background: var(--sand-2); margin-bottom: 2mm; }
 .dcard .words { display: flex; flex-wrap: wrap; direction: ltr; }
-.dcard .words .wd { display: flex; align-items: center; margin: 1.5mm 3mm 1.5mm 0; }
-.dcard .pic-mini { width: 20mm; height: 20mm; }
-.dcard .tick { display: inline-block; width: 7mm; height: 7mm; border: 2px solid var(--ink); border-radius: 2mm; vertical-align: middle; margin-inline-end: 2mm; }
+.dcard .words .wd { display: flex; align-items: center; margin: 1mm 3mm 1mm 0; }
+.dcard .pic-mini { width: 13mm; height: 13mm; }
+.dcard .head-sticker { width: 22mm; flex: none; }
+.dcard .tick { display: inline-block; width: 6mm; height: 6mm; border: 2px solid var(--ink); border-radius: 2mm; vertical-align: middle; margin-inline-end: 2mm; }
 .cutout { display: grid; grid-template-columns: repeat(6, 1fr); grid-gap: 3mm; direction: ltr; }
-.cutout div { border: 2px dashed #B8A77A; border-radius: 4mm; height: 32mm; display: flex; align-items: center; justify-content: center; font-family: var(--en); font-weight: 700; font-size: 54pt; }
+.cutout div { border: 2px dashed #B8A77A; border-radius: 3mm; height: 20mm; display: flex; align-items: center; justify-content: center; font-family: var(--en); font-weight: 700; font-size: 34pt; }
 
 @media print {
   @page { size: A4; margin: 0; }
-  body { background: #fff; }
-  #app { max-width: none; margin: 0; box-shadow: none; border-radius: 0; background: #fff; }
+  body { background: #fff; min-height: 0; }
+  #app { max-width: none; margin: 0; box-shadow: none; border-radius: 0; background: #fff; min-height: 0; }
   .no-print, .topbar, .print-tools, .toast, .tour-layer { display: none !important; }
-  .print-scroll { overflow: visible; }
+  .print-scroll { overflow: visible; padding: 0; }
   .print-page { margin: 0; box-shadow: none; page-break-after: always; break-after: page; }
   .print-page:last-child { page-break-after: auto; break-after: auto; }
   .screen { padding: 0; }
