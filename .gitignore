@@ -1,0 +1,17 @@
+# Python environments and caches
+.venv/
+.venv-mms/
+__pycache__/
+*.pyc
+tools/.audio-cache/
+tools/fonts-src/
+
+# Deliverables for the group's report stay local (not published), and so does the private build brief
+deliverables/
+BUILD_PROMPT.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.claude/

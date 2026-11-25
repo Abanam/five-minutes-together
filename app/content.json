@@ -1,0 +1,741 @@
+{
+  "meta": {
+    "version": "1.0",
+    "liveUrl": "https://abanam.github.io/five-minutes-together/",
+    "appName": { "ar": "خمس دقائق معًا", "en": "5 Minutes Together" },
+    "howToEdit": "Teachers can edit this file. 'sounds' holds the six letters, 'words' the CVC words (built from those letters), and 'days' the five sessions. Arabic text lives in 'texts' (ar = shown, en = English view, say = optional script for the audio generator). If you change an Arabic text, the app notices that its recorded audio no longer matches and reads the new text with the device's Arabic voice instead. Run tools/make_audio.py to record new clips."
+  },
+
+  "sounds": {
+    "s": { "ipa": "s", "kind": "continuous", "colour": "s", "keywords": ["sun", "sand"], "tip": "tip_s" },
+    "a": { "ipa": "æ", "kind": "continuous", "colour": "a", "keywords": ["ant", "apple"], "tip": "tip_a" },
+    "t": { "ipa": "t", "kind": "stop", "colour": "t", "keywords": ["tent", "tomato"], "tip": "tip_t" },
+    "p": { "ipa": "p", "kind": "stop", "colour": "p", "keywords": ["palm", "pen"], "tip": "tip_p" },
+    "i": { "ipa": "ɪ", "kind": "continuous", "colour": "i", "keywords": ["insect", "ink"], "tip": "tip_i" },
+    "n": { "ipa": "n", "kind": "continuous", "colour": "n", "keywords": ["net", "nest"], "tip": "tip_n" }
+  },
+
+  "keywords": {
+    "sun":    { "first": "s", "picture": "sun",    "ar": "شمس" },
+    "sand":   { "first": "s", "picture": "sand",   "ar": "كثبان رملية" },
+    "ant":    { "first": "a", "picture": "ant",    "ar": "نملة" },
+    "apple":  { "first": "a", "picture": "apple",  "ar": "تفاحة" },
+    "tent":   { "first": "t", "picture": "tent",   "ar": "خيمة" },
+    "tomato": { "first": "t", "picture": "tomato", "ar": "طماطم" },
+    "palm":   { "first": "p", "picture": "palm",   "ar": "نخلة" },
+    "pen":    { "first": "p", "picture": "pen",    "ar": "قلم" },
+    "insect": { "first": "i", "picture": "insect", "ar": "حشرة (دعسوقة)" },
+    "ink":    { "first": "i", "picture": "ink",    "ar": "حبر" },
+    "net":    { "first": "n", "picture": "net",    "ar": "شبكة صيد" },
+    "nest":   { "first": "n", "picture": "nest",   "ar": "عُشّ" }
+  },
+
+  "words": {
+    "at":  { "sounds": ["a", "t"],      "picture": null,  "ar": "عند" },
+    "sat": { "sounds": ["s", "a", "t"], "picture": "sat", "ar": "جلسَ" },
+    "pat": { "sounds": ["p", "a", "t"], "picture": "pat", "ar": "يربّت" },
+    "tap": { "sounds": ["t", "a", "p"], "picture": "tap", "ar": "صنبور" },
+    "it":  { "sounds": ["i", "t"],      "picture": null,  "ar": "هو / هي (لغير العاقل)" },
+    "sit": { "sounds": ["s", "i", "t"], "picture": "sit", "ar": "يجلس" },
+    "sip": { "sounds": ["s", "i", "p"], "picture": "sip", "ar": "رشفة" },
+    "tip": { "sounds": ["t", "i", "p"], "picture": "tip", "ar": "رأس (القلم)" },
+    "pit": { "sounds": ["p", "i", "t"], "picture": "pit", "ar": "حفرة" },
+    "in":  { "sounds": ["i", "n"],      "picture": null,  "ar": "في / داخل" },
+    "pin": { "sounds": ["p", "i", "n"], "picture": "pin", "ar": "دبوس" },
+    "tin": { "sounds": ["t", "i", "n"], "picture": "tin", "ar": "علبة" },
+    "nap": { "sounds": ["n", "a", "p"], "picture": "nap", "ar": "قيلولة" },
+    "pan": { "sounds": ["p", "a", "n"], "picture": "pan", "ar": "مقلاة" }
+  },
+
+  "levels": {
+    "1": { "name": "lvl1_name", "desc": "lvl1_desc", "autoplay": true,  "hintOnly": false },
+    "2": { "name": "lvl2_name", "desc": "lvl2_desc", "autoplay": false, "hintOnly": false },
+    "3": { "name": "lvl3_name", "desc": "lvl3_desc", "autoplay": false, "hintOnly": true }
+  },
+
+  "stops": {
+    "beach": { "name": "stop_beach" },
+    "palms": { "name": "stop_palms" },
+    "fort":  { "name": "stop_fort" },
+    "wadi":  { "name": "stop_wadi" },
+    "sea":   { "name": "stop_sea" }
+  },
+
+  "stickers": {
+    "turtle": { "name": "st_turtle" },
+    "palm":   { "name": "st_palm" },
+    "fort":   { "name": "st_fort" },
+    "dates":  { "name": "st_dates" },
+    "dhow":   { "name": "st_dhow" }
+  },
+
+  "days": [
+    {
+      "day": 1, "level": 1, "stop": "beach", "sticker": "turtle",
+      "newSounds": ["s", "a", "t"],
+      "tip": "d1_tip",
+      "hear": {
+        "review": false,
+        "find": [
+          { "sound": "s", "pictures": ["sun", "tent", "sand"] },
+          { "sound": "a", "pictures": ["sun", "apple", "ant"] },
+          { "sound": "t", "pictures": ["tomato", "ant", "tent"] }
+        ]
+      },
+      "tapSay": [
+        { "word": "at",  "ask": "ask_d1_at" },
+        { "word": "sat", "ask": "ask_d1_sat" }
+      ],
+      "blend": ["at", "sat"],
+      "challenge": [
+        { "type": "sound", "target": "s", "choices": ["a", "s", "t"] },
+        { "type": "sound", "target": "t", "choices": ["t", "a", "s"] },
+        { "type": "blend", "target": "sat", "choices": ["pan", "tin", "sat"] }
+      ],
+      "home": "home1"
+    },
+    {
+      "day": 2, "level": 1, "stop": "palms", "sticker": "palm",
+      "newSounds": ["p"],
+      "tip": "d2_tip",
+      "hear": {
+        "review": false,
+        "find": [
+          { "sound": "p", "pictures": ["pen", "tomato", "palm"] }
+        ]
+      },
+      "tapSay": [
+        { "word": "pat", "ask": "ask_d2_pat" },
+        { "word": "tap", "ask": "ask_d2_tap" },
+        { "word": "sat", "ask": "ask_d2_sat" },
+        { "word": "at",  "ask": "ask_d2_at" }
+      ],
+      "blend": ["pat", "tap", "sat", "at"],
+      "challenge": [
+        { "type": "sound", "target": "p", "choices": ["t", "p", "a"] },
+        { "type": "blend", "target": "pat", "choices": ["pat", "tap", "sat"] },
+        { "type": "blend", "target": "tap", "choices": ["sit", "pat", "tap"] }
+      ],
+      "home": "home2"
+    },
+    {
+      "day": 3, "level": 2, "stop": "fort", "sticker": "fort",
+      "newSounds": ["i"],
+      "tip": "d3_tip",
+      "hear": {
+        "review": false,
+        "find": [
+          { "sound": "i", "pictures": ["apple", "ink", "insect"] }
+        ]
+      },
+      "tapSay": [
+        { "word": "it",  "ask": "ask_d3_it" },
+        { "word": "sit", "ask": "ask_d3_sit" },
+        { "word": "sip", "ask": "ask_d3_sip" },
+        { "word": "tip", "ask": "ask_d3_tip" },
+        { "word": "pit", "ask": "ask_d3_pit" }
+      ],
+      "blend": ["it", "sit", "sip", "tip", "pit"],
+      "challenge": [
+        { "type": "sound", "target": "i", "choices": ["a", "t", "i"] },
+        { "type": "blend", "target": "sit", "choices": ["sit", "sip", "tip"] },
+        { "type": "blend", "target": "pit", "choices": ["tip", "pit", "pat"] }
+      ],
+      "home": "home3"
+    },
+    {
+      "day": 4, "level": 2, "stop": "wadi", "sticker": "dates",
+      "newSounds": ["n"],
+      "tip": "d4_tip",
+      "hear": {
+        "review": false,
+        "find": [
+          { "sound": "n", "pictures": ["net", "sun", "nest"] }
+        ]
+      },
+      "tapSay": [
+        { "word": "in",  "ask": "ask_d4_in" },
+        { "word": "pin", "ask": "ask_d4_pin" },
+        { "word": "tin", "ask": "ask_d4_tin" },
+        { "word": "nap", "ask": "ask_d4_nap" },
+        { "word": "pan", "ask": "ask_d4_pan" }
+      ],
+      "blend": ["in", "pin", "tin", "nap", "pan"],
+      "challenge": [
+        { "type": "sound", "target": "n", "choices": ["p", "n", "i"] },
+        { "type": "blend", "target": "pin", "choices": ["tin", "pan", "pin"] },
+        { "type": "blend", "target": "nap", "choices": ["nap", "tap", "pit"] }
+      ],
+      "home": "home4"
+    },
+    {
+      "day": 5, "level": 3, "stop": "sea", "sticker": "dhow",
+      "newSounds": [],
+      "reviewSounds": ["s", "a", "t", "p", "i", "n"],
+      "tip": "d5_tip",
+      "hear": {
+        "review": true,
+        "find": [
+          { "sound": "n", "pictures": ["pen", "nest", "net"] }
+        ]
+      },
+      "tapSay": [
+        { "word": "pan", "ask": "ask_d5_pan" },
+        { "word": "pin", "ask": "ask_d5_pin" },
+        { "word": "tin", "ask": "ask_d5_tin" },
+        { "word": "tap", "ask": "ask_d5_tap" },
+        { "word": "nap", "ask": "ask_d5_nap" }
+      ],
+      "blend": ["sip", "tip", "pit", "pat", "sit"],
+      "final": true,
+      "challenge": [
+        { "type": "sound", "target": "s", "choices": ["s", "n", "p"] },
+        { "type": "sound", "target": "a", "choices": ["i", "a", "t"] },
+        { "type": "sound", "target": "t", "choices": ["p", "s", "t"] },
+        { "type": "sound", "target": "p", "choices": ["p", "t", "n"] },
+        { "type": "sound", "target": "i", "choices": ["a", "i", "s"] },
+        { "type": "sound", "target": "n", "choices": ["t", "p", "n"] },
+        { "type": "blend", "target": "pan", "choices": ["pan", "pin", "tap"] },
+        { "type": "blend", "target": "pin", "choices": ["tin", "pin", "nap"] },
+        { "type": "blend", "target": "tin", "choices": ["sip", "pan", "tin"] },
+        { "type": "blend", "target": "tap", "choices": ["tap", "pat", "pit"] },
+        { "type": "blend", "target": "nap", "choices": ["tip", "nap", "pan"] },
+        { "type": "blend", "target": "sip", "choices": ["tin", "pit", "sip"] },
+        { "type": "blend", "target": "tip", "choices": ["tip", "tap", "sit"] },
+        { "type": "blend", "target": "pit", "choices": ["pin", "pit", "pat"] },
+        { "type": "blend", "target": "pat", "choices": ["nap", "tip", "pat"] },
+        { "type": "blend", "target": "sit", "choices": ["sit", "pan", "tin"] }
+      ],
+      "home": "home5"
+    }
+  ],
+
+  "objectives": {
+    "O1": { "text": "obj_o1", "type": "sound", "need": 5, "of": 6 },
+    "O2": { "text": "obj_o2", "type": "blend", "need": 8, "of": 10 },
+    "O3": { "text": "obj_o3", "type": "sessions", "need": 5, "of": 5 }
+  },
+
+  "trustedApps": [
+    {
+      "id": "khankids",
+      "name": "Khan Academy Kids",
+      "url": "https://www.khanacademy.org/kids",
+      "checked": "2026-11-25",
+      "evidence": "Official site: '100% free - forever. No ads, no subscriptions'",
+      "why": {
+        "ar": "تطبيق مجاني تمامًا ودون إعلانات، فيه ألعاب وقصص قصيرة للقراءة والحروف للأطفال من عمر سنتين إلى ثماني سنوات.\nيتدرّج مع طفلك خطوة بخطوة، ويمكن استخدامه في البيت أو في المدرسة.",
+        "en": "Completely free with no ads: games and short stories for reading and letters, for children aged 2 to 8.\nIt moves step by step with your child, at home or at school."
+      },
+      "ask": {
+        "ar": "اسأل طفلك بعد اللعب: ما الحرف الذي تعلّمته اليوم؟ وما صوته؟",
+        "en": "After playing, ask your child: Which letter did you learn today? What is its sound?"
+      }
+    },
+    {
+      "id": "duoabc",
+      "name": "Duolingo ABC",
+      "url": "https://abc.duolingo.com/",
+      "checked": "2026-11-25",
+      "evidence": "Official site: '100% free'; Duolingo ABC privacy policy: 'does not display advertising of any kind'",
+      "why": {
+        "ar": "مجاني بالكامل ودون إعلانات، يعلّم أصوات الحروف والقراءة بدروس قصيرة تشبه اللعب.\nفيه قصص مضحكة وتمارين لكتابة الحروف الصغيرة والكبيرة.",
+        "en": "Fully free with no ads: it teaches letter sounds and reading in short, game-like lessons.\nIt has funny stories and practice for writing small and capital letters."
+      },
+      "ask": {
+        "ar": "اطلب من طفلك أن يقرأ لك كلمة من القصة، ثم صفّقا مع كل صوت فيها.",
+        "en": "Ask your child to read you a word from the story, then clap together for each sound in it."
+      }
+    },
+    {
+      "id": "readalong",
+      "name": "Read Along by Google",
+      "url": "https://readalong.google/",
+      "checked": "2026-11-25",
+      "evidence": "Official site: 'available free of charge', works offline, shared-device profiles; official Google Play listing: 'Zero cost with no ads or upsells'",
+      "why": {
+        "ar": "مجاني ودون إعلانات، ويعمل دون إنترنت بعد تحميله، ويدعم أكثر من مستخدم على هاتف واحد.\nفيه مساعدة قراءة تستمع إلى طفلك وهو يقرأ بصوت عالٍ، وتساعده في الكلمات الصعبة.",
+        "en": "Free with no ads; it works offline after download and supports several users on one shared phone.\nA reading helper listens as your child reads aloud and helps with hard words."
+      },
+      "ask": {
+        "ar": "اسأل طفلك: ما الكلمة التي كانت صعبة؟ لنقرأها معًا ببطء.",
+        "en": "Ask your child: Which word was hard? Let's read it slowly together."
+      }
+    }
+  ],
+
+  "english": {
+    "hello":    "Hello! I'm Sanad. Let's play with sounds!",
+    "great":    "Great job!",
+    "welldone": "Well done!",
+    "yes":      "Yes! You got it!",
+    "again":    "Let's listen again.",
+    "tryagain": "Try again. You can do it!",
+    "find":     "Find the pictures that start with",
+    "say":      "Your turn. Say the word!",
+    "which":    "Listen. Which one is it?",
+    "sticker":  "You got a sticker!",
+    "tomorrow": "See you tomorrow!",
+    "sleep":    "Sanad is sleeping. Come back tomorrow!",
+    "ready":    "Are you ready? Let's go!",
+    "allaboard":"All aboard the sound train!"
+  },
+
+  "texts": {
+    "ob1": {
+      "ar": "أهلًا بك في «خمس دقائق معًا»! تطبيق مجاني يساعدك على تعليم طفلك أصوات الحروف الإنجليزية في البيت. صُمّم لأطفال الصف الأول والثاني.",
+      "en": "Welcome to “5 Minutes Together”! A free app that helps you teach your child English letter sounds at home. It is made for children in Grades 1 and 2.",
+      "say": "أَهْلًا بِكَ فِي: خَمْسِ دَقَائِقَ مَعًا! تَطْبِيقٌ مَجَّانِيٌّ يُسَاعِدُكَ عَلَى تَعْلِيمِ طِفْلِكَ أَصْوَاتَ الحُرُوفِ الإِنْجِلِيزِيَّةِ فِي البَيْتِ. صُمِّمَ لِأَطْفَالِ الصَّفِّ الأَوَّلِ وَالثَّانِي."
+    },
+    "ob2": {
+      "ar": "كل يوم جلسة واحدة مدتها خمس دقائق، بالخطوات نفسها: اسمع، ثم انقر وقل، ثم ادمج وحدك، ثم تحدّي سند. بعدها نُطفئ الشاشة ونلعب معًا في البيت.",
+      "en": "Each day there is one five-minute session with the same steps: Hear it, Tap and say, Blend on your own, then Sanad's challenge. Then we switch off the screen and play together at home.",
+      "say": "كُلَّ يَوْمٍ جَلْسَةٌ وَاحِدَةٌ مُدَّتُهَا خَمْسُ دَقَائِقَ، بِالخُطُوَاتِ نَفْسِهَا: اِسْمَعْ، ثُمَّ اُنْقُرْ وَقُلْ، ثُمَّ اِدْمِجْ وَحْدَكَ، ثُمَّ تَحَدِّي سَنَد. بَعْدَهَا نُطْفِئُ الشَّاشَةَ وَنَلْعَبُ مَعًا فِي البَيْتِ."
+    },
+    "ob3": {
+      "ar": "لا تحتاج أن تعرف الإنجليزية: التطبيق ينطق الأصوات، وأنت تشجّع وتسأل.",
+      "en": "You don't need to know English: the app says the sounds, and you encourage and ask.",
+      "say": "لَا تَحْتَاجُ أَنْ تَعْرِفَ الإِنْجِلِيزِيَّةَ: التَّطْبِيقُ يَنْطِقُ الأَصْوَاتَ، وَأَنْتَ تُشَجِّعُ وَتَسْأَلُ."
+    },
+
+    "home_ready": {
+      "ar": "جلسة اليوم جاهزة. اجلس مع طفلك في مكان هادئ، ثم اضغط «ابدأ».",
+      "en": "Today's session is ready. Sit with your child in a quiet place, then press “Start”.",
+      "say": "جَلْسَةُ اليَوْمِ جَاهِزَةٌ. اِجْلِسْ مَعَ طِفْلِكَ فِي مَكَانٍ هَادِئٍ، ثُمَّ اضْغَطْ: اِبْدَأْ."
+    },
+    "home_done": {
+      "ar": "أحسنتما! أنهيتما جلسة اليوم. الجلسة التالية تُفتح غدًا.",
+      "en": "Well done! You finished today's session. The next session opens tomorrow.",
+      "say": "أَحْسَنْتُمَا! أَنْهَيْتُمَا جَلْسَةَ اليَوْمِ. الجَلْسَةُ التَّالِيَةُ تُفْتَحُ غَدًا."
+    },
+    "home_all": {
+      "ar": "أكملتما الأيام الخمسة! انظر إلى النتائج، ويمكنكما إعادة أي يوم.",
+      "en": "You completed all five days! Look at the results; you can repeat any day.",
+      "say": "أَكْمَلْتُمَا الأَيَّامَ الخَمْسَةَ! اُنْظُرْ إِلَى النَّتَائِجِ، وَيُمْكِنُكُمَا إِعَادَةُ أَيِّ يَوْمٍ."
+    },
+    "locked": {
+      "ar": "هذا اليوم يُفتح غدًا. خمس دقائق في اليوم تكفي، والراحة جزء من التعلّم!",
+      "en": "This day opens tomorrow. Five minutes a day is enough, and rest is part of learning!",
+      "say": "هَذَا اليَوْمُ يُفْتَحُ غَدًا. خَمْسُ دَقَائِقَ فِي اليَوْمِ تَكْفِي، وَالرَّاحَةُ جُزْءٌ مِنَ التَّعَلُّمِ!"
+    },
+
+    "lvl1_name": { "ar": "أنا أقول وأنت تكرّر", "en": "I say, you repeat", "noAudio": true },
+    "lvl2_name": { "ar": "اسأل وساعد", "en": "Ask and help", "noAudio": true },
+    "lvl3_name": { "ar": "أنت تستطيع", "en": "You can do it", "noAudio": true },
+    "lvl1_desc": {
+      "ar": "اليوم ١ و٢: التطبيق يُشغّل الأصوات تلقائيًا. قل الصوت أولًا، ثم اطلب من طفلك أن يكرّره.",
+      "en": "Days 1–2: the app plays the sounds automatically. Say the sound first, then ask your child to repeat it.",
+      "say": "فِي اليَوْمَيْنِ الأَوَّلِ وَالثَّانِي: التَّطْبِيقُ يُشَغِّلُ الأَصْوَاتَ تِلْقَائِيًّا. قُلِ الصَّوْتَ أَوَّلًا، ثُمَّ اطْلُبْ مِنْ طِفْلِكَ أَنْ يُكَرِّرَهُ."
+    },
+    "lvl2_desc": {
+      "ar": "اليوم ٣ و٤: طفلك ينقر ليسمع الأصوات. اسأله أسئلة، وساعده عند الحاجة.",
+      "en": "Days 3–4: your child taps to hear the sounds. Ask questions, and help when needed.",
+      "say": "فِي اليَوْمَيْنِ الثَّالِثِ وَالرَّابِعِ: طِفْلُكَ يَنْقُرُ لِيَسْمَعَ الأَصْوَاتَ. اِسْأَلْهُ أَسْئِلَةً، وَسَاعِدْهُ عِنْدَ الحَاجَةِ."
+    },
+    "lvl3_desc": {
+      "ar": "اليوم ٥: لا يوجد صوت تلقائي، والتلميح عند الطلب فقط. طفلك يحاول وحده، وأنت تشجّعه فقط.",
+      "en": "Day 5: no automatic audio, and hints only on request. Your child tries alone, and you only encourage.",
+      "say": "فِي اليَوْمِ الخَامِسِ: لَا يُوجَدُ صَوْتٌ تِلْقَائِيٌّ، وَالتَّلْمِيحُ عِنْدَ الطَّلَبِ فَقَطْ. طِفْلُكَ يُحَاوِلُ وَحْدَهُ، وَأَنْتَ تُشَجِّعُهُ فَقَطْ."
+    },
+
+    "stop_beach": { "ar": "الشاطئ", "en": "The beach", "noAudio": true },
+    "stop_palms": { "ar": "بستان النخيل", "en": "The palm grove", "noAudio": true },
+    "stop_fort":  { "ar": "القلعة", "en": "The fort", "noAudio": true },
+    "stop_wadi":  { "ar": "الوادي", "en": "The wadi", "noAudio": true },
+    "stop_sea":   { "ar": "البحر والسفينة", "en": "The sea and the dhow", "noAudio": true },
+
+    "st_turtle": { "ar": "سلحفاة بحرية", "en": "Sea turtle", "noAudio": true },
+    "st_palm":   { "ar": "نخلة", "en": "Palm tree", "noAudio": true },
+    "st_fort":   { "ar": "قلعة", "en": "Fort", "noAudio": true },
+    "st_dates":  { "ar": "صحن تمر", "en": "Bowl of dates", "noAudio": true },
+    "st_dhow":   { "ar": "سفينة شراعية", "en": "Dhow", "noAudio": true },
+
+    "d1_tip": {
+      "ar": "اليوم نتعلم ثلاثة أصوات: s و a و t. تذكّر: نقول صوت الحرف وليس اسمه.",
+      "en": "Today we learn three sounds: s, a and t. Remember: we say the letter's sound, not its name.",
+      "say": "اليَوْمَ نَتَعَلَّمُ ثَلَاثَةَ أَصْوَاتٍ: {ph:s} ، وَ {ph:a} ، وَ {ph:t} . تَذَكَّرْ: نَقُولُ صَوْتَ الحَرْفِ وَلَيْسَ اسْمَهُ."
+    },
+    "d2_tip": {
+      "ar": "صوت اليوم p، وهو غير موجود في العربية. ضع يدك أمام فمك لتشعر بالهواء عندما تقوله.",
+      "en": "Today's sound is p. It does not exist in Arabic. Put your hand in front of your mouth to feel the air when you say it.",
+      "say": "صَوْتُ اليَوْمِ {ph:p} ، وَهُوَ غَيْرُ مَوْجُودٍ فِي العَرَبِيَّةِ. ضَعْ يَدَكَ أَمَامَ فَمِكَ لِتَشْعُرَ بِالهَوَاءِ عِنْدَمَا تَقُولُهُ."
+    },
+    "d3_tip": {
+      "ar": "صوت اليوم i. استمع جيدًا للفرق بين a في sat و i في sit.",
+      "en": "Today's sound is i. Listen carefully to the difference between a in sat and i in sit.",
+      "say": "صَوْتُ اليَوْمِ {ph:i} . اِسْتَمِعْ جَيِّدًا لِلْفَرْقِ بَيْنَ {ph:a} فِي {w:sat} ، وَ {ph:i} فِي {w:sit} ."
+    },
+    "d4_tip": {
+      "ar": "صوت اليوم n، ويمكن مدّه: نننن. سنقرأ كلمات مثل pin و pan.",
+      "en": "Today's sound is n, and it can be stretched: nnnn. We will read words like pin and pan.",
+      "say": "صَوْتُ اليَوْمِ {ph:n} ، وَيُمْكِنُ مَدُّهُ. سَنَقْرَأُ كَلِمَاتٍ مِثْلَ {w:pin} ، وَ {w:pan} ."
+    },
+    "d5_tip": {
+      "ar": "اليوم نراجع الأصوات الستة. دع طفلك يحاول وحده، وأنت تشجّعه. في النهاية فحص قصير يُظهر لك النتائج.",
+      "en": "Today we review all six sounds. Let your child try alone while you encourage. At the end, a short check shows you the results.",
+      "say": "اليَوْمَ نُرَاجِعُ الأَصْوَاتَ السِّتَّةَ. دَعْ طِفْلَكَ يُحَاوِلُ وَحْدَهُ، وَأَنْتَ تُشَجِّعُهُ. فِي النِّهَايَةِ فَحْصٌ قَصِيرٌ يُظْهِرُ لَكَ النَّتَائِجَ."
+    },
+
+    "tip_general": {
+      "ar": "قل صوت الحرف وليس اسمه، ولا تضف حركة بعده: قل (سسس) وليس (إس)، وقل (ت) وليس (تا).",
+      "en": "Say the letter's sound, not its name, and do not add a vowel after it: say (sss), not (ess), and say (t), not (ta).",
+      "say": "قُلْ صَوْتَ الحَرْفِ وَلَيْسَ اسْمَهُ، وَلَا تُضِفْ حَرَكَةً بَعْدَهُ: قُلْ {ph:s} وَلَيْسَ إِسْ، وَقُلْ {ph:t} وَلَيْسَ تَا."
+    },
+    "tip_s": {
+      "ar": "مثل السين، ويمكن مدّه: سسسس.",
+      "en": "Like the Arabic letter س, and it can be stretched: ssss.",
+      "say": "مِثْلُ السِّينِ، وَيُمْكِنُ مَدُّهُ: {ph:s}"
+    },
+    "tip_a": {
+      "ar": "مثل فتحة قصيرة والفم مفتوح أكثر قليلاً مع ابتسامة، كما في cat.",
+      "en": "Like a short fatha, with the mouth open a little more and a smile, as in cat.",
+      "say": "مِثْلُ فَتْحَةٍ قَصِيرَةٍ، وَالفَمُ مَفْتُوحٌ أَكْثَرَ قَلِيلًا مَعَ ابْتِسَامَةٍ، كَمَا فِي {w:cat}"
+    },
+    "tip_t": {
+      "ar": "مثل التاء مع نفخة هواء خفيفة، دون إضافة حركة بعدها.",
+      "en": "Like the Arabic letter ت with a light puff of air, without adding a vowel after it.",
+      "say": "مِثْلُ التَّاءِ مَعَ نَفْخَةِ هَوَاءٍ خَفِيفَةٍ، دُونَ إِضَافَةِ حَرَكَةٍ بَعْدَهَا."
+    },
+    "tip_p": {
+      "ar": "غير موجود في العربية. يشبه الباء لكن دون اهتزاز في الحلق ومع نفخة هواء. ضع يدك أمام فمك لتشعر بالهواء، وانتبه ألا ينطقه الطفل باءً.",
+      "en": "It does not exist in Arabic. It is like ب but with no vibration in the throat and with a puff of air. Put your hand in front of your mouth to feel the air, and make sure your child does not say it as ب.",
+      "say": "غَيْرُ مَوْجُودٍ فِي العَرَبِيَّةِ. يُشْبِهُ البَاءَ، لَكِنْ دُونَ اهْتِزَازٍ فِي الحَلْقِ، وَمَعَ نَفْخَةِ هَوَاءٍ. ضَعْ يَدَكَ أَمَامَ فَمِكَ لِتَشْعُرَ بِالهَوَاءِ، وَانْتَبِهْ أَلَّا يَنْطِقَهُ الطِّفْلُ بَاءً."
+    },
+    "tip_i": {
+      "ar": "مثل كسرة قصيرة: إِ، كما في sit.",
+      "en": "Like a short kasra: i, as in sit.",
+      "say": "مِثْلُ كَسْرَةٍ قَصِيرَةٍ: إِ ، كَمَا فِي {w:sit}"
+    },
+    "tip_n": {
+      "ar": "مثل النون، ويمكن مدّه: نننن.",
+      "en": "Like the Arabic letter ن, and it can be stretched: nnnn.",
+      "say": "مِثْلُ النُّونِ، وَيُمْكِنُ مَدُّهُ: {ph:n}"
+    },
+
+    "hear_L1": {
+      "ar": "استمع إلى الصوت، ثم قله أنت، واطلب من طفلك أن يكرّره بعدك.",
+      "en": "Listen to the sound, say it yourself, then ask your child to repeat it after you.",
+      "say": "اِسْتَمِعْ إِلَى الصَّوْتِ، ثُمَّ قُلْهُ أَنْتَ، وَاطْلُبْ مِنْ طِفْلِكَ أَنْ يُكَرِّرَهُ بَعْدَكَ."
+    },
+    "hear_L2": {
+      "ar": "اطلب من طفلك أن ينقر على الحرف ويستمع. ثم اسأله: ما الصوت الذي سمعته؟",
+      "en": "Ask your child to tap the letter and listen. Then ask: What sound did you hear?",
+      "say": "اُطْلُبْ مِنْ طِفْلِكَ أَنْ يَنْقُرَ عَلَى الحَرْفِ وَيَسْتَمِعَ. ثُمَّ اسْأَلْهُ: مَا الصَّوْتُ الَّذِي سَمِعْتَهُ؟"
+    },
+    "hear_L3": {
+      "ar": "دع طفلك ينقر على كل حرف ويقول صوته وحده. أنت تشجّع فقط.",
+      "en": "Let your child tap each letter and say its sound alone. You only encourage.",
+      "say": "دَعْ طِفْلَكَ يَنْقُرُ عَلَى كُلِّ حَرْفٍ وَيَقُولُ صَوْتَهُ وَحْدَهُ. أَنْتَ تُشَجِّعُ فَقَطْ."
+    },
+    "kw_L1": {
+      "ar": "انقر على كل صورة: نسمع الصوت ثم الكلمة. قولا الصوت الأول معًا.",
+      "en": "Tap each picture: we hear the sound, then the word. Say the first sound together.",
+      "say": "اُنْقُرْ عَلَى كُلِّ صُورَةٍ: نَسْمَعُ الصَّوْتَ ثُمَّ الكَلِمَةَ. قُولَا الصَّوْتَ الأَوَّلَ مَعًا."
+    },
+    "kw_L2": {
+      "ar": "دع طفلك ينقر على الصورة. اسأله: ما أول صوت في هذه الكلمة؟",
+      "en": "Let your child tap the picture. Ask: What is the first sound in this word?",
+      "say": "دَعْ طِفْلَكَ يَنْقُرُ عَلَى الصُّورَةِ. اِسْأَلْهُ: مَا أَوَّلُ صَوْتٍ فِي هَذِهِ الكَلِمَةِ؟"
+    },
+    "kw_L3": {
+      "ar": "دع طفلك ينقر على الصورة ويقول الصوت الأول وحده.",
+      "en": "Let your child tap the picture and say the first sound alone.",
+      "say": "دَعْ طِفْلَكَ يَنْقُرُ عَلَى الصُّورَةِ وَيَقُولُ الصَّوْتَ الأَوَّلَ وَحْدَهُ."
+    },
+    "find_L1": {
+      "ar": "قل الصوت مرة أخرى، ثم ساعد طفلك على إيجاد صورتين تبدآن به.",
+      "en": "Say the sound again, then help your child find two pictures that start with it.",
+      "say": "قُلِ الصَّوْتَ مَرَّةً أُخْرَى، ثُمَّ سَاعِدْ طِفْلَكَ عَلَى إِيجَادِ صُورَتَيْنِ تَبْدَآنِ بِهِ."
+    },
+    "find_L2": {
+      "ar": "اسأل طفلك: أي صورتين تبدآن بهذا الصوت؟",
+      "en": "Ask your child: Which two pictures start with this sound?",
+      "say": "اِسْأَلْ طِفْلَكَ: أَيُّ صُورَتَيْنِ تَبْدَآنِ بِهَذَا الصَّوْتِ؟"
+    },
+    "find_L3": {
+      "ar": "دع طفلك يختار وحده. إذا احتاج، يمكنه أن ينقر على زر التلميح.",
+      "en": "Let your child choose alone. If needed, they can tap the hint button.",
+      "say": "دَعْ طِفْلَكَ يَخْتَارُ وَحْدَهُ. إِذَا احْتَاجَ، يُمْكِنُهُ أَنْ يَنْقُرَ عَلَى زِرِّ التَّلْمِيحِ."
+    },
+    "review_L3": {
+      "ar": "مراجعة: دع طفلك ينقر على الحروف الستة ويقول صوت كل حرف. أنت تشجّع فقط.",
+      "en": "Review: let your child tap the six letters and say each sound. You only encourage.",
+      "say": "مُرَاجَعَةٌ: دَعْ طِفْلَكَ يَنْقُرُ عَلَى الحُرُوفِ السِّتَّةِ، وَيَقُولُ صَوْتَ كُلِّ حَرْفٍ. أَنْتَ تُشَجِّعُ فَقَطْ."
+    },
+    "tapsay_L1": {
+      "ar": "نسمع الأصوات واحدًا واحدًا. قلها مع طفلك، ثم انقر على القطار ليجمع الأصوات في كلمة.",
+      "en": "We hear the sounds one by one. Say them with your child, then tap the train to join the sounds into a word.",
+      "say": "نَسْمَعُ الأَصْوَاتَ وَاحِدًا وَاحِدًا. قُلْهَا مَعَ طِفْلِكَ، ثُمَّ انْقُرْ عَلَى القِطَارِ لِيَجْمَعَ الأَصْوَاتَ فِي كَلِمَةٍ."
+    },
+    "tapsay_L2": {
+      "ar": "اسأل طفلك: ما صوت كل حرف؟ دعه ينقر على الحرف ليتأكد، ثم ينقر على القطار.",
+      "en": "Ask your child: What is the sound of each letter? Let them tap the letter to check, then tap the train.",
+      "say": "اِسْأَلْ طِفْلَكَ: مَا صَوْتُ كُلِّ حَرْفٍ؟ دَعْهُ يَنْقُرُ عَلَى الحَرْفِ لِيَتَأَكَّدَ، ثُمَّ يَنْقُرُ عَلَى القِطَارِ."
+    },
+    "tapsay_L3": {
+      "ar": "دع طفلك يقرأ الأصوات وحده ثم ينقر على القطار. التلميح عند الطلب فقط.",
+      "en": "Let your child read the sounds alone, then tap the train. Hints only on request.",
+      "say": "دَعْ طِفْلَكَ يَقْرَأُ الأَصْوَاتَ وَحْدَهُ، ثُمَّ يَنْقُرُ عَلَى القِطَارِ. التَّلْمِيحُ عِنْدَ الطَّلَبِ فَقَطْ."
+    },
+    "blend_L1": {
+      "ar": "اقرأ الأصوات مع طفلك ببطء، ثم دعه يقول الكلمة. إذا قالها، انقر «قالها صح».",
+      "en": "Read the sounds slowly with your child, then let them say the word. If they say it, tap “Said it right”.",
+      "say": "اِقْرَأِ الأَصْوَاتَ مَعَ طِفْلِكَ بِبُطْءٍ، ثُمَّ دَعْهُ يَقُولُ الكَلِمَةَ. إِذَا قَالَهَا، اُنْقُرْ: قَالَهَا صَحّ."
+    },
+    "blend_L2": {
+      "ar": "اسأل طفلك: ما هذه الكلمة؟ إذا احتاج مساعدة، انقر على زر التلميح.",
+      "en": "Ask your child: What is this word? If they need help, tap the hint button.",
+      "say": "اِسْأَلْ طِفْلَكَ: مَا هَذِهِ الكَلِمَةُ؟ إِذَا احْتَاجَ مُسَاعَدَةً، اُنْقُرْ عَلَى زِرِّ التَّلْمِيحِ."
+    },
+    "blend_L3": {
+      "ar": "دع طفلك يقرأ الكلمة وحده. أنت تشجّع فقط، والتلميح عند الطلب.",
+      "en": "Let your child read the word alone. You only encourage; the hint is there on request.",
+      "say": "دَعْ طِفْلَكَ يَقْرَأُ الكَلِمَةَ وَحْدَهُ. أَنْتَ تُشَجِّعُ فَقَطْ، وَالتَّلْمِيحُ عِنْدَ الطَّلَبِ."
+    },
+    "blend_retry": {
+      "ar": "لا بأس! نستمع إلى الأصوات مرة أخرى، ثم يحاول طفلك من جديد.",
+      "en": "That's fine! We listen to the sounds again, then your child tries once more.",
+      "say": "لَا بَأْسَ! نَسْتَمِعُ إِلَى الأَصْوَاتِ مَرَّةً أُخْرَى، ثُمَّ يُحَاوِلُ طِفْلُكَ مِنْ جَدِيدٍ."
+    },
+    "challenge_intro": {
+      "ar": "تحدّي سند: ثلاثة أسئلة سريعة. دع طفلك يختار وحده، والتطبيق يتحقق من الإجابة.",
+      "en": "Sanad's challenge: three quick questions. Let your child choose alone; the app checks the answer.",
+      "say": "تَحَدِّي سَنَد: ثَلَاثَةُ أَسْئِلَةٍ سَرِيعَةٍ. دَعْ طِفْلَكَ يَخْتَارُ وَحْدَهُ، وَالتَّطْبِيقُ يَتَحَقَّقُ مِنَ الإِجَابَةِ."
+    },
+    "final_intro": {
+      "ar": "الفحص النهائي: ستة أسئلة للأصوات وعشرة للكلمات. دع طفلك يجيب وحده هذه المرة، وشجّعه بعد كل إجابة.",
+      "en": "Final check: six sound questions and ten word questions. Let your child answer alone this time, and encourage them after each answer.",
+      "say": "الفَحْصُ النِّهَائِيُّ: سِتَّةُ أَسْئِلَةٍ لِلْأَصْوَاتِ، وَعَشَرَةٌ لِلْكَلِمَاتِ. دَعْ طِفْلَكَ يُجِيبُ وَحْدَهُ هَذِهِ المَرَّةَ، وَشَجِّعْهُ بَعْدَ كُلِّ إِجَابَةٍ."
+    },
+    "ch_sound": {
+      "ar": "دع طفلك يستمع إلى الصوت، ثم يختار الحرف الصحيح.",
+      "en": "Let your child listen to the sound, then choose the right letter.",
+      "say": "دَعْ طِفْلَكَ يَسْتَمِعُ إِلَى الصَّوْتِ، ثُمَّ يَخْتَارُ الحَرْفَ الصَّحِيحَ."
+    },
+    "ch_blend": {
+      "ar": "دع طفلك يستمع إلى الأصوات ويجمعها في كلمة، ثم يختار الصورة الصحيحة.",
+      "en": "Let your child listen to the sounds and blend them into a word, then choose the right picture.",
+      "say": "دَعْ طِفْلَكَ يَسْتَمِعُ إِلَى الأَصْوَاتِ وَيَجْمَعُهَا فِي كَلِمَةٍ، ثُمَّ يَخْتَارُ الصُّورَةَ الصَّحِيحَةَ."
+    },
+    "ch_sound_L3": {
+      "ar": "دع طفلك ينقر على زر الصوت ويستمع، ثم يختار الحرف.",
+      "en": "Let your child tap the sound button and listen, then choose the letter.",
+      "say": "دَعْ طِفْلَكَ يَنْقُرُ عَلَى زِرِّ الصَّوْتِ وَيَسْتَمِعُ، ثُمَّ يَخْتَارُ الحَرْفَ."
+    },
+    "ch_blend_L3": {
+      "ar": "دع طفلك ينقر على زر الصوت، ويجمع الأصوات، ثم يختار الصورة.",
+      "en": "Let your child tap the sound button, blend the sounds, then choose the picture.",
+      "say": "دَعْ طِفْلَكَ يَنْقُرُ عَلَى زِرِّ الصَّوْتِ، وَيَجْمَعُ الأَصْوَاتَ، ثُمَّ يَخْتَارُ الصُّورَةَ."
+    },
+    "celebrate": {
+      "ar": "أحسنتما! انتهت جلسة اليوم. أطفئا الشاشة الآن، وجرّبا نشاط البيت معًا.",
+      "en": "Well done, both of you! Today's session is over. Switch off the screen now and try the home activity together.",
+      "say": "أَحْسَنْتُمَا! اِنْتَهَتْ جَلْسَةُ اليَوْمِ. أَطْفِئَا الشَّاشَةَ الآنَ، وَجَرِّبَا نَشَاطَ البَيْتِ مَعًا."
+    },
+    "celebrate_d5": {
+      "ar": "أحسنتما! أكملتما الأيام الخمسة. انظر إلى النتائج لتعرف ما يحتاج طفلك إلى التدرّب عليه.",
+      "en": "Well done! You have completed all five days. Look at the results to see what your child should practise.",
+      "say": "أَحْسَنْتُمَا! أَكْمَلْتُمَا الأَيَّامَ الخَمْسَةَ. اُنْظُرْ إِلَى النَّتَائِجِ لِتَعْرِفَ مَا يَحْتَاجُ طِفْلُكَ إِلَى التَّدَرُّبِ عَلَيْهِ."
+    },
+
+    "home1": {
+      "ar": "ارسما على ورقة شمسًا (sun) ونملة (ant) وخيمة (tent). قل صوتًا: s أو a أو t، ودع طفلك يشير إلى الصورة التي تبدأ به.",
+      "en": "Draw a sun (sun), an ant (ant) and a tent (tent) on paper. Say one sound, s, a or t, and let your child point to the picture that starts with it.",
+      "say": "اُرْسُمَا عَلَى وَرَقَةٍ شَمْسًا: {w:sun} ، وَنَمْلَةً: {w:ant} ، وَخَيْمَةً: {w:tent} . قُلْ صَوْتًا: {ph:s} ، أَوْ {ph:a} ، أَوْ {ph:t} ، وَدَعْ طِفْلَكَ يُشِيرُ إِلَى الصُّورَةِ الَّتِي تَبْدَأُ بِهِ."
+    },
+    "home2": {
+      "ar": "ابحثا في المطبخ عن شيء يبدأ بصوت p، مثل المقلاة (pan). قولا معًا: p… a… n، وضعا أيديكما أمام الفم لتشعرا بهواء p.",
+      "en": "Look in the kitchen for something that starts with p, like a pan (pan). Say together: p… a… n, and put your hands in front of your mouths to feel the air of p.",
+      "say": "اِبْحَثَا فِي المَطْبَخِ عَنْ شَيْءٍ يَبْدَأُ بِصَوْتِ {ph:p} ، مِثْلَ المِقْلَاةِ: {w:pan} . قُولَا مَعًا: {ph:p} {ph:a} {ph:n} ، وَضَعَا أَيْدِيَكُمَا أَمَامَ الفَمِ لِتَشْعُرَا بِهَوَاءِ {ph:p} ."
+    },
+    "home3": {
+      "ar": "لعبة «اجلس وقف»: إذا قلت sit يجلس طفلك، وإذا قلت sat يقف. استمعا جيدًا للفرق بين i و a، ثم بدّلا الأدوار!",
+      "en": "“Sit and stand” game: when you say sit, your child sits down; when you say sat, they stand up. Listen carefully for the difference between i and a, then swap roles!",
+      "say": "لُعْبَةُ: اِجْلِسْ وَقِفْ. إِذَا قُلْتَ {w:sit} يَجْلِسُ طِفْلُكَ، وَإِذَا قُلْتَ {w:sat} يَقِفُ. اِسْتَمِعَا جَيِّدًا لِلْفَرْقِ بَيْنَ {ph:i} وَ {ph:a} ، ثُمَّ بَدِّلَا الأَدْوَارَ!"
+    },
+    "home4": {
+      "ar": "ابحثا في البيت عن علبة (tin) ومقلاة (pan). انقرا عليهما بالملعقة بلطف مع كل صوت: t… i… n!",
+      "en": "Find a tin (tin) and a pan (pan) at home. Tap them gently with a spoon for each sound: t… i… n!",
+      "say": "اِبْحَثَا فِي البَيْتِ عَنْ عُلْبَةٍ: {w:tin} ، وَمِقْلَاةٍ: {w:pan} . اُنْقُرَا عَلَيْهِمَا بِالمِلْعَقَةِ بِلُطْفٍ مَعَ كُلِّ صَوْتٍ: {ph:t} {ph:i} {ph:n} !"
+    },
+    "home5": {
+      "ar": "اكتبا الحروف الستة على أوراق صغيرة، أو استخدما البطاقات المطبوعة: s a t p i n. قل صوتًا ودع طفلك يلتقط الورقة الصحيحة، ثم كوّنا كلمات مثل pin و sat.",
+      "en": "Write the six letters on small pieces of paper, or use the printed cards: s a t p i n. Say a sound and let your child pick up the right paper, then make words like pin and sat.",
+      "say": "اُكْتُبَا الحُرُوفَ السِّتَّةَ عَلَى أَوْرَاقٍ صَغِيرَةٍ، أَوِ اسْتَخْدِمَا البِطَاقَاتِ المَطْبُوعَةَ. قُلْ صَوْتًا، وَدَعْ طِفْلَكَ يَلْتَقِطُ الوَرَقَةَ الصَّحِيحَةَ، ثُمَّ كَوِّنَا كَلِمَاتٍ مِثْلَ {w:pin} ، وَ {w:sat} ."
+    },
+
+    "ask_d1_at":  { "ar": "ما أول صوت في كلمة at؟", "en": "What is the first sound in at?", "say": "مَا أَوَّلُ صَوْتٍ فِي كَلِمَةِ {w:at} ؟" },
+    "ask_d1_sat": { "ar": "ما أول صوت في كلمة sat؟", "en": "What is the first sound in sat?", "say": "مَا أَوَّلُ صَوْتٍ فِي كَلِمَةِ {w:sat} ؟" },
+    "ask_d2_pat": { "ar": "ضع يدك أمام فمك وقل pat. هل تشعر بالهواء؟", "en": "Put your hand in front of your mouth and say pat. Can you feel the air?", "say": "ضَعْ يَدَكَ أَمَامَ فَمِكَ وَقُلْ {w:pat} . هَلْ تَشْعُرُ بِالهَوَاءِ؟" },
+    "ask_d2_tap": { "ar": "ما آخر صوت في كلمة tap؟", "en": "What is the last sound in tap?", "say": "مَا آخِرُ صَوْتٍ فِي كَلِمَةِ {w:tap} ؟" },
+    "ask_d2_sat": { "ar": "قل الأصوات ببطء… ثم بسرعة!", "en": "Say the sounds slowly… then quickly!", "say": "قُلِ الأَصْوَاتَ بِبُطْءٍ... ثُمَّ بِسُرْعَةٍ!" },
+    "ask_d2_at":  { "ar": "ما الصوت الذي سمعته؟", "en": "What sound did you hear?", "say": "مَا الصَّوْتُ الَّذِي سَمِعْتَهُ؟" },
+    "ask_d3_it":  { "ar": "ما أول صوت في كلمة it؟", "en": "What is the first sound in it?", "say": "مَا أَوَّلُ صَوْتٍ فِي كَلِمَةِ {w:it} ؟" },
+    "ask_d3_sit": { "ar": "كم صوتًا في كلمة sit؟ صفّقا مع كل صوت.", "en": "How many sounds are in sit? Clap for each sound.", "say": "كَمْ صَوْتًا فِي كَلِمَةِ {w:sit} ؟ صَفِّقَا مَعَ كُلِّ صَوْتٍ." },
+    "ask_d3_sip": { "ar": "ما آخر صوت في كلمة sip؟", "en": "What is the last sound in sip?", "say": "مَا آخِرُ صَوْتٍ فِي كَلِمَةِ {w:sip} ؟" },
+    "ask_d3_tip": { "ar": "قل الكلمة مثل الروبوت: t… i… p، ثم قلها بسرعة!", "en": "Say the word like a robot: t… i… p, then say it fast!", "say": "قُلِ الكَلِمَةَ مِثْلَ الرُّوبُوتِ: {ph:t} {ph:i} {ph:p} ، ثُمَّ قُلْهَا بِسُرْعَةٍ!" },
+    "ask_d3_pit": { "ar": "غيّر أول صوت في pit إلى s. ما الكلمة الجديدة؟", "en": "Change the first sound in pit to s. What is the new word?", "say": "غَيِّرْ أَوَّلَ صَوْتٍ فِي {w:pit} إِلَى {ph:s} . مَا الكَلِمَةُ الجَدِيدَةُ؟" },
+    "ask_d4_in":  { "ar": "قل in ببطء: i… n. أي صوت يمكن مدّه؟", "en": "Say in slowly: i… n. Which sound can you stretch?", "say": "قُلْ {w:in} بِبُطْءٍ: {ph:i} {ph:n} . أَيُّ صَوْتٍ يُمْكِنُ مَدُّهُ؟" },
+    "ask_d4_pin": { "ar": "غيّر أول صوت في pin إلى t. ما الكلمة الجديدة؟", "en": "Change the first sound in pin to t. What is the new word?", "say": "غَيِّرْ أَوَّلَ صَوْتٍ فِي {w:pin} إِلَى {ph:t} . مَا الكَلِمَةُ الجَدِيدَةُ؟" },
+    "ask_d4_tin": { "ar": "كم صوتًا في كلمة tin؟ صفّقا مع كل صوت.", "en": "How many sounds are in tin? Clap for each sound.", "say": "كَمْ صَوْتًا فِي كَلِمَةِ {w:tin} ؟ صَفِّقَا مَعَ كُلِّ صَوْتٍ." },
+    "ask_d4_nap": { "ar": "قل الأصوات ببطء… ثم بسرعة!", "en": "Say the sounds slowly… then quickly!", "say": "قُلِ الأَصْوَاتَ بِبُطْءٍ... ثُمَّ بِسُرْعَةٍ!" },
+    "ask_d4_pan": { "ar": "أين نجد pan في بيتنا؟", "en": "Where do we find a pan in our home?", "say": "أَيْنَ نَجِدُ {w:pan} فِي بَيْتِنَا؟" },
+    "ask_d5_pan": { "ar": "ما أول صوت في كلمة pan؟", "en": "What is the first sound in pan?", "say": "مَا أَوَّلُ صَوْتٍ فِي كَلِمَةِ {w:pan} ؟" },
+    "ask_d5_pin": { "ar": "ما الصوت الذي سمعته في وسط الكلمة؟", "en": "What sound did you hear in the middle of the word?", "say": "مَا الصَّوْتُ الَّذِي سَمِعْتَهُ فِي وَسَطِ الكَلِمَةِ؟" },
+    "ask_d5_tin": { "ar": "ما آخر صوت في كلمة tin؟", "en": "What is the last sound in tin?", "say": "مَا آخِرُ صَوْتٍ فِي كَلِمَةِ {w:tin} ؟" },
+    "ask_d5_tap": { "ar": "غيّر أول صوت في tap إلى n. ما الكلمة الجديدة؟", "en": "Change the first sound in tap to n. What is the new word?", "say": "غَيِّرْ أَوَّلَ صَوْتٍ فِي {w:tap} إِلَى {ph:n} . مَا الكَلِمَةُ الجَدِيدَةُ؟" },
+    "ask_d5_nap": { "ar": "أين نجد هذا الصوت في بيتنا؟", "en": "Where can we find this sound in our home?", "say": "أَيْنَ نَجِدُ هَذَا الصَّوْتَ فِي بَيْتِنَا؟" },
+
+    "obj_o1": {
+      "ar": "الهدف ١: بنهاية الجلسات الخمس، يعرف الطفل صوت ٥ حروف على الأقل من ٦، ويختار الحرف الصحيح من ٣ بعد سماع الصوت.",
+      "en": "O1: By the end of the 5 sessions, the child identifies the sound of at least 5 of the 6 target letters, choosing the right letter from 3 after hearing the sound.",
+      "say": "الهَدَفُ الأَوَّلُ: بِنِهَايَةِ الجَلَسَاتِ الخَمْسِ، يَعْرِفُ الطِّفْلُ صَوْتَ خَمْسَةِ حُرُوفٍ عَلَى الأَقَلِّ مِنْ سِتَّةٍ، وَيَخْتَارُ الحَرْفَ الصَّحِيحَ مِنْ ثَلَاثَةٍ بَعْدَ سَمَاعِ الصَّوْتِ."
+    },
+    "obj_o2": {
+      "ar": "الهدف ٢: بنهاية الجلسات الخمس، يدمج الطفل ٨ كلمات على الأقل من ١٠، ويختار الصورة المناسبة من ٣ بعد سماع الأصوات منفصلة.",
+      "en": "O2: By the end of the 5 sessions, the child blends at least 8 of 10 spoken CVC words, choosing the matching picture from 3 after hearing the separate sounds.",
+      "say": "الهَدَفُ الثَّانِي: بِنِهَايَةِ الجَلَسَاتِ الخَمْسِ، يَدْمِجُ الطِّفْلُ ثَمَانِيَ كَلِمَاتٍ عَلَى الأَقَلِّ مِنْ عَشْرٍ، وَيَخْتَارُ الصُّورَةَ المُنَاسِبَةَ مِنْ ثَلَاثٍ بَعْدَ سَمَاعِ الأَصْوَاتِ مُنْفَصِلَةً."
+    },
+    "obj_o3": {
+      "ar": "الهدف ٣: يُكمل ولي الأمر كل جلسة يومية باتباع الإرشادات العربية وحدها، دون حاجة إلى الإنجليزية. يُقاس بعدد الجلسات المكتملة.",
+      "en": "O3: The parent completes each daily session by following the Arabic guidance alone, without needing English. Measured by sessions completed.",
+      "say": "الهَدَفُ الثَّالِثُ: يُكْمِلُ وَلِيُّ الأَمْرِ كُلَّ جَلْسَةٍ يَوْمِيَّةٍ بِاتِّبَاعِ الإِرْشَادَاتِ العَرَبِيَّةِ وَحْدَهَا، دُونَ حَاجَةٍ إِلَى الإِنْجِلِيزِيَّةِ. يُقَاسُ بِعَدَدِ الجَلَسَاتِ المُكْتَمِلَةِ."
+    },
+
+    "res_intro": {
+      "ar": "هنا ترى ما أنجزه طفلك في كل يوم. النتائج محفوظة في هذا الجهاز فقط.",
+      "en": "Here you can see what your child completed each day. Results are saved on this device only.",
+      "say": "هُنَا تَرَى مَا أَنْجَزَهُ طِفْلُكَ فِي كُلِّ يَوْمٍ. النَّتَائِجُ مَحْفُوظَةٌ فِي هَذَا الجِهَازِ فَقَطْ."
+    },
+    "res_before": {
+      "ar": "تظهر نتيجة الهدفين ١ و٢ بعد الفحص النهائي في اليوم الخامس.",
+      "en": "Results for objectives 1 and 2 appear after the final check on Day 5.",
+      "say": "تَظْهَرُ نَتِيجَةُ الهَدَفَيْنِ الأَوَّلِ وَالثَّانِي بَعْدَ الفَحْصِ النِّهَائِيِّ فِي اليَوْمِ الخَامِسِ."
+    },
+    "res_o1_met": {
+      "ar": "تحقق الهدف ١: عرف طفلك أصوات ٥ حروف أو أكثر من ٦.",
+      "en": "O1 met: your child identified the sounds of at least 5 of the 6 letters.",
+      "say": "تَحَقَّقَ الهَدَفُ الأَوَّلُ: عَرَفَ طِفْلُكَ أَصْوَاتَ خَمْسَةِ حُرُوفٍ أَوْ أَكْثَرَ مِنْ سِتَّةٍ."
+    },
+    "res_o1_not": {
+      "ar": "لم يتحقق الهدف ١ بعد. تدرّبا مرة أخرى على الأصوات المذكورة أدناه.",
+      "en": "O1 not met yet. Practise the sounds listed below again.",
+      "say": "لَمْ يَتَحَقَّقِ الهَدَفُ الأَوَّلُ بَعْدُ. تَدَرَّبَا مَرَّةً أُخْرَى عَلَى الأَصْوَاتِ المَذْكُورَةِ أَدْنَاهُ."
+    },
+    "res_o2_met": {
+      "ar": "تحقق الهدف ٢: دمج طفلك ٨ كلمات أو أكثر من ١٠.",
+      "en": "O2 met: your child blended at least 8 of the 10 words.",
+      "say": "تَحَقَّقَ الهَدَفُ الثَّانِي: دَمَجَ طِفْلُكَ ثَمَانِيَ كَلِمَاتٍ أَوْ أَكْثَرَ مِنْ عَشْرٍ."
+    },
+    "res_o2_not": {
+      "ar": "لم يتحقق الهدف ٢ بعد. أعيدا خطوة «ادمج وحدك» مع الكلمات المذكورة أدناه.",
+      "en": "O2 not met yet. Repeat “Blend on your own” with the words listed below.",
+      "say": "لَمْ يَتَحَقَّقِ الهَدَفُ الثَّانِي بَعْدُ. أَعِيدَا خُطْوَةَ: اِدْمِجْ وَحْدَكَ، مَعَ الكَلِمَاتِ المَذْكُورَةِ أَدْنَاهُ."
+    },
+    "res_o3": {
+      "ar": "الهدف ٣ يقيس عدد الجلسات التي أكملتماها باتباع الإرشادات العربية.",
+      "en": "O3 measures how many sessions you completed by following the Arabic guidance.",
+      "say": "الهَدَفُ الثَّالِثُ يَقِيسُ عَدَدَ الجَلَسَاتِ الَّتِي أَكْمَلْتُمَاهَا بِاتِّبَاعِ الإِرْشَادَاتِ العَرَبِيَّةِ."
+    },
+    "res_practise": {
+      "ar": "تدرّبا مرة أخرى على هذه الأصوات، وأعيدا اليوم الذي تعلمتما فيه كل صوت:",
+      "en": "Practise these sounds again, and repeat the day when you learned each one:",
+      "say": "تَدَرَّبَا مَرَّةً أُخْرَى عَلَى هَذِهِ الأَصْوَاتِ، وَأَعِيدَا اليَوْمَ الَّذِي تَعَلَّمْتُمَا فِيهِ كُلَّ صَوْتٍ."
+    },
+    "res_good": {
+      "ar": "رائع! لا توجد أصوات تحتاج إلى تدريب إضافي. يمكنكما إعادة أي يوم للمتعة.",
+      "en": "Great! No sounds need extra practice. You can repeat any day for fun.",
+      "say": "رَائِعٌ! لَا تُوجَدُ أَصْوَاتٌ تَحْتَاجُ إِلَى تَدْرِيبٍ إِضَافِيٍّ. يُمْكِنُكُمَا إِعَادَةُ أَيِّ يَوْمٍ لِلْمُتْعَةِ."
+    },
+
+    "gate_hold": {
+      "ar": "هذا القسم لولي الأمر. اضغط على الزر واستمر بالضغط ٣ ثوانٍ.",
+      "en": "This part is for parents. Press and hold the button for 3 seconds.",
+      "say": "هَذَا القِسْمُ لِوَلِيِّ الأَمْرِ. اِضْغَطْ عَلَى الزِّرِّ، وَاسْتَمِرَّ بِالضَّغْطِ ثَلَاثَ ثَوَانٍ."
+    },
+
+    "howto_1": {
+      "ar": "قبل البدء: اجلسا معًا في مكان هادئ، وارفع صوت الهاتف. الجلسة خمس دقائق فقط، مرة واحدة في اليوم.",
+      "en": "Before you start: sit together in a quiet place and turn the phone volume up. The session is only five minutes, once a day.",
+      "say": "قَبْلَ البَدْءِ: اِجْلِسَا مَعًا فِي مَكَانٍ هَادِئٍ، وَارْفَعْ صَوْتَ الهَاتِفِ. الجَلْسَةُ خَمْسُ دَقَائِقَ فَقَطْ، مَرَّةً وَاحِدَةً فِي اليَوْمِ."
+    },
+    "howto_2": {
+      "ar": "الخطوات: كل جلسة لها الخطوات نفسها. اسمع الصوت، ثم انقر على الحروف وقل أصواتها، ثم يدمج طفلك الكلمة وحده، ثم تحدّي سند.",
+      "en": "The steps: every session has the same steps. Hear the sound, tap the letters and say their sounds, your child blends the word alone, then Sanad's challenge.",
+      "say": "الخُطُوَاتُ: كُلُّ جَلْسَةٍ لَهَا الخُطُوَاتُ نَفْسُهَا. اِسْمَعِ الصَّوْتَ، ثُمَّ انْقُرْ عَلَى الحُرُوفِ وَقُلْ أَصْوَاتَهَا، ثُمَّ يَدْمِجُ طِفْلُكَ الكَلِمَةَ وَحْدَهُ، ثُمَّ تَحَدِّي سَنَد."
+    },
+    "howto_3": {
+      "ar": "البطاقة الرملية لك أنت: فيها ما تقوله أو تسأله، وزر الصوت يقرؤها لك. شاشات الطفل فيها صور وأصوات فقط.",
+      "en": "The sand-coloured card is for you: it tells you what to say or ask, and the sound button reads it to you. The child's screens have only pictures and sounds.",
+      "say": "البِطَاقَةُ الرَّمْلِيَّةُ لَكَ أَنْتَ: فِيهَا مَا تَقُولُهُ أَوْ تَسْأَلُهُ، وَزِرُّ الصَّوْتِ يَقْرَؤُهَا لَكَ. شَاشَاتُ الطِّفْلِ فِيهَا صُوَرٌ وَأَصْوَاتٌ فَقَطْ."
+    },
+    "howto_4": {
+      "ar": "الدعم يقلّ تدريجيًا: في اليومين ١ و٢ تقول أنت ويكرّر طفلك. في اليومين ٣ و٤ تسأل وتساعد. في اليوم ٥ يحاول طفلك وحده.",
+      "en": "Support fades step by step: on Days 1 and 2 you say and your child repeats. On Days 3 and 4 you ask and help. On Day 5 your child tries alone.",
+      "say": "الدَّعْمُ يَقِلُّ تَدْرِيجِيًّا: فِي اليَوْمَيْنِ الأَوَّلِ وَالثَّانِي تَقُولُ أَنْتَ وَيُكَرِّرُ طِفْلُكَ. فِي اليَوْمَيْنِ الثَّالِثِ وَالرَّابِعِ تَسْأَلُ وَتُسَاعِدُ. فِي اليَوْمِ الخَامِسِ يُحَاوِلُ طِفْلُكَ وَحْدَهُ."
+    },
+    "howto_5": {
+      "ar": "بعد الجلسة: بعد الملصق، أطفئا الشاشة وجرّبا نشاط البيت. اليوم التالي يُفتح غدًا.",
+      "en": "After the session: after the sticker, switch off the screen and try the home activity. The next day opens tomorrow.",
+      "say": "بَعْدَ الجَلْسَةِ: بَعْدَ المُلْصَقِ، أَطْفِئَا الشَّاشَةَ وَجَرِّبَا نَشَاطَ البَيْتِ. اليَوْمُ التَّالِي يُفْتَحُ غَدًا."
+    },
+    "howto_6": {
+      "ar": "لا يوجد جهاز؟ يستطيع المعلم أن يطبع لكم بطاقات الأيام الخمسة، وفيها التعليمات نفسها بالعربية.",
+      "en": "No device? The teacher can print the cards for the five days for you, with the same Arabic instructions.",
+      "say": "لَا يُوجَدُ جِهَازٌ؟ يَسْتَطِيعُ المُعَلِّمُ أَنْ يَطْبَعَ لَكُمْ بِطَاقَاتِ الأَيَّامِ الخَمْسَةِ، وَفِيهَا التَّعْلِيمَاتُ نَفْسُهَا بِالعَرَبِيَّةِ."
+    },
+
+    "teacher_guide": {
+      "ar": "دليل المعلم في دقيقة:\n١. عرّف أولياء الأمور بالتطبيق في اجتماع أو عبر واتساب: خمس دقائق في اليوم، لمدة خمسة أيام.\n٢. طمئنهم: لا يحتاجون إلى معرفة الإنجليزية، فالتطبيق ينطق الأصوات، وهم يشجّعون ويسألون.\n٣. وزّع النشرة التي فيها رمز QR، أو أرسل رسالة واتساب الجاهزة.\n٤. للأسر التي لا تملك جهازًا، اطبع بطاقات الأيام الخمسة.\n٥. بعد أسبوع، اسأل الأطفال في الصف عن الأصوات الستة، واستمع إلى ملاحظات الأسر.",
+      "en": "One-minute teacher guide:\n1. Introduce the app to parents at a meeting or on WhatsApp: five minutes a day for five days.\n2. Reassure them: they do not need English. The app says the sounds; they encourage and ask.\n3. Hand out the flyer with the QR code, or send the ready WhatsApp message.\n4. For families without a device, print the cards for the five days.\n5. After a week, ask the children in class about the six sounds, and listen to the families' feedback.",
+      "say": "دَلِيلُ المُعَلِّمِ فِي دَقِيقَةٍ. أَوَّلًا: عَرِّفْ أَوْلِيَاءَ الأُمُورِ بِالتَّطْبِيقِ فِي اجْتِمَاعٍ أَوْ عَبْرَ وَاتْسَاب: خَمْسُ دَقَائِقَ فِي اليَوْمِ، لِمُدَّةِ خَمْسَةِ أَيَّامٍ. ثَانِيًا: طَمْئِنْهُمْ: لَا يَحْتَاجُونَ إِلَى مَعْرِفَةِ الإِنْجِلِيزِيَّةِ، فَالتَّطْبِيقُ يَنْطِقُ الأَصْوَاتَ، وَهُمْ يُشَجِّعُونَ وَيَسْأَلُونَ. ثَالِثًا: وَزِّعِ النَّشْرَةَ الَّتِي فِيهَا الرَّمْزُ، أَوْ أَرْسِلْ رِسَالَةَ وَاتْسَاب الجَاهِزَةَ. رَابِعًا: لِلْأُسَرِ الَّتِي لَا تَمْلِكُ جِهَازًا، اِطْبَعْ بِطَاقَاتِ الأَيَّامِ الخَمْسَةِ. خَامِسًا: بَعْدَ أُسْبُوعٍ، اِسْأَلِ الأَطْفَالَ فِي الصَّفِّ عَنِ الأَصْوَاتِ السِّتَّةِ، وَاسْتَمِعْ إِلَى مُلَاحَظَاتِ الأُسَرِ."
+    },
+    "teacher_whatsapp": {
+      "ar": "السلام عليكم أولياء الأمور الكرام،\nأنصحكم بتطبيق «خمس دقائق معًا» لتعليم أطفالنا في الصف الأول والثاني أصوات الحروف الإنجليزية في البيت.\n- مجاني، دون إعلانات، ودون حساب.\n- خمس دقائق فقط في اليوم، والتطبيق ينطق الأصوات، فلا تحتاجون إلى معرفة الإنجليزية.\n- يعمل دون إنترنت بعد فتحه أول مرة.\nافتحوا الرابط: {link}\nمع خالص التحية،\nمعلّم/ة اللغة الإنجليزية",
+      "en": "Dear parents,\nI recommend the app “5 Minutes Together” for teaching our Grade 1 and 2 children English letter sounds at home.\n- Free, no ads, no account.\n- Only five minutes a day. The app says the sounds, so you do not need to know English.\n- Works without internet after the first visit.\nOpen the link: {link}\nKind regards,\nYour English teacher",
+      "noAudio": true
+    },
+    "teacher_edit": {
+      "ar": "يمكن تغيير الحروف والكلمات في ملف content.json. الكلمات المكوّنة من الأصوات الستة تعمل مباشرة، لأن التطبيق يجمع أصوات الحروف بنفسه. الحروف الجديدة تحتاج إلى ملفات صوت جديدة (انظر ملف README).",
+      "en": "Letters and words can be changed in the file content.json. Words made from the six sounds work straight away, because the app joins the letter sounds itself. New letters need new sound files (see the README file).",
+      "say": "يُمْكِنُ تَغْيِيرُ الحُرُوفِ وَالكَلِمَاتِ فِي مِلَفِّ المُحْتَوَى. الكَلِمَاتُ المُكَوَّنَةُ مِنَ الأَصْوَاتِ السِّتَّةِ تَعْمَلُ مُبَاشَرَةً، لِأَنَّ التَّطْبِيقَ يَجْمَعُ أَصْوَاتَ الحُرُوفِ بِنَفْسِهِ. الحُرُوفُ الجَدِيدَةُ تَحْتَاجُ إِلَى مِلَفَّاتِ صَوْتٍ جَدِيدَةٍ."
+    },
+
+    "map_hint": {
+      "ar": "انقر مع طفلك على المحطة المضيئة لتبدأ جلسة اليوم. المحطات المكتملة تلمع بنجمة، ويمكن إعادتها في أي وقت.",
+      "en": "Tap the glowing stop with your child to start today's session. Finished stops shine with a star and can be repeated at any time.",
+      "say": "اُنْقُرْ مَعَ طِفْلِكَ عَلَى المَحَطَّةِ المُضِيئَةِ لِتَبْدَأَ جَلْسَةَ اليَوْمِ. المَحَطَّاتُ المُكْتَمِلَةُ تَلْمَعُ بِنَجْمَةٍ، وَيُمْكِنُ إِعَادَتُهَا فِي أَيِّ وَقْتٍ."
+    },
+    "stickers_intro": {
+      "ar": "كل يوم مكتمل يعطي طفلك ملصقًا واحدًا. خمسة أيام، خمسة ملصقات.",
+      "en": "Each completed day gives your child one sticker. Five days, five stickers.",
+      "say": "كُلُّ يَوْمٍ مُكْتَمِلٍ يُعْطِي طِفْلَكَ مُلْصَقًا وَاحِدًا. خَمْسَةُ أَيَّامٍ، خَمْسَةُ مُلْصَقَاتٍ."
+    },
+    "review_intro": {
+      "ar": "قيّم كل عبارة من ١ إلى ٥، واكتب ملاحظة إن أردت. لا يُرسل أي شيء من هذا الجهاز؛ انسخ ملاحظاتك وشاركها بنفسك.",
+      "en": "Rate each statement from 1 to 5 and add a comment if you like. Nothing is sent from this device: copy your feedback and share it yourself.",
+      "say": "قَيِّمْ كُلَّ عِبَارَةٍ مِنْ وَاحِدٍ إِلَى خَمْسَةٍ، وَاكْتُبْ مُلَاحَظَةً إِنْ أَرَدْتَ. لَا يُرْسَلُ أَيُّ شَيْءٍ مِنْ هَذَا الجِهَازِ؛ اِنْسَخْ مُلَاحَظَاتِكَ وَشَارِكْهَا بِنَفْسِكَ."
+    },
+    "apps_intro": {
+      "ar": "تطبيقات ومواقع مجانية ودون إعلانات، اخترناها لتعلّم القراءة المبكرة. استخدمها مع طفلك بعد جلسة اليوم، لا بدلًا منها.",
+      "en": "Free, ad-free apps and websites we checked for early reading. Use them with your child after today's session, not instead of it.",
+      "say": "تَطْبِيقَاتٌ وَمَوَاقِعُ مَجَّانِيَّةٌ وَدُونَ إِعْلَانَاتٍ، اِخْتَرْنَاهَا لِتَعَلُّمِ القِرَاءَةِ المُبَكِّرَةِ. اِسْتَخْدِمْهَا مَعَ طِفْلِكَ بَعْدَ جَلْسَةِ اليَوْمِ، لَا بَدَلًا مِنْهَا."
+    },
+
+    "about_purpose": {
+      "ar": "«خمس دقائق معًا» نموذج أولي أعدّته مجموعة من طلبة مقرر EDEN4233 (تقنيات تعليم القراءة والكتابة المبكرة باللغة الإنجليزية) في كلية التربية بالرستاق، جامعة التقنية والعلوم التطبيقية. يساعد الأسر العُمانية على دعم أطفال الصف الأول والثاني في تعلّم أصوات الحروف الإنجليزية ودمجها، عبر روتين يومي مدته خمس دقائق.",
+      "en": "“5 Minutes Together” is a prototype made by a group of students in the course EDEN4233 Technology for Initial Language Literacy at Rustaq College of Education, University of Technology and Applied Sciences. It helps Omani families support Grade 1–2 children to learn and blend English letter sounds through a five-minute daily routine.",
+      "say": "خَمْسُ دَقَائِقَ مَعًا: نَمُوذَجٌ أَوَّلِيٌّ أَعَدَّتْهُ مَجْمُوعَةٌ مِنْ طَلَبَةِ مُقَرَّرِ تِقْنِيَّاتِ تَعْلِيمِ القِرَاءَةِ وَالكِتَابَةِ المُبَكِّرَةِ بِاللُّغَةِ الإِنْجِلِيزِيَّةِ، فِي كُلِّيَّةِ التَّرْبِيَةِ بِالرُّسْتَاقِ، جَامِعَةِ التِّقْنِيَةِ وَالعُلُومِ التَّطْبِيقِيَّةِ. يُسَاعِدُ الأُسَرَ العُمَانِيَّةَ عَلَى دَعْمِ أَطْفَالِ الصَّفِّ الأَوَّلِ وَالثَّانِي فِي تَعَلُّمِ أَصْوَاتِ الحُرُوفِ الإِنْجِلِيزِيَّةِ وَدَمْجِهَا، عَبْرَ رُوتِينٍ يَوْمِيٍّ مُدَّتُهُ خَمْسُ دَقَائِقَ."
+    },
+    "about_privacy": {
+      "ar": "لا تغادر أي بيانات هذا الجهاز. لا حسابات، ولا إعلانات، ولا محادثة، ولا تتبّع. التقدّم محفوظ في هذا الجهاز فقط، ويمكن مسحه من الإعدادات.",
+      "en": "No data leaves this device. No accounts, no ads, no chat and no tracking. Progress is saved on this device only and can be erased in Settings.",
+      "say": "لَا تُغَادِرُ أَيُّ بَيَانَاتٍ هَذَا الجِهَازَ. لَا حِسَابَاتٍ، وَلَا إِعْلَانَاتٍ، وَلَا مُحَادَثَةَ، وَلَا تَتَبُّعَ. التَّقَدُّمُ مَحْفُوظٌ فِي هَذَا الجِهَازِ فَقَطْ، وَيُمْكِنُ مَسْحُهُ مِنَ الإِعْدَادَاتِ."
+    },
+    "about_ai": {
+      "ar": "بُني هذا التطبيق بمساعدة الذكاء الاصطناعي (Claude Code) تحت إشراف المجموعة وتوجيهها.",
+      "en": "This app was built with AI assistance (Claude Code) under the group's direction.",
+      "say": "بُنِيَ هَذَا التَّطْبِيقُ بِمُسَاعَدَةِ الذَّكَاءِ الاصْطِنَاعِيِّ، كْلُود كُود، تَحْتَ إِشْرَافِ المَجْمُوعَةِ وَتَوْجِيهِهَا."
+    }
+  }
+}

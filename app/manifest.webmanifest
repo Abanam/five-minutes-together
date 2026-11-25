@@ -1,0 +1,19 @@
+{
+  "name": "خمس دقائق معًا – 5 Minutes Together",
+  "short_name": "خمس دقائق",
+  "description": "A 5-minute daily English letter-sound routine for Omani families, with Arabic guidance for parents.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFBF2",
+  "theme_color": "#0F5E73",
+  "categories": ["education", "kids"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

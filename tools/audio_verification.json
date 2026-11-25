@@ -1,0 +1,2861 @@
+{
+ "files": {
+  "ar/about_ai.mp3": {
+   "duration": 12.21,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.91,
+   "clipped_samples": 0,
+   "kbytes": 48.3,
+   "pass": true
+  },
+  "ar/about_privacy.mp3": {
+   "duration": 19.83,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.3,
+   "clipped_samples": 0,
+   "kbytes": 78.0,
+   "pass": true
+  },
+  "ar/about_purpose.mp3": {
+   "duration": 42.771,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.39,
+   "clipped_samples": 0,
+   "kbytes": 167.7,
+   "pass": true
+  },
+  "ar/app_duoabc_ask.mp3": {
+   "duration": 7.37,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.77,
+   "clipped_samples": 0,
+   "kbytes": 29.3,
+   "pass": true
+  },
+  "ar/app_duoabc_why.mp3": {
+   "duration": 20.24,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.53,
+   "clipped_samples": 0,
+   "kbytes": 79.7,
+   "pass": true
+  },
+  "ar/app_khankids_ask.mp3": {
+   "duration": 8.8,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.01,
+   "clipped_samples": 0,
+   "kbytes": 35.0,
+   "pass": true
+  },
+  "ar/app_khankids_why.mp3": {
+   "duration": 24.07,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -4.94,
+   "clipped_samples": 0,
+   "kbytes": 94.6,
+   "pass": true
+  },
+  "ar/app_readalong_ask.mp3": {
+   "duration": 8.6,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.79,
+   "clipped_samples": 0,
+   "kbytes": 34.1,
+   "pass": true
+  },
+  "ar/app_readalong_why.mp3": {
+   "duration": 22.15,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.12,
+   "clipped_samples": 0,
+   "kbytes": 87.1,
+   "pass": true
+  },
+  "ar/apps_intro.mp3": {
+   "duration": 15.89,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -4.13,
+   "clipped_samples": 0,
+   "kbytes": 62.7,
+   "pass": true
+  },
+  "ar/ask_d1_at.mp3": {
+   "duration": 3.29,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -1.46,
+   "clipped_samples": 0,
+   "kbytes": 19.9,
+   "pass": true
+  },
+  "ar/ask_d1_sat.mp3": {
+   "duration": 3.33,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.86,
+   "clipped_samples": 0,
+   "kbytes": 20.1,
+   "pass": true
+  },
+  "ar/ask_d2_at.mp3": {
+   "duration": 2.66,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.32,
+   "clipped_samples": 0,
+   "kbytes": 10.9,
+   "pass": true
+  },
+  "ar/ask_d2_pat.mp3": {
+   "duration": 8.07,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.72,
+   "clipped_samples": 0,
+   "kbytes": 47.9,
+   "pass": true
+  },
+  "ar/ask_d2_sat.mp3": {
+   "duration": 4.75,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.11,
+   "clipped_samples": 0,
+   "kbytes": 19.1,
+   "pass": true
+  },
+  "ar/ask_d2_tap.mp3": {
+   "duration": 3.48,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.33,
+   "clipped_samples": 0,
+   "kbytes": 20.9,
+   "pass": true
+  },
+  "ar/ask_d3_it.mp3": {
+   "duration": 3.24,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.29,
+   "clipped_samples": 0,
+   "kbytes": 19.5,
+   "pass": true
+  },
+  "ar/ask_d3_pit.mp3": {
+   "duration": 8.33,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.37,
+   "clipped_samples": 0,
+   "kbytes": 49.4,
+   "pass": true
+  },
+  "ar/ask_d3_sip.mp3": {
+   "duration": 3.4,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.93,
+   "clipped_samples": 0,
+   "kbytes": 20.5,
+   "pass": true
+  },
+  "ar/ask_d3_sit.mp3": {
+   "duration": 6.63,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.14,
+   "clipped_samples": 0,
+   "kbytes": 39.5,
+   "pass": true
+  },
+  "ar/ask_d3_tip.mp3": {
+   "duration": 7.58,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.66,
+   "clipped_samples": 0,
+   "kbytes": 44.9,
+   "pass": true
+  },
+  "ar/ask_d4_in.mp3": {
+   "duration": 7.92,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.23,
+   "clipped_samples": 0,
+   "kbytes": 46.9,
+   "pass": true
+  },
+  "ar/ask_d4_nap.mp3": {
+   "duration": 4.75,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.11,
+   "clipped_samples": 0,
+   "kbytes": 19.1,
+   "pass": true
+  },
+  "ar/ask_d4_pan.mp3": {
+   "duration": 4.27,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.68,
+   "clipped_samples": 0,
+   "kbytes": 25.5,
+   "pass": true
+  },
+  "ar/ask_d4_pin.mp3": {
+   "duration": 7.71,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.45,
+   "clipped_samples": 0,
+   "kbytes": 45.8,
+   "pass": true
+  },
+  "ar/ask_d4_tin.mp3": {
+   "duration": 6.58,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.29,
+   "clipped_samples": 0,
+   "kbytes": 39.2,
+   "pass": true
+  },
+  "ar/ask_d5_nap.mp3": {
+   "duration": 3.1,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.05,
+   "clipped_samples": 0,
+   "kbytes": 12.7,
+   "pass": true
+  },
+  "ar/ask_d5_pan.mp3": {
+   "duration": 3.34,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.38,
+   "clipped_samples": 0,
+   "kbytes": 20.2,
+   "pass": true
+  },
+  "ar/ask_d5_pin.mp3": {
+   "duration": 4.37,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.76,
+   "clipped_samples": 0,
+   "kbytes": 17.7,
+   "pass": true
+  },
+  "ar/ask_d5_tap.mp3": {
+   "duration": 8.18,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.18,
+   "clipped_samples": 0,
+   "kbytes": 48.5,
+   "pass": true
+  },
+  "ar/ask_d5_tin.mp3": {
+   "duration": 3.45,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.69,
+   "clipped_samples": 0,
+   "kbytes": 20.8,
+   "pass": true
+  },
+  "ar/blend_L1.mp3": {
+   "duration": 12.03,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.28,
+   "clipped_samples": 0,
+   "kbytes": 47.6,
+   "pass": true
+  },
+  "ar/blend_L2.mp3": {
+   "duration": 9.651,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.79,
+   "clipped_samples": 0,
+   "kbytes": 38.3,
+   "pass": true
+  },
+  "ar/blend_L3.mp3": {
+   "duration": 10.56,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.14,
+   "clipped_samples": 0,
+   "kbytes": 41.8,
+   "pass": true
+  },
+  "ar/blend_retry.mp3": {
+   "duration": 9.0,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -4.93,
+   "clipped_samples": 0,
+   "kbytes": 35.7,
+   "pass": true
+  },
+  "ar/celebrate.mp3": {
+   "duration": 10.62,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.36,
+   "clipped_samples": 0,
+   "kbytes": 42.0,
+   "pass": true
+  },
+  "ar/celebrate_d5.mp3": {
+   "duration": 12.85,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.22,
+   "clipped_samples": 0,
+   "kbytes": 50.7,
+   "pass": true
+  },
+  "ar/ch_blend.mp3": {
+   "duration": 9.49,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.53,
+   "clipped_samples": 0,
+   "kbytes": 37.6,
+   "pass": true
+  },
+  "ar/ch_blend_L3.mp3": {
+   "duration": 8.49,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.91,
+   "clipped_samples": 0,
+   "kbytes": 33.7,
+   "pass": true
+  },
+  "ar/ch_sound.mp3": {
+   "duration": 6.97,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.26,
+   "clipped_samples": 0,
+   "kbytes": 27.8,
+   "pass": true
+  },
+  "ar/ch_sound_L3.mp3": {
+   "duration": 7.01,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.39,
+   "clipped_samples": 0,
+   "kbytes": 27.9,
+   "pass": true
+  },
+  "ar/challenge_intro.mp3": {
+   "duration": 13.431,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.52,
+   "clipped_samples": 0,
+   "kbytes": 53.1,
+   "pass": true
+  },
+  "ar/d1_tip.mp3": {
+   "duration": 14.36,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.34,
+   "clipped_samples": 0,
+   "kbytes": 84.7,
+   "pass": true
+  },
+  "ar/d2_tip.mp3": {
+   "duration": 12.39,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.07,
+   "clipped_samples": 0,
+   "kbytes": 73.2,
+   "pass": true
+  },
+  "ar/d3_tip.mp3": {
+   "duration": 12.95,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.5,
+   "clipped_samples": 0,
+   "kbytes": 76.4,
+   "pass": true
+  },
+  "ar/d4_tip.mp3": {
+   "duration": 10.53,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.43,
+   "clipped_samples": 0,
+   "kbytes": 62.2,
+   "pass": true
+  },
+  "ar/d5_tip.mp3": {
+   "duration": 14.64,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.01,
+   "clipped_samples": 0,
+   "kbytes": 57.7,
+   "pass": true
+  },
+  "ar/final_intro.mp3": {
+   "duration": 16.15,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -4.56,
+   "clipped_samples": 0,
+   "kbytes": 63.6,
+   "pass": true
+  },
+  "ar/find_L1.mp3": {
+   "duration": 8.28,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.84,
+   "clipped_samples": 0,
+   "kbytes": 32.8,
+   "pass": true
+  },
+  "ar/find_L2.mp3": {
+   "duration": 5.55,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.41,
+   "clipped_samples": 0,
+   "kbytes": 22.3,
+   "pass": true
+  },
+  "ar/find_L3.mp3": {
+   "duration": 9.471,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.6,
+   "clipped_samples": 0,
+   "kbytes": 37.6,
+   "pass": true
+  },
+  "ar/gate_hold.mp3": {
+   "duration": 8.48,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.69,
+   "clipped_samples": 0,
+   "kbytes": 33.7,
+   "pass": true
+  },
+  "ar/hear_L1.mp3": {
+   "duration": 7.96,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.81,
+   "clipped_samples": 0,
+   "kbytes": 31.7,
+   "pass": true
+  },
+  "ar/hear_L2.mp3": {
+   "duration": 10.12,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.25,
+   "clipped_samples": 0,
+   "kbytes": 40.2,
+   "pass": true
+  },
+  "ar/hear_L3.mp3": {
+   "duration": 9.2,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.14,
+   "clipped_samples": 0,
+   "kbytes": 36.5,
+   "pass": true
+  },
+  "ar/home1.mp3": {
+   "duration": 21.21,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -4.95,
+   "clipped_samples": 0,
+   "kbytes": 124.8,
+   "pass": true
+  },
+  "ar/home2.mp3": {
+   "duration": 18.18,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.12,
+   "clipped_samples": 0,
+   "kbytes": 107.1,
+   "pass": true
+  },
+  "ar/home3.mp3": {
+   "duration": 22.27,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.97,
+   "clipped_samples": 0,
+   "kbytes": 131.0,
+   "pass": true
+  },
+  "ar/home4.mp3": {
+   "duration": 14.44,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.48,
+   "clipped_samples": 0,
+   "kbytes": 85.2,
+   "pass": true
+  },
+  "ar/home5.mp3": {
+   "duration": 19.44,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.53,
+   "clipped_samples": 0,
+   "kbytes": 114.4,
+   "pass": true
+  },
+  "ar/home_all.mp3": {
+   "duration": 9.52,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.51,
+   "clipped_samples": 0,
+   "kbytes": 37.8,
+   "pass": true
+  },
+  "ar/home_done.mp3": {
+   "duration": 8.68,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.57,
+   "clipped_samples": 0,
+   "kbytes": 34.5,
+   "pass": true
+  },
+  "ar/home_ready.mp3": {
+   "duration": 9.85,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.85,
+   "clipped_samples": 0,
+   "kbytes": 39.0,
+   "pass": true
+  },
+  "ar/howto_1.mp3": {
+   "duration": 13.57,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.17,
+   "clipped_samples": 0,
+   "kbytes": 53.5,
+   "pass": true
+  },
+  "ar/howto_2.mp3": {
+   "duration": 18.41,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.12,
+   "clipped_samples": 0,
+   "kbytes": 72.5,
+   "pass": true
+  },
+  "ar/howto_3.mp3": {
+   "duration": 16.0,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -4.73,
+   "clipped_samples": 0,
+   "kbytes": 63.1,
+   "pass": true
+  },
+  "ar/howto_4.mp3": {
+   "duration": 17.34,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -4.8,
+   "clipped_samples": 0,
+   "kbytes": 68.3,
+   "pass": true
+  },
+  "ar/howto_5.mp3": {
+   "duration": 11.64,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.03,
+   "clipped_samples": 0,
+   "kbytes": 46.1,
+   "pass": true
+  },
+  "ar/howto_6.mp3": {
+   "duration": 12.43,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.38,
+   "clipped_samples": 0,
+   "kbytes": 49.2,
+   "pass": true
+  },
+  "ar/kw_L1.mp3": {
+   "duration": 8.76,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.76,
+   "clipped_samples": 0,
+   "kbytes": 34.8,
+   "pass": true
+  },
+  "ar/kw_L2.mp3": {
+   "duration": 8.35,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.98,
+   "clipped_samples": 0,
+   "kbytes": 33.1,
+   "pass": true
+  },
+  "ar/kw_L3.mp3": {
+   "duration": 6.32,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.04,
+   "clipped_samples": 0,
+   "kbytes": 25.2,
+   "pass": true
+  },
+  "ar/locked.mp3": {
+   "duration": 9.09,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.26,
+   "clipped_samples": 0,
+   "kbytes": 36.1,
+   "pass": true
+  },
+  "ar/lvl1_desc.mp3": {
+   "duration": 12.74,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.96,
+   "clipped_samples": 0,
+   "kbytes": 50.3,
+   "pass": true
+  },
+  "ar/lvl2_desc.mp3": {
+   "duration": 12.62,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.43,
+   "clipped_samples": 0,
+   "kbytes": 49.9,
+   "pass": true
+  },
+  "ar/lvl3_desc.mp3": {
+   "duration": 14.74,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.19,
+   "clipped_samples": 0,
+   "kbytes": 58.2,
+   "pass": true
+  },
+  "ar/map_hint.mp3": {
+   "duration": 14.31,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.21,
+   "clipped_samples": 0,
+   "kbytes": 56.5,
+   "pass": true
+  },
+  "ar/ob1.mp3": {
+   "duration": 18.52,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.2,
+   "clipped_samples": 0,
+   "kbytes": 72.9,
+   "pass": true
+  },
+  "ar/ob2.mp3": {
+   "duration": 21.87,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -4.67,
+   "clipped_samples": 0,
+   "kbytes": 86.0,
+   "pass": true
+  },
+  "ar/ob3.mp3": {
+   "duration": 9.831,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.21,
+   "clipped_samples": 0,
+   "kbytes": 39.0,
+   "pass": true
+  },
+  "ar/obj_o1.mp3": {
+   "duration": 16.06,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.34,
+   "clipped_samples": 0,
+   "kbytes": 63.4,
+   "pass": true
+  },
+  "ar/obj_o2.mp3": {
+   "duration": 16.48,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.94,
+   "clipped_samples": 0,
+   "kbytes": 64.9,
+   "pass": true
+  },
+  "ar/obj_o3.mp3": {
+   "duration": 18.45,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.42,
+   "clipped_samples": 0,
+   "kbytes": 72.6,
+   "pass": true
+  },
+  "ar/res_before.mp3": {
+   "duration": 7.5,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.43,
+   "clipped_samples": 0,
+   "kbytes": 29.9,
+   "pass": true
+  },
+  "ar/res_good.mp3": {
+   "duration": 11.67,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.64,
+   "clipped_samples": 0,
+   "kbytes": 46.2,
+   "pass": true
+  },
+  "ar/res_intro.mp3": {
+   "duration": 8.08,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.14,
+   "clipped_samples": 0,
+   "kbytes": 32.1,
+   "pass": true
+  },
+  "ar/res_o1_met.mp3": {
+   "duration": 9.03,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.37,
+   "clipped_samples": 0,
+   "kbytes": 35.8,
+   "pass": true
+  },
+  "ar/res_o1_not.mp3": {
+   "duration": 9.31,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.11,
+   "clipped_samples": 0,
+   "kbytes": 36.9,
+   "pass": true
+  },
+  "ar/res_o2_met.mp3": {
+   "duration": 7.57,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.2,
+   "clipped_samples": 0,
+   "kbytes": 30.2,
+   "pass": true
+  },
+  "ar/res_o2_not.mp3": {
+   "duration": 11.94,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -4.93,
+   "clipped_samples": 0,
+   "kbytes": 47.2,
+   "pass": true
+  },
+  "ar/res_o3.mp3": {
+   "duration": 8.89,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.48,
+   "clipped_samples": 0,
+   "kbytes": 35.2,
+   "pass": true
+  },
+  "ar/res_practise.mp3": {
+   "duration": 8.9,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -4.99,
+   "clipped_samples": 0,
+   "kbytes": 35.4,
+   "pass": true
+  },
+  "ar/review_intro.mp3": {
+   "duration": 16.28,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -4.63,
+   "clipped_samples": 0,
+   "kbytes": 64.2,
+   "pass": true
+  },
+  "ar/review_L3.mp3": {
+   "duration": 12.66,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.28,
+   "clipped_samples": 0,
+   "kbytes": 50.0,
+   "pass": true
+  },
+  "ar/stickers_intro.mp3": {
+   "duration": 10.57,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.37,
+   "clipped_samples": 0,
+   "kbytes": 41.8,
+   "pass": true
+  },
+  "ar/tapsay_L1.mp3": {
+   "duration": 11.42,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.59,
+   "clipped_samples": 0,
+   "kbytes": 45.2,
+   "pass": true
+  },
+  "ar/tapsay_L2.mp3": {
+   "duration": 11.06,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.78,
+   "clipped_samples": 0,
+   "kbytes": 43.8,
+   "pass": true
+  },
+  "ar/tapsay_L3.mp3": {
+   "duration": 10.17,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.89,
+   "clipped_samples": 0,
+   "kbytes": 40.3,
+   "pass": true
+  },
+  "ar/teacher_edit.mp3": {
+   "duration": 23.53,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.64,
+   "clipped_samples": 0,
+   "kbytes": 92.5,
+   "pass": true
+  },
+  "ar/teacher_guide.mp3": {
+   "duration": 61.5,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -3.67,
+   "clipped_samples": 0,
+   "kbytes": 240.8,
+   "pass": true
+  },
+  "ar/tip_a.mp3": {
+   "duration": 9.98,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.29,
+   "clipped_samples": 0,
+   "kbytes": 59.0,
+   "pass": true
+  },
+  "ar/tip_general.mp3": {
+   "duration": 14.14,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.59,
+   "clipped_samples": 0,
+   "kbytes": 83.5,
+   "pass": true
+  },
+  "ar/tip_i.mp3": {
+   "duration": 5.99,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.49,
+   "clipped_samples": 0,
+   "kbytes": 35.7,
+   "pass": true
+  },
+  "ar/tip_n.mp3": {
+   "duration": 4.78,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.91,
+   "clipped_samples": 0,
+   "kbytes": 28.6,
+   "pass": true
+  },
+  "ar/tip_p.mp3": {
+   "duration": 19.46,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.23,
+   "clipped_samples": 0,
+   "kbytes": 76.6,
+   "pass": true
+  },
+  "ar/tip_s.mp3": {
+   "duration": 5.16,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.38,
+   "clipped_samples": 0,
+   "kbytes": 30.7,
+   "pass": true
+  },
+  "ar/tip_t.mp3": {
+   "duration": 7.14,
+   "range": [
+    0.8,
+    75.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.72,
+   "clipped_samples": 0,
+   "kbytes": 28.5,
+   "pass": true
+  },
+  "en/b-at.mp3": {
+   "duration": 1.21,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.39,
+   "clipped_samples": 0,
+   "kbytes": 10.2,
+   "pass": true
+  },
+  "en/b-in.mp3": {
+   "duration": 1.69,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -9.55,
+   "clipped_samples": 0,
+   "kbytes": 13.9,
+   "pass": true
+  },
+  "en/b-it.mp3": {
+   "duration": 1.21,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.47,
+   "clipped_samples": 0,
+   "kbytes": 10.2,
+   "pass": true
+  },
+  "en/b-nap.mp3": {
+   "duration": 2.223,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.42,
+   "clipped_samples": 0,
+   "kbytes": 18.0,
+   "pass": true
+  },
+  "en/b-pan.mp3": {
+   "duration": 2.223,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.32,
+   "clipped_samples": 0,
+   "kbytes": 18.0,
+   "pass": true
+  },
+  "en/b-pat.mp3": {
+   "duration": 1.743,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.29,
+   "clipped_samples": 0,
+   "kbytes": 14.3,
+   "pass": true
+  },
+  "en/b-pin.mp3": {
+   "duration": 2.223,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -2.32,
+   "clipped_samples": 0,
+   "kbytes": 18.0,
+   "pass": true
+  },
+  "en/b-pit.mp3": {
+   "duration": 1.743,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.29,
+   "clipped_samples": 0,
+   "kbytes": 14.3,
+   "pass": true
+  },
+  "en/b-sat.mp3": {
+   "duration": 2.33,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.7,
+   "peak_dbfs": -7.61,
+   "clipped_samples": 0,
+   "kbytes": 19.0,
+   "pass": true
+  },
+  "en/b-sip.mp3": {
+   "duration": 2.373,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -3.47,
+   "clipped_samples": 0,
+   "kbytes": 19.2,
+   "pass": true
+  },
+  "en/b-sit.mp3": {
+   "duration": 2.33,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.6,
+   "peak_dbfs": -7.86,
+   "clipped_samples": 0,
+   "kbytes": 19.0,
+   "pass": true
+  },
+  "en/b-tap.mp3": {
+   "duration": 1.743,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -1.48,
+   "clipped_samples": 0,
+   "kbytes": 14.3,
+   "pass": true
+  },
+  "en/b-tin.mp3": {
+   "duration": 2.18,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.4,
+   "clipped_samples": 0,
+   "kbytes": 17.7,
+   "pass": true
+  },
+  "en/b-tip.mp3": {
+   "duration": 1.743,
+   "range": [
+    0.8,
+    3.5
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -1.48,
+   "clipped_samples": 0,
+   "kbytes": 14.3,
+   "pass": true
+  },
+  "en/ph-a.mp3": {
+   "duration": 0.72,
+   "range": [
+    0.55,
+    0.95
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.51,
+   "clipped_samples": 0,
+   "kbytes": 6.2,
+   "pass": true
+  },
+  "en/ph-i.mp3": {
+   "duration": 0.72,
+   "range": [
+    0.55,
+    0.95
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -11.09,
+   "clipped_samples": 0,
+   "kbytes": 6.2,
+   "pass": true
+  },
+  "en/ph-n.mp3": {
+   "duration": 0.57,
+   "range": [
+    0.55,
+    0.95
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -9.45,
+   "clipped_samples": 0,
+   "kbytes": 5.1,
+   "pass": true
+  },
+  "en/ph-p.mp3": {
+   "duration": 0.133,
+   "range": [
+    0.05,
+    0.45
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -2.32,
+   "clipped_samples": 0,
+   "kbytes": 1.7,
+   "pass": true
+  },
+  "en/ph-s.mp3": {
+   "duration": 0.72,
+   "range": [
+    0.55,
+    0.95
+   ],
+   "active_rms_db": -20.7,
+   "peak_dbfs": -8.7,
+   "clipped_samples": 0,
+   "kbytes": 6.2,
+   "pass": true
+  },
+  "en/ph-t.mp3": {
+   "duration": 0.09,
+   "range": [
+    0.05,
+    0.45
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.29,
+   "clipped_samples": 0,
+   "kbytes": 1.4,
+   "pass": true
+  },
+  "en/w-ant.mp3": {
+   "duration": 0.51,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.37,
+   "clipped_samples": 0,
+   "kbytes": 4.7,
+   "pass": true
+  },
+  "en/w-apple.mp3": {
+   "duration": 0.57,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.56,
+   "clipped_samples": 0,
+   "kbytes": 5.1,
+   "pass": true
+  },
+  "en/w-at.mp3": {
+   "duration": 0.45,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.7,
+   "peak_dbfs": -1.44,
+   "clipped_samples": 0,
+   "kbytes": 4.2,
+   "pass": true
+  },
+  "en/w-cat.mp3": {
+   "duration": 0.5,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.82,
+   "clipped_samples": 0,
+   "kbytes": 4.5,
+   "pass": true
+  },
+  "en/w-in.mp3": {
+   "duration": 0.45,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.55,
+   "clipped_samples": 0,
+   "kbytes": 4.2,
+   "pass": true
+  },
+  "en/w-ink.mp3": {
+   "duration": 0.43,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.25,
+   "clipped_samples": 0,
+   "kbytes": 4.0,
+   "pass": true
+  },
+  "en/w-insect.mp3": {
+   "duration": 0.66,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.4,
+   "clipped_samples": 0,
+   "kbytes": 5.9,
+   "pass": true
+  },
+  "en/w-it.mp3": {
+   "duration": 0.4,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.41,
+   "clipped_samples": 0,
+   "kbytes": 3.8,
+   "pass": true
+  },
+  "en/w-nap.mp3": {
+   "duration": 0.49,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -8.37,
+   "clipped_samples": 0,
+   "kbytes": 4.5,
+   "pass": true
+  },
+  "en/w-nest.mp3": {
+   "duration": 0.55,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.17,
+   "clipped_samples": 0,
+   "kbytes": 4.9,
+   "pass": true
+  },
+  "en/w-net.mp3": {
+   "duration": 0.48,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.7,
+   "peak_dbfs": -7.43,
+   "clipped_samples": 0,
+   "kbytes": 4.4,
+   "pass": true
+  },
+  "en/w-palm.mp3": {
+   "duration": 0.52,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -9.77,
+   "clipped_samples": 0,
+   "kbytes": 4.7,
+   "pass": true
+  },
+  "en/w-pan.mp3": {
+   "duration": 0.51,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.61,
+   "clipped_samples": 0,
+   "kbytes": 4.7,
+   "pass": true
+  },
+  "en/w-pat.mp3": {
+   "duration": 0.49,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.91,
+   "clipped_samples": 0,
+   "kbytes": 4.5,
+   "pass": true
+  },
+  "en/w-pen.mp3": {
+   "duration": 0.51,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.2,
+   "clipped_samples": 0,
+   "kbytes": 4.7,
+   "pass": true
+  },
+  "en/w-pin.mp3": {
+   "duration": 0.49,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.69,
+   "clipped_samples": 0,
+   "kbytes": 4.5,
+   "pass": true
+  },
+  "en/w-pit.mp3": {
+   "duration": 0.485,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -8.12,
+   "clipped_samples": 0,
+   "kbytes": 4.5,
+   "pass": true
+  },
+  "en/w-sand.mp3": {
+   "duration": 0.515,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.2,
+   "clipped_samples": 0,
+   "kbytes": 4.7,
+   "pass": true
+  },
+  "en/w-sat.mp3": {
+   "duration": 0.495,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.72,
+   "clipped_samples": 0,
+   "kbytes": 4.5,
+   "pass": true
+  },
+  "en/w-sip.mp3": {
+   "duration": 0.405,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.03,
+   "clipped_samples": 0,
+   "kbytes": 3.8,
+   "pass": true
+  },
+  "en/w-sit.mp3": {
+   "duration": 0.5,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.08,
+   "clipped_samples": 0,
+   "kbytes": 4.5,
+   "pass": true
+  },
+  "en/w-sun.mp3": {
+   "duration": 0.506,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.65,
+   "clipped_samples": 0,
+   "kbytes": 4.7,
+   "pass": true
+  },
+  "en/w-tap.mp3": {
+   "duration": 0.48,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.12,
+   "clipped_samples": 0,
+   "kbytes": 4.4,
+   "pass": true
+  },
+  "en/w-tent.mp3": {
+   "duration": 0.46,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.08,
+   "clipped_samples": 0,
+   "kbytes": 4.4,
+   "pass": true
+  },
+  "en/w-tin.mp3": {
+   "duration": 0.45,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -8.43,
+   "clipped_samples": 0,
+   "kbytes": 4.2,
+   "pass": true
+  },
+  "en/w-tip.mp3": {
+   "duration": 0.49,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.12,
+   "clipped_samples": 0,
+   "kbytes": 4.5,
+   "pass": true
+  },
+  "en/w-tomato.mp3": {
+   "duration": 0.6,
+   "range": [
+    0.25,
+    1.6
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -7.37,
+   "clipped_samples": 0,
+   "kbytes": 5.3,
+   "pass": true
+  },
+  "en/x-again.mp3": {
+   "duration": 1.07,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.66,
+   "clipped_samples": 0,
+   "kbytes": 9.0,
+   "pass": true
+  },
+  "en/x-allaboard.mp3": {
+   "duration": 1.28,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -4.01,
+   "clipped_samples": 0,
+   "kbytes": 10.7,
+   "pass": true
+  },
+  "en/x-find.mp3": {
+   "duration": 1.54,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -4.68,
+   "clipped_samples": 0,
+   "kbytes": 12.8,
+   "pass": true
+  },
+  "en/x-great.mp3": {
+   "duration": 0.84,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.72,
+   "clipped_samples": 0,
+   "kbytes": 7.2,
+   "pass": true
+  },
+  "en/x-hello.mp3": {
+   "duration": 2.53,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.27,
+   "clipped_samples": 0,
+   "kbytes": 20.5,
+   "pass": true
+  },
+  "en/x-ready.mp3": {
+   "duration": 1.44,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -4.09,
+   "clipped_samples": 0,
+   "kbytes": 11.9,
+   "pass": true
+  },
+  "en/x-say.mp3": {
+   "duration": 1.44,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.03,
+   "clipped_samples": 0,
+   "kbytes": 11.9,
+   "pass": true
+  },
+  "en/x-sleep.mp3": {
+   "duration": 2.26,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -6.1,
+   "clipped_samples": 0,
+   "kbytes": 18.4,
+   "pass": true
+  },
+  "en/x-sticker.mp3": {
+   "duration": 1.0,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -8.19,
+   "clipped_samples": 0,
+   "kbytes": 8.5,
+   "pass": true
+  },
+  "en/x-tomorrow.mp3": {
+   "duration": 0.96,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -7.77,
+   "clipped_samples": 0,
+   "kbytes": 8.1,
+   "pass": true
+  },
+  "en/x-tryagain.mp3": {
+   "duration": 1.55,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -4.96,
+   "clipped_samples": 0,
+   "kbytes": 12.8,
+   "pass": true
+  },
+  "en/x-welldone.mp3": {
+   "duration": 0.67,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -6.39,
+   "clipped_samples": 0,
+   "kbytes": 5.9,
+   "pass": true
+  },
+  "en/x-which.mp3": {
+   "duration": 1.41,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.4,
+   "peak_dbfs": -5.89,
+   "clipped_samples": 0,
+   "kbytes": 11.7,
+   "pass": true
+  },
+  "en/x-yes.mp3": {
+   "duration": 1.1,
+   "range": [
+    0.5,
+    5.0
+   ],
+   "active_rms_db": -20.5,
+   "peak_dbfs": -5.98,
+   "clipped_samples": 0,
+   "kbytes": 9.2,
+   "pass": true
+  }
+ },
+ "phonemes": {
+  "s": {
+   "problems": [],
+   "duration": 0.72,
+   "rms_db": -20.793,
+   "peak_db": -8.696,
+   "clipped_samples": 0,
+   "voiced_fraction": 0.088,
+   "longest_voiced_ms": 10,
+   "centroid_hz": 9031.089,
+   "low_ratio_0_500": 0.001,
+   "high_ratio_3k_plus": 0.993,
+   "F1": 1148.438,
+   "F2": 2229.492,
+   "F1_start": 1119.141,
+   "F1_end": 1148.438,
+   "F2_start": 2411.133,
+   "F2_end": 2100.586,
+   "frames": 6
+  },
+  "a": {
+   "problems": [],
+   "duration": 0.72,
+   "rms_db": -20.435,
+   "peak_db": -7.51,
+   "clipped_samples": 0,
+   "voiced_fraction": 1.0,
+   "longest_voiced_ms": 690,
+   "centroid_hz": 672.565,
+   "low_ratio_0_500": 0.594,
+   "high_ratio_3k_plus": 0.008,
+   "F1": 1019.531,
+   "F2": 2039.062,
+   "F1_start": 1001.953,
+   "F1_end": 1034.18,
+   "F2_start": 2047.852,
+   "F2_end": 2015.625,
+   "frames": 66
+  },
+  "t": {
+   "problems": [],
+   "duration": 0.09,
+   "rms_db": -20.841,
+   "peak_db": -7.286,
+   "clipped_samples": 0,
+   "voiced_fraction": 0.0,
+   "longest_voiced_ms": 0,
+   "centroid_hz": 3760.074,
+   "low_ratio_0_500": 0.095,
+   "high_ratio_3k_plus": 0.75
+  },
+  "p": {
+   "problems": [],
+   "duration": 0.118,
+   "rms_db": -21.886,
+   "peak_db": -2.315,
+   "clipped_samples": 0,
+   "voiced_fraction": 0.0,
+   "longest_voiced_ms": 0,
+   "centroid_hz": 3367.094,
+   "low_ratio_0_500": 0.202,
+   "high_ratio_3k_plus": 0.398
+  },
+  "i": {
+   "problems": [],
+   "duration": 0.72,
+   "rms_db": -20.439,
+   "peak_db": -11.087,
+   "clipped_samples": 0,
+   "voiced_fraction": 1.0,
+   "longest_voiced_ms": 690,
+   "centroid_hz": 472.922,
+   "low_ratio_0_500": 0.873,
+   "high_ratio_3k_plus": 0.01,
+   "F1": 357.422,
+   "F2": 2604.492,
+   "F1_start": 342.773,
+   "F1_end": 360.352,
+   "F2_start": 2648.438,
+   "F2_end": 2601.562,
+   "frames": 66
+  },
+  "n": {
+   "problems": [],
+   "duration": 0.56,
+   "rms_db": -20.945,
+   "peak_db": -9.449,
+   "clipped_samples": 0,
+   "voiced_fraction": 0.923,
+   "longest_voiced_ms": 360,
+   "centroid_hz": 390.731,
+   "low_ratio_0_500": 0.796,
+   "high_ratio_3k_plus": 0.011,
+   "F1": 351.562,
+   "F2": 899.414,
+   "F1_start": 333.984,
+   "F1_end": 375.0,
+   "F2_start": 914.062,
+   "F2_end": 890.625,
+   "frames": 34
+  }
+ },
+ "controls": {
+  "letter name ˈA vs /a/": {
+   "rejected": true,
+   "problems": [
+    "duration 0.35s not in 0.55-0.95",
+    "voiced 0.68 < 0.7",
+    "F2 moves 1242Hz (diphthong / letter name?)"
+   ]
+  },
+  "letter name ˈI vs /i/": {
+   "rejected": true,
+   "problems": [
+    "duration 0.36s not in 0.55-0.95",
+    "voiced 0.59 < 0.7",
+    "F1 914Hz not in (300, 650)",
+    "F2 1629Hz not in (1800, 3000)",
+    "F2 moves 914Hz (diphthong / letter name?)",
+    "F1 moves 680Hz (diphthong / letter name?)"
+   ]
+  },
+  "letter name ˈɛs vs /s/": {
+   "rejected": true,
+   "problems": [
+    "voiced 0.61 > 0.15",
+    "centroid 715Hz < 3500"
+   ]
+  },
+  "letter name tˈi vs /t/": {
+   "rejected": true,
+   "problems": [
+    "duration 0.63s not in 0.05-0.4",
+    "voiced stretch 300ms > 60ms (vowel added?)",
+    "centroid 439Hz < 1500"
+   ]
+  },
+  "letter name pˈi vs /p/": {
+   "rejected": true,
+   "problems": [
+    "duration 0.63s not in 0.05-0.4",
+    "voiced stretch 320ms > 60ms (vowel added?)"
+   ]
+  },
+  "letter name ˈɛn vs /n/": {
+   "rejected": true,
+   "problems": [
+    "starts with a vowel-like F1 885Hz (letter name 'en'?)"
+   ]
+  }
+ },
+ "whisper_en": {
+  "at": {
+   "heard": "at.",
+   "match": true,
+   "exact": true
+  },
+  "sat": {
+   "heard": "Is that?",
+   "match": false,
+   "exact": false
+  },
+  "pat": {
+   "heard": "PAT.",
+   "match": true,
+   "exact": true
+  },
+  "tap": {
+   "heard": "tap.",
+   "match": true,
+   "exact": true
+  },
+  "it": {
+   "heard": "it.",
+   "match": true,
+   "exact": true
+  },
+  "sit": {
+   "heard": "sit.",
+   "match": true,
+   "exact": true
+  },
+  "sip": {
+   "heard": "Insepa.",
+   "match": false,
+   "exact": false
+  },
+  "tip": {
+   "heard": "sebe.",
+   "match": false,
+   "exact": false
+  },
+  "pit": {
+   "heard": "pit.",
+   "match": true,
+   "exact": true
+  },
+  "in": {
+   "heard": "in.",
+   "match": true,
+   "exact": true
+  },
+  "pin": {
+   "heard": "pin.",
+   "match": true,
+   "exact": true
+  },
+  "tin": {
+   "heard": "10.",
+   "match": true,
+   "exact": false
+  },
+  "nap": {
+   "heard": "NAP",
+   "match": true,
+   "exact": true
+  },
+  "pan": {
+   "heard": "Pan.",
+   "match": true,
+   "exact": true
+  },
+  "sun": {
+   "heard": "the sun.",
+   "match": false,
+   "exact": false
+  },
+  "sand": {
+   "heard": "the sand.",
+   "match": false,
+   "exact": false
+  },
+  "ant": {
+   "heard": "and...",
+   "match": true,
+   "exact": false
+  },
+  "apple": {
+   "heard": "Apple",
+   "match": true,
+   "exact": true
+  },
+  "tent": {
+   "heard": "TENT",
+   "match": true,
+   "exact": true
+  },
+  "tomato": {
+   "heard": "tomato.",
+   "match": true,
+   "exact": true
+  },
+  "palm": {
+   "heard": "POM.",
+   "match": true,
+   "exact": false
+  },
+  "pen": {
+   "heard": "pen.",
+   "match": true,
+   "exact": true
+  },
+  "insect": {
+   "heard": "Insect.",
+   "match": true,
+   "exact": true
+  },
+  "ink": {
+   "heard": "ink.",
+   "match": true,
+   "exact": true
+  },
+  "net": {
+   "heard": "net.",
+   "match": true,
+   "exact": true
+  },
+  "nest": {
+   "heard": "NEST",
+   "match": true,
+   "exact": true
+  },
+  "cat": {
+   "heard": "Cat.",
+   "match": true,
+   "exact": true
+  }
+ },
+ "whisper_ar": {
+  "about_ai": {
+   "similarity": 0.857,
+   "heard": "بهذا التطبيق بمساعدة الذكاء الأصطناعي لرد الكولني أعت الشراف المجموعة وتوجيها"
+  },
+  "about_privacy": {
+   "similarity": 0.956,
+   "heard": "لا تغادر أي بيانات هذا الجهاز لا حسابات ولا آلانات ولا محادثة ولا تتبار لتقدم محفوظ في هذا الجهاز فقل وامكن مسحه من الإعدادان"
+  },
+  "about_purpose": {
+   "similarity": 0.56,
+   "heard": "خسد قائقا معا نوذج أولي وعدته مجموعة منطلبة مقرر تقنيات تعليم القراءة والكتابة المبكرة باللغة للانجليزيا في كالية التربية بالرستاق جماعة التقنية والعلوم التطبيقيا  وطفال الصفل أول والثاني في تعلم أصوات الحروف الإنجليزية ودمجها عبر روتين يوم مددته خمس دقائق"
+  },
+  "app_duoabc_ask": {
+   "similarity": 0.876,
+   "heard": "لب من تفلك أن يقرأ لك كلمة من القصد ثم صفق ما قل صوت فيها"
+  },
+  "app_duoabc_why": {
+   "similarity": 0.941,
+   "heard": "وجان بالكامل ودون أعلانات يلم أصوات الحروف والقراءة بدروس قصيرة تشبه اللعن فهي قصص مضحكة وتمارينة لكتابة الحروف الصغيرة والكبيات"
+  },
+  "app_khankids_ask": {
+   "similarity": 0.879,
+   "heard": "فأل طفلك بعد اللعن ما الحرف الذي تعلمته اليوم وما السوطه؟"
+  },
+  "app_khankids_why": {
+   "similarity": 0.956,
+   "heard": "تطيق مجان تماماً ودون أعلانات فيه ألعاب وقصص قصيرة للقراءة والحروف للأطفال من عمر سنتين إلى ثمان سنوان يترجم تفلك خطوة بخطوة ويمكن استخدامه في البيت أو في المدرسني"
+  },
+  "app_readalong_ask": {
+   "similarity": 0.854,
+   "heard": "سأل تفتح ملكلمة التي كانت صعبة لي نقرأها معا ببطر"
+  },
+  "app_readalong_why": {
+   "similarity": 0.934,
+   "heard": "وجان ودون أعلانات وعمل دون انترنت بعد تحميل ويدعم أكثر من مستخدم على هاتف واحن فيه مساعدة قراءة تستمع إلى تفلك وهو يقرأ بصوت عالن ولسعيده في الكلمات الصعبلي"
+  },
+  "apps_intro": {
+   "similarity": 0.942,
+   "heard": "طبيقات ومواقع مجانية ودون اعلاناتي اختارناها لتعلم القراءة المبكيلة لستخدمها مع طفلكة بعد جلسة اليوم لا بدلا منهن"
+  },
+  "ask_d1_at": {
+   "similarity": 0.857,
+   "heard": "مأول صوت في كلمني"
+  },
+  "ask_d1_sat": {
+   "similarity": 0.857,
+   "heard": "مأول صوت في كلمني"
+  },
+  "ask_d2_at": {
+   "similarity": 1.0,
+   "heard": "ما الصوت الذي سمعته؟"
+  },
+  "ask_d2_pat": {
+   "similarity": 0.571,
+   "heard": "هل تشعر بالهوائي؟"
+  },
+  "ask_d2_sat": {
+   "similarity": 0.8,
+   "heard": "كر الأصوات ببطه ثم بسرعن"
+  },
+  "ask_d2_tap": {
+   "similarity": 0.963,
+   "heard": "مآخر صوت في كلمة"
+  },
+  "ask_d3_it": {
+   "similarity": 0.897,
+   "heard": "ما أول صوت في كلمني"
+  },
+  "ask_d3_pit": {
+   "similarity": 0.852,
+   "heard": "هارأول صوت في مالكلمة الجديدة"
+  },
+  "ask_d3_sip": {
+   "similarity": 0.963,
+   "heard": "مآخر صوت في كلمة"
+  },
+  "ask_d3_sit": {
+   "similarity": 0.756,
+   "heard": "كم صوت في كلمني سقى معكل صول"
+  },
+  "ask_d3_tip": {
+   "similarity": 0.825,
+   "heard": "كل الكلمة تمثل الروب واللي ثم قلها بسرعلي"
+  },
+  "ask_d4_in": {
+   "similarity": 0.765,
+   "heard": "اهل اي صوت يمكن مدهو"
+  },
+  "ask_d4_nap": {
+   "similarity": 0.8,
+   "heard": "كر الأصوات ببطه ثم بسرعن"
+  },
+  "ask_d4_pan": {
+   "similarity": 0.786,
+   "heard": "انا نجن في البيتنا"
+  },
+  "ask_d4_pin": {
+   "similarity": 0.836,
+   "heard": "هارأول صوت في ين ملكلمة الجديدة"
+  },
+  "ask_d4_tin": {
+   "similarity": 0.783,
+   "heard": "كم صوت في كلمني؟ سقوا معكل صول"
+  },
+  "ask_d5_nap": {
+   "similarity": 0.558,
+   "heard": "انا نجد الهدى سلط في بيطينة"
+  },
+  "ask_d5_pan": {
+   "similarity": 0.857,
+   "heard": "مأول صوت في كلمني"
+  },
+  "ask_d5_pin": {
+   "similarity": 0.842,
+   "heard": "ما الصوت الذي السمعته في وصة الكلمان"
+  },
+  "ask_d5_tap": {
+   "similarity": 0.836,
+   "heard": "هارأول صوت في ين ملكلمة الجديدة"
+  },
+  "ask_d5_tin": {
+   "similarity": 0.889,
+   "heard": "مآخر صوت في كلمن"
+  },
+  "blend_L1": {
+   "similarity": 0.835,
+   "heard": "رأى الأصوات مع تفلك ببطاة ثم دعه يقول الكلمني إذا لقالها نافره قالها لصحه"
+  },
+  "blend_L2": {
+   "similarity": 0.848,
+   "heard": "سأل تفتح ما هذه الكلمة إذا احتاج مساعدني انقروا على زرت الميح"
+  },
+  "blend_L3": {
+   "similarity": 0.901,
+   "heard": "ناطفلك يقرأ الكلمة وحده. اتت شجع فقد. والتلميح عند الطلا."
+  },
+  "blend_retry": {
+   "similarity": 0.944,
+   "heard": "لا بأسه يستمع إلى الأصواط مرة أخرى ثم يحاول طفلك من جديد"
+  },
+  "celebrate": {
+   "similarity": 0.887,
+   "heard": "ها حسنت من تهت الجلسة اليون. أفأن الشاشة الآن وجرب نشاط البيتة معا."
+  },
+  "celebrate_d5": {
+   "similarity": 0.935,
+   "heard": "ها حسنتا أملت مما الأيام الخمسا نظور إلى النتائج لتعرف ما يحتاج تفلكا إلى التدرب عليه"
+  },
+  "ch_blend": {
+   "similarity": 0.926,
+   "heard": "دع تفلك يستمع إلى الأصوات ويجمعها في كلمة لي ثم يختار صورة الصحيحا"
+  },
+  "ch_blend_L3": {
+   "similarity": 0.841,
+   "heard": "دع تفلك ينقر على زر الصول ويجمع الأسوال ثم يختار صوداً"
+  },
+  "ch_sound": {
+   "similarity": 1.0,
+   "heard": "دع طفلك يستمع إلى الصوت ثم يختار الحرف الصحيح"
+  },
+  "ch_sound_L3": {
+   "similarity": 0.947,
+   "heard": "دع تفلك ينقر على زر الصوت ويستمى ثم يختار الحرف"
+  },
+  "challenge_intro": {
+   "similarity": 0.926,
+   "heard": "الحديث سننه ثلاثة أسألة سريعة دع طفلك يختار وحده والتطبيق يتحقق من الإجابة"
+  },
+  "d1_tip": {
+   "similarity": 0.889,
+   "heard": "ليوم نتعلم ثلاثة أسوال تذاكر مقول صوت الحرف وليس اسمه"
+  },
+  "d2_tip": {
+   "similarity": 0.919,
+   "heard": "صط اليوم وهو غير موجود في العربيا دا يدك أماما فمك لتشعر بالهواء عندما تقوله"
+  },
+  "d3_tip": {
+   "similarity": 0.815,
+   "heard": "صوت اليوم تمع جيدا للفرق بي ست"
+  },
+  "d4_tip": {
+   "similarity": 0.742,
+   "heard": "سط اليوم وامكن مده سوقرأ كلمات مثى"
+  },
+  "d5_tip": {
+   "similarity": 0.909,
+   "heard": "أيوم نراجع الأسواط السيتادلا دع طفلك يحاولا وحده وآت تشجيعه في النهاية فحص قصير يظهر لك النتائج"
+  },
+  "final_intro": {
+   "similarity": 0.867,
+   "heard": "فحص النهائه ستنأسئلة للأصوان واشرت للكلمال دع طفلك يجيب وحده هذه الماد وشجعه بعد كل إجابا"
+  },
+  "find_L1": {
+   "similarity": 0.944,
+   "heard": "قل الصوت مرة أخرى ثم ساعد تفلك على إجاد صوتين تبدأان به"
+  },
+  "find_L2": {
+   "similarity": 0.767,
+   "heard": "سأل تفتح أي سواتين تبدأان بهذا الصول؟"
+  },
+  "find_L3": {
+   "similarity": 0.989,
+   "heard": "دع طفلك يختار وحده إذا احتاج يكنه أن ينقر على زر التلميح"
+  },
+  "gate_hold": {
+   "similarity": 0.891,
+   "heard": "هذا القسم لولي الأمر، تغط على الزرة، واستمر بالضعط ثلاث ثوان"
+  },
+  "hear_L1": {
+   "similarity": 0.864,
+   "heard": "استمع إلى الصولي ثم قاله أن وطلب من تفلك أن يكريره بعد لن"
+  },
+  "hear_L2": {
+   "similarity": 0.913,
+   "heard": "لب من تفلك أن يمقر على الحرف ويستمى ثم سأله ما الصوت الذي سمعته؟"
+  },
+  "hear_L3": {
+   "similarity": 0.988,
+   "heard": "دع طفلك ينقر على كل حرف ويقول صوته وحده. اتتشجع فقط."
+  },
+  "home1": {
+   "similarity": 0.713,
+   "heard": "اسمنا على ورقة شمسة، وملدي، حيمل، قر السوطة، وضعت فلك يشير إلى الصورة التي تبدأ به"
+  },
+  "home2": {
+   "similarity": 0.886,
+   "heard": "بحثا في المطبخ عن شيء يبدأ بصوت ثل المقلأل هُلا مع وضم ايدكم أمام الفمن لتشعر بهوائي"
+  },
+  "home3": {
+   "similarity": 0.745,
+   "heard": "لماذن؟ لس وقن إذا لقلت ست يجلس تفلل وريد قلث ست الرهو تمعا جيدا للفرق بين ثم بدل الأدوارة"
+  },
+  "home4": {
+   "similarity": 0.844,
+   "heard": "تحث في البيت عن علي بلي وقلاظ انقرن عليه ما بالملعقة بلطف مع كل الصول"
+  },
+  "home5": {
+   "similarity": 0.845,
+   "heard": "كتب الحروف الستة على أوراق صغية أو استخدم البطاقات المطبوعا قر السوطة وضعت فلك يلتقت الورقة الصحيحة ثم كلمات مثلا"
+  },
+  "home_all": {
+   "similarity": 0.889,
+   "heard": "أملت مما الأيام الخمسن مضر إلى النتائج ومكنك ما أعدت أي يوم"
+  },
+  "home_done": {
+   "similarity": 0.892,
+   "heard": "ها حسنت، آهيت مما جلسة اليون جلسة التالية تفتح غدا"
+  },
+  "home_ready": {
+   "similarity": 0.747,
+   "heard": "جاسة اليوم جاهزا لسا ما تفلك في مكان هاده ثنى ضرط"
+  },
+  "howto_1": {
+   "similarity": 0.878,
+   "heard": "قل البدي لسن معا في مكان هادي ورفع صوت الهاتف جلسة خمس دقائق فقا ماتا واحدة في اليوم"
+  },
+  "howto_2": {
+   "similarity": 0.863,
+   "heard": "هتواد كل جلسة لها الخطوات نفسها سماع صول ثم انقر على الحروف الوقول أصواتها ثم يدمج طفلك الكاليمة واحد ثم تحدس سنة"
+  },
+  "howto_3": {
+   "similarity": 0.949,
+   "heard": "البطاقة الرملية لك أنت فاها ما تقوله أو تسأله وزر الصوت يقرؤها ترا فشات الطفل فيها صور وأصوات فقط"
+  },
+  "howto_4": {
+   "similarity": 0.753,
+   "heard": "الدعم يقنت درجية في اليومين الأول والثاني تقول أنت ويكرر اعتفته في اليومين الثالث والرابعة تسأل وتساعني في اليوم الخامس يحاول تفلك وحده"
+  },
+  "howto_5": {
+   "similarity": 0.777,
+   "heard": "ماذا الجلسنت؟ ماذا الملصق؟ أفع الشاشة وجربا نشاط البيلدي يوم تالي يفتح غدا"
+  },
+  "howto_6": {
+   "similarity": 0.954,
+   "heard": "ليوجد جهاز استطيع المعلم أن يطبع لكم بطاقات الأيام الخمسة وفاها التعليمات نفسها بالعربيا"
+  },
+  "kw_L1": {
+   "similarity": 0.875,
+   "heard": "انقروا على كل صولا يسمع الصوت ثم الكلمة دي قول الصوت الأول مع"
+  },
+  "kw_L2": {
+   "similarity": 0.795,
+   "heard": "دا تفلك ينقر على صوتا فرلها ما أول الصوت في هذه الكلمة لي"
+  },
+  "kw_L3": {
+   "similarity": 0.88,
+   "heard": "دا تفلك ينقر على صورتي ويقول الصوت الأول وحده"
+  },
+  "locked": {
+   "similarity": 0.981,
+   "heard": "هذا اليوم يفتح غدا خرس دقائق في اليوم تكفي والراحة جزء من التعلم"
+  },
+  "lvl1_desc": {
+   "similarity": 0.788,
+   "heard": "في اليومين الأول والثاني أتطبيق يشرل الأسواطة تلقائية قلوا صوت أولى ثم أطلب من تفلك أن يكرره"
+  },
+  "lvl2_desc": {
+   "similarity": 0.765,
+   "heard": "في اليومين الثالث والرابع فلق ينقر ليسمع الأصول سأله أسئلاً وساعده عند الحاجاً"
+  },
+  "lvl3_desc": {
+   "similarity": 0.919,
+   "heard": "في اليوم الخامس لا يوجد صوت تلقائي والتلميح عند الطلب فقط فلاك يحاول وحده وآت تشجعه فقط"
+  },
+  "map_hint": {
+   "similarity": 0.929,
+   "heard": "نقرّن مع تفلك على المحطة المضيئة لتبدأ جلسة اليوم بمحطات المكتملة تلمع بنجمال ذي ويمكن إعادتها في أي وقت"
+  },
+  "ob1": {
+   "similarity": 0.904,
+   "heard": "على لبك فين خسد قائقا معا تطيق مجان يساعدك على تعليم تفلك أصوات الحروف الإنجليزية في البين صمن لأطفال الصف الأول وثاني"
+  },
+  "ob2": {
+   "similarity": 0.92,
+   "heard": "كل يوم جلسة واحدة مدتها خمس دقائق بالخطوات نفسها ثنة ثم قر وقل ثم دمج وحدرا ثم تحد سنة بعدها نطفئ الشاشة ونلعب معا في البيت"
+  },
+  "ob3": {
+   "similarity": 0.897,
+   "heard": "لتحتاج أن تعرف الإنجليزية التطبيق يمطق الأسوال وإيت تشجع وتسأن"
+  },
+  "obj_o1": {
+   "similarity": 0.854,
+   "heard": "هالف الأول مهاية الجلسات الخمسة يعرف الطفل صوت خمسة حروف على الأقل منسة ويختار الحرف الصحيح من ثلاثة بعد السماعة الصوت"
+  },
+  "obj_o2": {
+   "similarity": 0.827,
+   "heard": "هادف الثاني، مهاية الجلسات الخمسة، يمجطف لثمان كلمات على الأقل من عشر، واختار صورة المناسبة من ثلاث بعد السماع الأصوات منفصلة."
+  },
+  "obj_o3": {
+   "similarity": 0.884,
+   "heard": "أهالف الثالث ثامل وليلأمر كل جلسة يومية باتباع الإرشادات العربية وحدها ننحاجة إلى الإنجلازية يقص بعدد الجلسات المكتملة"
+  },
+  "res_before": {
+   "similarity": 0.871,
+   "heard": "تظر نتيجة الهدفين الأول والثاني بعد الفحص النهائي في اليوم الخامسة"
+  },
+  "res_good": {
+   "similarity": 0.929,
+   "heard": "لا راعة، لا توجد أصوات تحتاج إلى تدريب إضافي، يكنك ما إعادة أيوم للمتعن."
+  },
+  "res_intro": {
+   "similarity": 0.92,
+   "heard": "هنا ترى ما انجزه تفلك في كل يهن نتائج محفوظة في هذا الجهاز فقط"
+  },
+  "res_o1_met": {
+   "similarity": 0.779,
+   "heard": "حقق الهدف الأول عاف تفلك أصوات خمسة حروف أو أكثر من ستن"
+  },
+  "res_o1_not": {
+   "similarity": 0.895,
+   "heard": "لم يتحقق الهدف الأول بعن تذابا مرة أخرى على الأصوات المذكورة أدناه"
+  },
+  "res_o2_met": {
+   "similarity": 0.771,
+   "heard": "حقق الهدف الثاني دجو طفلك ثمان كلمات أو أكثر من عشر"
+  },
+  "res_o2_not": {
+   "similarity": 0.86,
+   "heard": "لم يتحقق الهدف الثاني بعن عيدا خطوا اما جواحدا مع الكلمات المذكورة ادناه"
+  },
+  "res_o3": {
+   "similarity": 0.891,
+   "heard": "هدف ثالث يقص عدد الجلسات التي أكمل تماهة بالتباع الإرشادات العربية"
+  },
+  "res_practise": {
+   "similarity": 0.919,
+   "heard": "تذابا مرة أخرى على هذه الأصوات وعيدا اليوم الذي تعلمت من فيه كل الصوت"
+  },
+  "review_L3": {
+   "similarity": 0.879,
+   "heard": "واجعته دع تفلك ينقر على الحروف الستني ويقول صوت كل حرف ايت تشجع فقد"
+  },
+  "review_intro": {
+   "similarity": 0.883,
+   "heard": "خيم كل عبارة من واحد إلى خمسان وكتب ملاحظة انأرت لا يرسل أي شيء من هذا الجهاز رسخ ملاحظاتك وشاركها بنفسيا"
+  },
+  "stickers_intro": {
+   "similarity": 0.822,
+   "heard": "كل يوم مكتمل يعطي تفلق ملسقا واحدة خاسة ايان خاسة مصقا"
+  },
+  "tapsay_L1": {
+   "similarity": 0.898,
+   "heard": "لسمع الأصوات واحدا واحدا قوها مع تفلل ثم قر على القطار ليجمع الأصوات في كلمني"
+  },
+  "tapsay_L2": {
+   "similarity": 0.841,
+   "heard": "سأل تفتح ما صوت كل حرف ده يمقر على الحرف ليتأكني ثم يمقر على القطاة"
+  },
+  "tapsay_L3": {
+   "similarity": 0.936,
+   "heard": "دع تفلك يقرأ الأصوات وحده ثم ينقر على القطاية التلميح عند الطلب فقل"
+  },
+  "teacher_edit": {
+   "similarity": 0.915,
+   "heard": "لكن تغيير الحروف والكلمات في ملف المحتوى لكلمات المكونة من الأصوات الستة تعمل مباشاتي لأن التطبيق يجمع أصوات الحروف بنفسه حروف الجديدة تحتاج إلى ملفات صوت جديدا"
+  },
+  "teacher_guide": {
+   "similarity": 0.375,
+   "heard": "ذي للمعلم في دقيقة لي  ويسألونه جلذا وزع النشرة التي فيها الرمز أو أرسل رسلتي وتساب الجاهزة  أخذات الأسي"
+  },
+  "tip_a": {
+   "similarity": 0.879,
+   "heard": "ملو فتحة قصيرا والثم مفتوح اكثر قليلا مع اكتساما كما فيه"
+  },
+  "tip_general": {
+   "similarity": 0.82,
+   "heard": "كل صوت الحرفل وليس اسمه ولا تطفو حركة بعده ليس اس رول ليس ته"
+  },
+  "tip_i": {
+   "similarity": 0.882,
+   "heard": "مدكسرة قصيرا كما في"
+  },
+  "tip_n": {
+   "similarity": 0.714,
+   "heard": "لا لن نون ويمكنوا مدهو نايف"
+  },
+  "tip_p": {
+   "similarity": 0.854,
+   "heard": "هير موجود في العربيا يشبه البعلي لكن دون اهتزاز في الحلق وما نخة هو الى ضايدك أماما فمك لتشهر بالهوائي وانتبه الى ينطقه طفل بائي"
+  },
+  "tip_s": {
+   "similarity": 0.684,
+   "heard": "لا للسنن ويمكنوا مدهو"
+  },
+  "tip_t": {
+   "similarity": 0.883,
+   "heard": "مذتاء مع نفخة هواء خفيفا نون إضافة حركة بعدها"
+  }
+ },
+ "summary": {
+  "files_checked": 168,
+  "files_pass": 168,
+  "total_kb": 6002.4,
+  "phonemes_pass": 6,
+  "controls_rejected": 6,
+  "whisper_en_match": "22/27",
+  "whisper_ar_mean_similarity": 0.856,
+  "whisper_ar_min_similarity": 0.375,
+  "whisper_ar_below_0_6": [
+   "about_purpose",
+   "ask_d2_pat",
+   "ask_d5_nap",
+   "teacher_guide"
+  ],
+  "hard_failures": []
+ },
+ "onsets": {
+  "at": {
+   "ok": true,
+   "why": "onset F2 2083 Hz"
+  },
+  "sat": {
+   "ok": true,
+   "why": "voiced frames before /s/: 0"
+  },
+  "pat": {
+   "ok": true,
+   "why": "voiced frames before /p/: 0"
+  },
+  "tap": {
+   "ok": true,
+   "why": "voiced frames before /t/: 0"
+  },
+  "it": {
+   "ok": true,
+   "why": "onset F2 2584 Hz"
+  },
+  "sit": {
+   "ok": true,
+   "why": "voiced frames before /s/: 0"
+  },
+  "sip": {
+   "ok": true,
+   "why": "voiced frames before /s/: 0"
+  },
+  "tip": {
+   "ok": true,
+   "why": "voiced frames before /t/: 0"
+  },
+  "pit": {
+   "ok": true,
+   "why": "voiced frames before /p/: 0"
+  },
+  "in": {
+   "ok": true,
+   "why": "onset F2 2640 Hz"
+  },
+  "pin": {
+   "ok": true,
+   "why": "voiced frames before /p/: 0"
+  },
+  "tin": {
+   "ok": true,
+   "why": "voiced frames before /t/: 0"
+  },
+  "nap": {
+   "ok": true,
+   "why": "nasal onset (not checked)"
+  },
+  "pan": {
+   "ok": true,
+   "why": "voiced frames before /p/: 0"
+  },
+  "sun": {
+   "ok": true,
+   "why": "voiced frames before /s/: 0"
+  },
+  "sand": {
+   "ok": true,
+   "why": "voiced frames before /s/: 0"
+  },
+  "ant": {
+   "ok": true,
+   "why": "onset F2 2320 Hz"
+  },
+  "apple": {
+   "ok": true,
+   "why": "onset F2 2262 Hz"
+  },
+  "tent": {
+   "ok": true,
+   "why": "voiced frames before /t/: 0"
+  },
+  "tomato": {
+   "ok": true,
+   "why": "voiced frames before /t/: 0"
+  },
+  "palm": {
+   "ok": true,
+   "why": "voiced frames before /p/: 0"
+  },
+  "pen": {
+   "ok": true,
+   "why": "voiced frames before /p/: 0"
+  },
+  "insect": {
+   "ok": true,
+   "why": "onset F2 2654 Hz"
+  },
+  "ink": {
+   "ok": true,
+   "why": "onset F2 2555 Hz"
+  },
+  "net": {
+   "ok": true,
+   "why": "nasal onset (not checked)"
+  },
+  "nest": {
+   "ok": true,
+   "why": "nasal onset (not checked)"
+  }
+ }
+}
