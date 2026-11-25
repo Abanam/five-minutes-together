@@ -31,8 +31,15 @@ First complete, published prototype for EDEN4233 (Technology for Initial Languag
 - Tap targets ≥ 64 px, bouncy press, a sound on every tap, synthesised chime, stars and hop for correct answers; a gentle "Let's listen again" for mistakes (no buzzer, red cross, lives or timers).
 - Large-text option, calm mode (also follows the device's reduced-motion setting), WCAG 2.1 AA contrast, colour never used alone.
 - No accounts, ads, chat or tracking; localStorage only; strict Content-Security-Policy (no third-party requests).
-- Offline PWA (service worker caches the whole app, "Ready offline ✓ / جاهز دون إنترنت"), about 6.7 MB, works on a shared phone; single-file offline backup.
+- Offline PWA (service worker caches the whole app, "Ready offline ✓ / جاهز دون إنترنت"), about 6.6 MB, works on a shared phone; single-file offline backup.
 
 ### Quality
-- Automated Playwright test suite (five-day play-through, offline, axe-core, RTL, font, images, audio, gate, size, 3G) – see `deliverables/TEST_REPORT.md`.
-- Audio verification in code (existence, duration, loudness, clipping, phoneme acoustics with letter-name negative controls, Whisper transcription).
+- Automated Playwright test suite (five-day play-through, offline, axe-core, RTL, font, images, audio, gate, size, 3G, and checks on the published site) – see `deliverables/TEST_REPORT.md`.
+- Audio verification in code (existence, duration, loudness, clipping, phoneme acoustics with letter-name negative controls, clean word onsets, Whisper transcription).
+
+### Fixed before the v1.0 tag (found by the automated checks)
+- English word clips no longer start with the speech engine's short "uh" (onset check + Whisper-checked candidates); /t/ now uses espeak-ng phoneme mode because Kokoro's /t/ was too hissy.
+- Hidden "Next" buttons could show early; the parent gate timer now uses a monotonic clock.
+- Offline caching survives dropped connections on weak data (per-file retries, resumes on the next visit).
+- Flyer and day cards each fit exactly one A4 page; blending examples on the cards read left to right.
+- Published with GitHub Actions in two jobs (build, deploy) to avoid an intermittent artifact race.
