@@ -1,0 +1,45 @@
+{
+ "model": "eleven_multilingual_v2",
+ "output_format": "mp3_44100_128",
+ "english": {
+  "name": "George",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "category": "premade (default voice)",
+  "about": "British, male, middle-aged – \"Warm, Captivating Storyteller\"",
+  "model": "eleven_multilingual_v2",
+  "settings": {
+   "stability": 0.55,
+   "similarity_boost": 0.75,
+   "style": 0.0,
+   "use_speaker_boost": true,
+   "speed": 0.9
+  },
+  "audition": {
+   "words": [
+    "sat",
+    "sip",
+    "tip",
+    "sun",
+    "sand"
+   ],
+   "whisper_score": "5/5"
+  }
+ },
+ "arabic": {
+  "name": "Five Minutes Together – Omani teacher (Arabic)",
+  "voice_id": "kSsnyUBsiuYL1XzsZVus",
+  "category": "generated (Voice Design on the ElevenLabs website)",
+  "how": "The Voice Design API was refused on the free plan (HTTP 403 feature_not_available: \"Creating a voice through the API is only available on a paid plan.\"), so the voice is designed on the website with the same description and preview text (brief §5), and its voice ID is pasted into the studio page.",
+  "description": "A warm, kind Omani woman in her early thirties, an experienced Grade 1 teacher in Oman, speaking gently to parents at home. Native Omani Gulf Arabic accent while reading clear, simple Modern Standard Arabic. Calm, reassuring and encouraging; moderate, slightly slow pace; very clear consonants; clean studio recording with no background noise or music.",
+  "preview_text": "مرحبًا بكم. في خمس دقائق كل يوم، يتعلّم طفلك أصوات الحروف الإنجليزية معك في البيت. اسأل طفلك: ما أول صوت في الكلمة؟ ضع يدك أمام فمك لتشعر بالهواء، وشجّعه بعد كل محاولة.",
+  "model": "eleven_multilingual_v2",
+  "settings": {
+   "stability": 0.55,
+   "similarity_boost": 0.75,
+   "style": 0.0,
+   "use_speaker_boost": true,
+   "speed": 0.9
+  },
+  "approved": true
+ }
+}

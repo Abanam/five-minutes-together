@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio – 5 Minutes Together v1.1 (local)</title>
+<link rel="stylesheet" href="/studio/studio.css">
+</head>
+<body>
+<header class="top">
+  <h1>استوديو الأصوات <span class="en" lang="en" dir="ltr">Audio studio · v1.1</span></h1>
+  <p class="local">هذه الصفحة تعمل على هذا الحاسوب فقط ولا تُنشر. <span class="en" lang="en" dir="ltr">Local page: nothing here is published.</span></p>
+  <nav class="tabs" role="tablist" aria-label="Studio">
+    <button type="button" role="tab" id="tab-voices" aria-controls="voices" aria-selected="true">الأصوات <span class="en" lang="en">Voices</span></button>
+    <button type="button" role="tab" id="tab-record" aria-controls="record" aria-selected="false">التسجيل <span class="en" lang="en">Record</span></button>
+  </nav>
+</header>
+<main>
+  <section id="voices" role="tabpanel" aria-labelledby="tab-voices"></section>
+  <section id="record" role="tabpanel" aria-labelledby="tab-record" hidden></section>
+</main>
+<script type="module" src="/studio/studio.js"></script>
+</body>
+</html>

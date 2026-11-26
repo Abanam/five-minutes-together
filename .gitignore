@@ -15,3 +15,11 @@ BUILD_PROMPT.md
 Thumbs.db
 .vscode/
 .claude/
+
+# v1.1: the API key, raw voice recordings and the private revision brief never leave this PC
+.env
+recordings/
+V1_1_PROMPT.md
+# the studio page's local working state (audition results, cache paths)
+tools/studio/state.json
+
