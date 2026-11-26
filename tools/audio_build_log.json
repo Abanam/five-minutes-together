@@ -1,2667 +1,7264 @@
 {
- "engine": {
-  "english": "Kokoro-82M v1.0 (kokoro-onnx), voice af_heart, Apache-2.0",
-  "arabic": "Meta MMS-TTS facebook/mms-tts-ara (VITS), CC BY-NC 4.0",
-  "fallback": "espeak-ng phoneme mode (GPL-3.0 engine) only if a Kokoro phoneme fails its checks"
- },
- "phonemes": {
-  "s": {
-   "method": "kokoro-carrier-frication",
-   "source": "ðə sˈʌn @0.85",
-   "tried": 1,
-   "measures": {
-    "duration": 0.72,
-    "rms_db": -20.122,
-    "peak_db": -6.975,
-    "clipped_samples": 0,
-    "voiced_fraction": 0.088,
-    "longest_voiced_ms": 10,
-    "centroid_hz": 9274.431,
-    "low_ratio_0_500": 0.001,
-    "high_ratio_3k_plus": 0.994,
-    "F1": 1116.211,
-    "F2": 1962.891,
-    "F1_start": 1116.211,
-    "F1_end": 1148.438,
-    "F2_start": 2141.602,
-    "F2_end": 1784.18,
-    "frames": 6
-   }
+ "build": "v1.1",
+ "clips": {
+  "en/w-at.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "at.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 603322711,
+     "onset_ok": true,
+     "whisper": "at.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
   },
-  "a": {
-   "method": "kokoro-steady-vowel",
-   "source": "ðə bˈæd @0.65",
-   "tried": 1,
-   "measures": {
-    "duration": 0.72,
-    "rms_db": -20.0,
-    "peak_db": -7.169,
-    "clipped_samples": 0,
-    "voiced_fraction": 1.0,
-    "longest_voiced_ms": 690,
-    "centroid_hz": 683.78,
-    "low_ratio_0_500": 0.595,
-    "high_ratio_3k_plus": 0.008,
-    "F1": 1019.531,
-    "F2": 2024.414,
-    "F1_start": 1019.531,
-    "F1_end": 1034.18,
-    "F2_start": 2041.992,
-    "F2_end": 2015.625,
-    "frames": 66
-   }
+  "en/w-sat.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "sat.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1316070102,
+     "onset_ok": true,
+     "whisper": "sat.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
   },
-  "t": {
-   "method": "espeak-ng-phoneme-mode",
-   "source": "[[t]]",
-   "tried": 2,
-   "measures": {
-    "duration": 0.09,
-    "rms_db": -20.438,
-    "peak_db": -7.399,
-    "clipped_samples": 0,
-    "voiced_fraction": 0.0,
-    "longest_voiced_ms": 0,
-    "centroid_hz": 3763.994,
-    "low_ratio_0_500": 0.097,
-    "high_ratio_3k_plus": 0.756
-   }
+  "en/w-pat.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "pat.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 751602543,
+     "onset_ok": true,
+     "whisper": "Pat.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
   },
-  "p": {
-   "method": "kokoro-carrier-burst",
-   "source": "ðə pˈʌn @0.85",
-   "tried": 1,
-   "measures": {
-    "duration": 0.133,
-    "rms_db": -22.006,
-    "peak_db": -1.567,
-    "clipped_samples": 0,
-    "voiced_fraction": 0.0,
-    "longest_voiced_ms": 0,
-    "centroid_hz": 2770.277,
-    "low_ratio_0_500": 0.231,
-    "high_ratio_3k_plus": 0.361
-   }
+  "en/w-tap.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "tap.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1210638778,
+     "onset_ok": true,
+     "whisper": "TAP",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
   },
-  "i": {
-   "method": "kokoro-steady-vowel",
-   "source": "ˈɪt @0.65",
-   "tried": 1,
-   "measures": {
-    "duration": 0.72,
-    "rms_db": -20.0,
-    "peak_db": -10.775,
-    "clipped_samples": 0,
-    "voiced_fraction": 1.0,
-    "longest_voiced_ms": 690,
-    "centroid_hz": 462.133,
-    "low_ratio_0_500": 0.874,
-    "high_ratio_3k_plus": 0.01,
-    "F1": 363.281,
-    "F2": 2616.211,
-    "F1_start": 339.844,
-    "F1_end": 363.281,
-    "F2_start": 2663.086,
-    "F2_end": 2598.633,
-    "frames": 66
-   }
+  "en/w-it.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "it.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1504253287,
+     "onset_ok": true,
+     "whisper": "It.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
   },
-  "n": {
-   "method": "kokoro-isolated (second of two)",
-   "source": "nnn @0.65",
-   "tried": 1,
-   "measures": {
-    "duration": 0.57,
-    "rms_db": -20.569,
-    "peak_db": -8.979,
-    "clipped_samples": 0,
-    "voiced_fraction": 0.973,
-    "longest_voiced_ms": 360,
-    "centroid_hz": 384.9,
-    "low_ratio_0_500": 0.797,
-    "high_ratio_3k_plus": 0.011,
-    "F1": 357.422,
-    "F2": 908.203,
-    "F1_start": 339.844,
-    "F1_end": 380.859,
-    "F2_start": 908.203,
-    "F2_end": 908.203,
-    "frames": 35
-   }
-  }
- },
- "files": {
+  "en/w-sit.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "sit.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1621148695,
+     "onset_ok": true,
+     "whisper": "Sit.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-sip.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "sip.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 890976852,
+     "onset_ok": true,
+     "whisper": "sip.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-tip.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "tip.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1042798332,
+     "onset_ok": true,
+     "whisper": "tip.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-pit.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "pit.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 2058243816,
+     "onset_ok": true,
+     "whisper": "pit.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-in.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "in.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 689853012,
+     "onset_ok": true,
+     "whisper": "in.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-pin.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "pin.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 483429493,
+     "onset_ok": true,
+     "whisper": "pin.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-tin.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "tin.",
+   "retake_used": 1,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1972427435,
+     "onset_ok": false,
+     "whisper": "tin.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 1,
+     "seed": 1972435354,
+     "onset_ok": true,
+     "whisper": "tin.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-nap.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "nap.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 2049228967,
+     "onset_ok": true,
+     "whisper": "NAP",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-pan.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "pan.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1719529736,
+     "onset_ok": false,
+     "whisper": "PAN.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true,
+     "spliced_onset_from_retake": {
+      "donor": 1,
+      "onset_ok": true,
+      "whisper": "fun.",
+      "match": false
+     }
+    },
+    {
+     "retake": 1,
+     "seed": 1719537655,
+     "onset_ok": true,
+     "whisper": "pun.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 2,
+     "seed": 1719545574,
+     "onset_ok": true,
+     "whisper": "PUM",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 3,
+     "seed": 1719553493,
+     "onset_ok": false,
+     "whisper": "Pan.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 4,
+     "seed": 1719561412,
+     "onset_ok": true,
+     "whisper": "PUM.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": false,
+   "extra_retakes_approved_by_user": 2
+  },
+  "en/w-sun.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "sun.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 2053618775,
+     "onset_ok": true,
+     "whisper": "sun.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-sand.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "sand.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 463024055,
+     "onset_ok": true,
+     "whisper": "sand.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-ant.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "ant.",
+   "retake_used": 1,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 272116298,
+     "onset_ok": true,
+     "whisper": "end.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 1,
+     "seed": 272124217,
+     "onset_ok": true,
+     "whisper": "and.",
+     "match": true,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-apple.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "apple.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 448885056,
+     "onset_ok": true,
+     "whisper": "Apple",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-tent.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "tent.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 53261284,
+     "onset_ok": true,
+     "whisper": "TENT",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-tomato.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "tomato.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1142698430,
+     "onset_ok": true,
+     "whisper": "tomato.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-palm.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "palm.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 550216303,
+     "onset_ok": true,
+     "whisper": "Palm.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-pen.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "pen.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1708948272,
+     "onset_ok": true,
+     "whisper": "pen.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-insect.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "insect.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 44542603,
+     "onset_ok": true,
+     "whisper": "Insect",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-ink.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "ink.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 719211408,
+     "onset_ok": true,
+     "whisper": "ink.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-net.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "net.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1543813420,
+     "onset_ok": true,
+     "whisper": "net.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-nest.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "nest.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1066964366,
+     "onset_ok": true,
+     "whisper": "nest.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/w-cat.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "text": "cat.",
+   "retake_used": 0,
+   "onset_stripped": false,
+   "tries": [
+    {
+     "retake": 0,
+     "seed": 1384046024,
+     "onset_ok": true,
+     "whisper": "cat.",
+     "match": true,
+     "exact": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "passed": true
+  },
+  "en/x-hello.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 1606605145,
+   "text_sent": "Hello! I'm Sanad. Let's play with sounds!",
+   "tries": [
+    {
+     "text_sent": "Hello! I'm Sanad. Let's play with sounds!",
+     "whisper": "Hello, I'm Sanad. Let's play with sounds.",
+     "sanad_heard": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": true
+  },
+  "en/x-great.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 103503047,
+   "text_sent": "Great job!",
+   "tries": [
+    {
+     "text_sent": "Great job!",
+     "whisper": "Great job.",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-welldone.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 572930569,
+   "text_sent": "Well done!",
+   "tries": [
+    {
+     "text_sent": "Well done!",
+     "whisper": "Well done.",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-yes.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 259289768,
+   "text_sent": "Yes! You got it!",
+   "tries": [
+    {
+     "text_sent": "Yes! You got it!",
+     "whisper": "Yes, you got it.",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-again.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 159993700,
+   "text_sent": "Let's listen again.",
+   "tries": [
+    {
+     "text_sent": "Let's listen again.",
+     "whisper": "Let's listen again.",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-tryagain.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 1011998940,
+   "text_sent": "Try again. You can do it!",
+   "tries": [
+    {
+     "text_sent": "Try again. You can do it!",
+     "whisper": "Try again. You can do it.",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-find.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 1258974892,
+   "text_sent": "Find the pictures that start with",
+   "tries": [
+    {
+     "text_sent": "Find the pictures that start with",
+     "whisper": "Find the pictures that start with",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-say.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 889034989,
+   "text_sent": "Your turn. Say the word!",
+   "tries": [
+    {
+     "text_sent": "Your turn. Say the word!",
+     "whisper": "Your turn. Say the word.",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-which.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 36963929,
+   "text_sent": "Listen. Which one is it?",
+   "tries": [
+    {
+     "text_sent": "Listen. Which one is it?",
+     "whisper": "Listen, which one is it?",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-sticker.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 1558441626,
+   "text_sent": "You got a sticker!",
+   "tries": [
+    {
+     "text_sent": "You got a sticker!",
+     "whisper": "You got a sticker!",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-tomorrow.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 449228028,
+   "text_sent": "See you tomorrow!",
+   "tries": [
+    {
+     "text_sent": "See you tomorrow!",
+     "whisper": "See you tomorrow.",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-sleep.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 1845892787,
+   "text_sent": "Sanad is sleeping. Come back tomorrow!",
+   "tries": [
+    {
+     "text_sent": "Sanad is sleeping. Come back tomorrow!",
+     "whisper": "Sanad is sleeping. Come back tomorrow.",
+     "sanad_heard": true,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": true
+  },
+  "en/x-ready.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 1518645232,
+   "text_sent": "Are you ready? Let's go!",
+   "tries": [
+    {
+     "text_sent": "Are you ready? Let's go!",
+     "whisper": "Are you ready? Let's go!",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
+  "en/x-allaboard.mp3": {
+   "source": "ElevenLabs",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "seed": 42019107,
+   "text_sent": "All aboard the sound train!",
+   "tries": [
+    {
+     "text_sent": "All aboard the sound train!",
+     "whisper": "all aboard the sound train.",
+     "sanad_heard": null,
+     "credits": 0,
+     "cached": true
+    }
+   ],
+   "sanad_confirmed": null
+  },
   "ar/ob1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "أهلا بك في"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "أهلا بك في: خمس دقائق معا! تطبيق مجّانيّ يساعدك على تعليم طفلك أصوات الحروف الإنجليزيّة في البيت. صمّم لأطفال الصّفّ الأوّل والثّاني.",
+     "seed": 804177924,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 12.6,
+     "characters": 133,
+     "letters": 100,
+     "chars_per_s": 10.6,
+     "longest_silence_s": 0.26,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 12.65,
+   "speech_seconds": 12.6,
+   "chars_per_s": 10.6,
+   "checks": {
+    "duration": 12.65,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "خمس دقائق معا"
-    ],
-    [
-     "ar",
-     "تطبيق مجاني يساعدك على تعليم طفلك أصوات الحروف الإنجليزية في البيت"
-    ],
-    [
-     "ar",
-     "صمم لأطفال الصف الأول والثاني"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ob2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "كل يوم جلسة واحدة مدتها خمس دقائق"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "كلّ يوم جلسة واحدة مدّتها خمس دقائق، بالخطوات نفسها: اسمع، ثمّ انقر وقل، ثمّ ادمج وحدك، ثمّ تحدّي سند. بعدها نطفئ الشّاشة ونلعب معا في البيت.",
+     "seed": 1393128259,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 17.62,
+     "characters": 141,
+     "letters": 102,
+     "chars_per_s": 8.0,
+     "longest_silence_s": 0.57,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 17.65,
+   "speech_seconds": 17.62,
+   "chars_per_s": 8.0,
+   "checks": {
+    "duration": 17.65,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "بالخطوات نفسها"
-    ],
-    [
-     "ar",
-     "اسمع"
-    ],
-    [
-     "ar",
-     "ثم انقر وقل"
-    ],
-    [
-     "ar",
-     "ثم ادمج وحدك"
-    ],
-    [
-     "ar",
-     "ثم تحدي سند"
-    ],
-    [
-     "ar",
-     "بعدها نطفئ الشاشة ونلعب معا في البيت"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ob3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "لا تحتاج أن تعرف الإنجليزية"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "لا تحتاج أن تعرف الإنجليزيّة: التّطبيق ينطق الأصوات، وأنت تشجّع وتسأل.",
+     "seed": 1316182982,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.07,
+     "characters": 70,
+     "letters": 54,
+     "chars_per_s": 9.9,
+     "longest_silence_s": 0.24,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.1,
+   "speech_seconds": 7.07,
+   "chars_per_s": 9.9,
+   "checks": {
+    "duration": 7.1,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "التطبيق ينطق الأصوات"
-    ],
-    [
-     "ar",
-     "وأنت تشجع وتسأل"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/home_ready.mp3": {
-   "plan": [
-    [
-     "ar",
-     "جلسة اليوم جاهزة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "جلسة اليوم جاهزة. اجلس مع طفلك في مكان هادئ، ثمّ اضغط: ابدأ.",
+     "seed": 987125028,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.82,
+     "characters": 60,
+     "letters": 44,
+     "chars_per_s": 8.8,
+     "longest_silence_s": 0.38,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.85,
+   "speech_seconds": 6.82,
+   "chars_per_s": 8.8,
+   "checks": {
+    "duration": 6.85,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "اجلس مع طفلك في مكان هادئ"
-    ],
-    [
-     "ar",
-     "ثم اضغط"
-    ],
-    [
-     "ar",
-     "ابدأ"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/home_done.mp3": {
-   "plan": [
-    [
-     "ar",
-     "أحسنتما"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "أحسنتما! أنهيتما جلسة اليوم. الجلسة التّالية تفتح غدا.",
+     "seed": 1569835746,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.62,
+     "characters": 54,
+     "letters": 43,
+     "chars_per_s": 9.6,
+     "longest_silence_s": 0.26,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.65,
+   "speech_seconds": 5.62,
+   "chars_per_s": 9.6,
+   "checks": {
+    "duration": 5.65,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "أنهيتما جلسة اليوم"
-    ],
-    [
-     "ar",
-     "الجلسة التالية تفتح غدا"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/home_all.mp3": {
-   "plan": [
-    [
-     "ar",
-     "أكملتما الأيام الخمسة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "أكملتما الأيّام الخمسة! انظر إلى النّتائج، ويمكنكما إعادة أيّ يوم.",
+     "seed": 1202557374,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.81,
+     "characters": 66,
+     "letters": 51,
+     "chars_per_s": 9.7,
+     "longest_silence_s": 0.18,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.85,
+   "speech_seconds": 6.81,
+   "chars_per_s": 9.7,
+   "checks": {
+    "duration": 6.85,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "انظر إلى النتائج"
-    ],
-    [
-     "ar",
-     "ويمكنكما إعادة أي يوم"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/locked.mp3": {
-   "plan": [
-    [
-     "ar",
-     "هذا اليوم يفتح غدا"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "هذا اليوم يفتح غدا. خمس دقائق في اليوم تكفي، والرّاحة جزء من التّعلّم!",
+     "seed": 1820105034,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.79,
+     "characters": 70,
+     "letters": 52,
+     "chars_per_s": 10.3,
+     "longest_silence_s": 0.26,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.82,
+   "speech_seconds": 6.79,
+   "chars_per_s": 10.3,
+   "checks": {
+    "duration": 6.82,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "خمس دقائق في اليوم تكفي"
-    ],
-    [
-     "ar",
-     "والراحة جزء من التعلم"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/lvl1_desc.mp3": {
-   "plan": [
-    [
-     "ar",
-     "في اليومين الأول والثاني"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "في اليومين الأوّل والثّاني: التّطبيق يشغّل الأصوات تلقائيّا. قل الصّوت أوّلا، ثمّ اطلب من طفلك أن يكرّره.",
+     "seed": 278232427,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 10.44,
+     "characters": 105,
+     "letters": 76,
+     "chars_per_s": 10.1,
+     "longest_silence_s": 0.37,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 10.49,
+   "speech_seconds": 10.44,
+   "chars_per_s": 10.1,
+   "checks": {
+    "duration": 10.49,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "التطبيق يشغل الأصوات تلقائيا"
-    ],
-    [
-     "ar",
-     "قل الصوت أولا"
-    ],
-    [
-     "ar",
-     "ثم اطلب من طفلك أن يكرره"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/lvl2_desc.mp3": {
-   "plan": [
-    [
-     "ar",
-     "في اليومين الثالث والرابع"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "في اليومين الثّالث والرّابع: طفلك ينقر ليسمع الأصوات. اسأله أسئلة، وساعده عند الحاجة.",
+     "seed": 536637845,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 8.8,
+     "characters": 85,
+     "letters": 67,
+     "chars_per_s": 9.7,
+     "longest_silence_s": 0.32,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 8.84,
+   "speech_seconds": 8.8,
+   "chars_per_s": 9.7,
+   "checks": {
+    "duration": 8.84,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "طفلك ينقر ليسمع الأصوات"
-    ],
-    [
-     "ar",
-     "اسأله أسئلة"
-    ],
-    [
-     "ar",
-     "وساعده عند الحاجة"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/lvl3_desc.mp3": {
-   "plan": [
-    [
-     "ar",
-     "في اليوم الخامس"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "في اليوم الخامس: لا يوجد صوت تلقائيّ، والتّلميح عند الطّلب فقط. طفلك يحاول وحده، وأنت تشجّعه فقط.",
+     "seed": 1962580670,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 11.38,
+     "characters": 97,
+     "letters": 72,
+     "chars_per_s": 8.5,
+     "longest_silence_s": 0.4,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 11.43,
+   "speech_seconds": 11.38,
+   "chars_per_s": 8.5,
+   "checks": {
+    "duration": 11.43,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "لا يوجد صوت تلقائي"
-    ],
-    [
-     "ar",
-     "والتلميح عند الطلب فقط"
-    ],
-    [
-     "ar",
-     "طفلك يحاول وحده"
-    ],
-    [
-     "ar",
-     "وأنت تشجعه فقط"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/d1_tip.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اليوم نتعلم ثلاثة أصوات"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اليوم نتعلّم ثلاثة أصوات:",
+     "seed": 441864698,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.52,
+     "characters": 25,
+     "letters": 20,
+     "chars_per_s": 9.9,
+     "longest_silence_s": 0.09,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "و",
+     "seed": 809572278,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.31,
+     "characters": 1,
+     "letters": 1,
+     "chars_per_s": 3.3,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "و",
+     "seed": 809572278,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.19,
+     "characters": 1,
+     "letters": 1,
+     "chars_per_s": 5.4,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "تذكّر: نقول صوت الحرف وليس اسمه.",
+     "seed": 915388568,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 3.81,
+     "characters": 32,
+     "letters": 24,
+     "chars_per_s": 8.4,
+     "longest_silence_s": 0.3,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:s",
+     "gap_before": 0.32,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "ph:a",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "ph:t",
+     "gap_before": 0.1,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 9.9,
+   "speech_seconds": 6.83,
+   "chars_per_s": 8.6,
+   "checks": {
+    "duration": 9.897,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ph",
-     "s"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "و"
-    ],
-    [
-     "ph",
-     "a"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "و"
-    ],
-    [
-     "ph",
-     "t"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "تذكر"
-    ],
-    [
-     "ar",
-     "نقول صوت الحرف وليس اسمه"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/d2_tip.mp3": {
-   "plan": [
-    [
-     "ar",
-     "صوت اليوم"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "صوت اليوم",
+     "seed": 1323795428,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.02,
+     "characters": 9,
+     "letters": 8,
+     "chars_per_s": 8.8,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "وهو غير موجود في العربيّة. ضع يدك أمام فمك لتشعر بالهواء عندما تقوله.",
+     "seed": 1298187663,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.98,
+     "characters": 69,
+     "letters": 54,
+     "chars_per_s": 11.5,
+     "longest_silence_s": 0.16,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:p",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    }
+   ],
+   "seconds": 7.56,
+   "speech_seconds": 7.0,
+   "chars_per_s": 11.1,
+   "checks": {
+    "duration": 7.56,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ph",
-     "p"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "وهو غير موجود في العربية"
-    ],
-    [
-     "ar",
-     "ضع يدك أمام فمك لتشعر بالهواء عندما تقوله"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/d3_tip.mp3": {
-   "plan": [
-    [
-     "ar",
-     "صوت اليوم"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "صوت اليوم",
+     "seed": 1323795428,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.98,
+     "characters": 9,
+     "letters": 8,
+     "chars_per_s": 9.2,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "استمع جيّدا للفرق بين",
+     "seed": 816090304,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.23,
+     "characters": 21,
+     "letters": 17,
+     "chars_per_s": 9.4,
+     "longest_silence_s": 0.06,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "في",
+     "seed": 787614110,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.33,
+     "characters": 2,
+     "letters": 2,
+     "chars_per_s": 6.2,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "و",
+     "seed": 809572278,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.14,
+     "characters": 1,
+     "letters": 1,
+     "chars_per_s": 7.2,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "في",
+     "seed": 787614110,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.34,
+     "characters": 2,
+     "letters": 2,
+     "chars_per_s": 5.9,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:i",
+     "gap_before": 0.1,
+     "gap_after": 0.48
+    },
+    {
+     "insert": "ph:a",
+     "gap_before": 0.1,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "w:sat",
+     "gap_before": 0.08,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "ph:i",
+     "gap_before": 0.1,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "w:sit",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 8.58,
+   "speech_seconds": 4.02,
+   "chars_per_s": 8.7,
+   "checks": {
+    "duration": 8.58,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ph",
-     "i"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "استمع جيدا للفرق بين"
-    ],
-    [
-     "ph",
-     "a"
-    ],
-    [
-     "ar",
-     "في"
-    ],
-    [
-     "w",
-     "sat"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "و"
-    ],
-    [
-     "ph",
-     "i"
-    ],
-    [
-     "ar",
-     "في"
-    ],
-    [
-     "w",
-     "sit"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/d4_tip.mp3": {
-   "plan": [
-    [
-     "ar",
-     "صوت اليوم"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "صوت اليوم",
+     "seed": 1323795428,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.06,
+     "characters": 9,
+     "letters": 8,
+     "chars_per_s": 8.5,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ويمكن مدّه. سنقرأ كلمات مثل",
+     "seed": 348456320,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.64,
+     "characters": 27,
+     "letters": 21,
+     "chars_per_s": 10.2,
+     "longest_silence_s": 0.11,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "و",
+     "seed": 809572278,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.26,
+     "characters": 1,
+     "letters": 1,
+     "chars_per_s": 3.8,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:n",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "w:pin",
+     "gap_before": 0.08,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "w:pan",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 6.53,
+   "speech_seconds": 3.96,
+   "chars_per_s": 9.3,
+   "checks": {
+    "duration": 6.53,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ph",
-     "n"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "ويمكن مده"
-    ],
-    [
-     "ar",
-     "سنقرأ كلمات مثل"
-    ],
-    [
-     "w",
-     "pin"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "و"
-    ],
-    [
-     "w",
-     "pan"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/d5_tip.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اليوم نراجع الأصوات الستة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اليوم نراجع الأصوات السّتّة. دع طفلك يحاول وحده، وأنت تشجّعه. في النّهاية فحص قصير يظهر لك النّتائج.",
+     "seed": 26592505,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 11.96,
+     "characters": 100,
+     "letters": 75,
+     "chars_per_s": 8.4,
+     "longest_silence_s": 0.39,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 12.0,
+   "speech_seconds": 11.96,
+   "chars_per_s": 8.4,
+   "checks": {
+    "duration": 12.0,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "دع طفلك يحاول وحده"
-    ],
-    [
-     "ar",
-     "وأنت تشجعه"
-    ],
-    [
-     "ar",
-     "في النهاية فحص قصير يظهر لك النتائج"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tip_general.mp3": {
-   "plan": [
-    [
-     "ar",
-     "قل صوت الحرف وليس اسمه"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "قل صوت الحرف وليس اسمه، ولا تضف حركة بعده: قل",
+     "seed": 569012339,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.13,
+     "characters": 45,
+     "letters": 34,
+     "chars_per_s": 8.8,
+     "longest_silence_s": 0.25,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "وليس إس، وقل",
+     "seed": 243604846,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.63,
+     "characters": 12,
+     "letters": 9,
+     "chars_per_s": 7.4,
+     "longest_silence_s": 0.15,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "وليس تا.",
+     "seed": 778997454,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.16,
+     "characters": 8,
+     "letters": 6,
+     "chars_per_s": 6.9,
+     "longest_silence_s": 0.01,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:s",
+     "gap_before": 0.1,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:t",
+     "gap_before": 0.1,
+     "gap_after": 0.22
+    }
+   ],
+   "seconds": 9.46,
+   "speech_seconds": 7.92,
+   "chars_per_s": 8.2,
+   "checks": {
+    "duration": 9.459,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ولا تضف حركة بعده"
-    ],
-    [
-     "ar",
-     "قل"
-    ],
-    [
-     "ph",
-     "s"
-    ],
-    [
-     "ar",
-     "وليس إس"
-    ],
-    [
-     "ar",
-     "وقل"
-    ],
-    [
-     "ph",
-     "t"
-    ],
-    [
-     "ar",
-     "وليس تا"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tip_s.mp3": {
-   "plan": [
-    [
-     "ar",
-     "مثل السين"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "مثل السّين، ويمكن مدّه:",
+     "seed": 1195956161,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.08,
+     "characters": 23,
+     "letters": 16,
+     "chars_per_s": 11.1,
+     "longest_silence_s": 0.15,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:s",
+     "gap_before": 0.32,
+     "gap_after": 0.22
+    }
+   ],
+   "seconds": 3.2,
+   "speech_seconds": 2.08,
+   "chars_per_s": 11.1,
+   "checks": {
+    "duration": 3.2,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ويمكن مده"
-    ],
-    [
-     "ph",
-     "s"
-    ]
-   ]
+    "active_rms_db": -20.3,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tip_a.mp3": {
-   "plan": [
-    [
-     "ar",
-     "مثل فتحة قصيرة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "مثل فتحة قصيرة، والفم مفتوح أكثر قليلا مع ابتسامة، كما في",
+     "seed": 1444025234,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.2,
+     "characters": 57,
+     "letters": 45,
+     "chars_per_s": 11.0,
+     "longest_silence_s": 0.15,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:cat",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    }
+   ],
+   "seconds": 5.78,
+   "speech_seconds": 5.2,
+   "chars_per_s": 11.0,
+   "checks": {
+    "duration": 5.78,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "والفم مفتوح أكثر قليلا مع ابتسامة"
-    ],
-    [
-     "ar",
-     "كما في"
-    ],
-    [
-     "w",
-     "cat"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tip_t.mp3": {
-   "plan": [
-    [
-     "ar",
-     "مثل التاء مع نفخة هواء خفيفة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "مثل التّاء مع نفخة هواء خفيفة، دون إضافة حركة بعدها.",
+     "seed": 1262606084,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.57,
+     "characters": 52,
+     "letters": 40,
+     "chars_per_s": 9.3,
+     "longest_silence_s": 0.19,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.6,
+   "speech_seconds": 5.57,
+   "chars_per_s": 9.3,
+   "checks": {
+    "duration": 5.6,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "دون إضافة حركة بعدها"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tip_p.mp3": {
-   "plan": [
-    [
-     "ar",
-     "غير موجود في العربية"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "غير موجود في العربيّة. يشبه الباء، لكن دون اهتزاز في الحلق، ومع نفخة هواء. ضع يدك أمام فمك لتشعر بالهواء، وانتبه ألّا ينطقه الطّفل باء.",
+     "seed": 233726302,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 14.87,
+     "characters": 135,
+     "letters": 102,
+     "chars_per_s": 9.1,
+     "longest_silence_s": 0.33,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 14.92,
+   "speech_seconds": 14.87,
+   "chars_per_s": 9.1,
+   "checks": {
+    "duration": 14.92,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "يشبه الباء"
-    ],
-    [
-     "ar",
-     "لكن دون اهتزاز في الحلق"
-    ],
-    [
-     "ar",
-     "ومع نفخة هواء"
-    ],
-    [
-     "ar",
-     "ضع يدك أمام فمك لتشعر بالهواء"
-    ],
-    [
-     "ar",
-     "وانتبه ألا ينطقه الطفل باء"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tip_i.mp3": {
-   "plan": [
-    [
-     "ar",
-     "مثل كسرة قصيرة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "مثل كسرة قصيرة: إ، كما في",
+     "seed": 1488896575,
+     "retake": 1,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.66,
+     "characters": 25,
+     "letters": 18,
+     "chars_per_s": 9.4,
+     "longest_silence_s": 0.3,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:sit",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    }
+   ],
+   "seconds": 3.26,
+   "speech_seconds": 2.66,
+   "chars_per_s": 9.4,
+   "checks": {
+    "duration": 3.26,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "إ"
-    ],
-    [
-     "ar",
-     "كما في"
-    ],
-    [
-     "w",
-     "sit"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tip_n.mp3": {
-   "plan": [
-    [
-     "ar",
-     "مثل النون"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "مثل النّون، ويمكن مدّه:",
+     "seed": 1179364327,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.2,
+     "characters": 23,
+     "letters": 16,
+     "chars_per_s": 10.5,
+     "longest_silence_s": 0.19,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:n",
+     "gap_before": 0.32,
+     "gap_after": 0.22
+    }
+   ],
+   "seconds": 3.46,
+   "speech_seconds": 2.2,
+   "chars_per_s": 10.5,
+   "checks": {
+    "duration": 3.46,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ويمكن مده"
-    ],
-    [
-     "ph",
-     "n"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/hear_L1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "استمع إلى الصوت"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "استمع إلى الصّوت، ثمّ قله أنت، واطلب من طفلك أن يكرّره بعدك.",
+     "seed": 1681222022,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.01,
+     "characters": 60,
+     "letters": 43,
+     "chars_per_s": 8.6,
+     "longest_silence_s": 0.41,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.05,
+   "speech_seconds": 7.01,
+   "chars_per_s": 8.6,
+   "checks": {
+    "duration": 7.05,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم قله أنت"
-    ],
-    [
-     "ar",
-     "واطلب من طفلك أن يكرره بعدك"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/hear_L2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اطلب من طفلك أن ينقر على الحرف ويستمع"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اطلب من طفلك أن ينقر على الحرف ويستمع. ثمّ اسأله: ما الصّوت الّذي سمعته؟",
+     "seed": 259742316,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.65,
+     "characters": 72,
+     "letters": 53,
+     "chars_per_s": 10.8,
+     "longest_silence_s": 0.24,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.69,
+   "speech_seconds": 6.65,
+   "chars_per_s": 10.8,
+   "checks": {
+    "duration": 6.69,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم اسأله"
-    ],
-    [
-     "ar",
-     "ما الصوت الذي سمعته"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/hear_L3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك ينقر على كل حرف ويقول صوته وحده"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك ينقر على كلّ حرف ويقول صوته وحده. أنت تشجّع فقط.",
+     "seed": 224935001,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.68,
+     "characters": 56,
+     "letters": 41,
+     "chars_per_s": 9.9,
+     "longest_silence_s": 0.23,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.73,
+   "speech_seconds": 5.68,
+   "chars_per_s": 9.9,
+   "checks": {
+    "duration": 5.73,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "أنت تشجع فقط"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/kw_L1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "انقر على كل صورة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "انقر على كلّ صورة: نسمع الصّوت ثمّ الكلمة. قولا الصّوت الأوّل معا.",
+     "seed": 266013077,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.79,
+     "characters": 66,
+     "letters": 47,
+     "chars_per_s": 8.5,
+     "longest_silence_s": 0.4,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.84,
+   "speech_seconds": 7.79,
+   "chars_per_s": 8.5,
+   "checks": {
+    "duration": 7.84,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "نسمع الصوت ثم الكلمة"
-    ],
-    [
-     "ar",
-     "قولا الصوت الأول معا"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/kw_L2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك ينقر على الصورة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك ينقر على الصّورة. اسأله: ما أوّل صوت في هذه الكلمة؟",
+     "seed": 1621766425,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.51,
+     "characters": 59,
+     "letters": 43,
+     "chars_per_s": 10.7,
+     "longest_silence_s": 0.22,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.56,
+   "speech_seconds": 5.51,
+   "chars_per_s": 10.7,
+   "checks": {
+    "duration": 5.56,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "اسأله"
-    ],
-    [
-     "ar",
-     "ما أول صوت في هذه الكلمة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/kw_L3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك ينقر على الصورة ويقول الصوت الأول وحده"
-    ]
-   ]
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك ينقر على الصّورة ويقول الصّوت الأوّل وحده.",
+     "seed": 321732600,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 4.58,
+     "characters": 50,
+     "letters": 38,
+     "chars_per_s": 10.9,
+     "longest_silence_s": 0.1,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 4.62,
+   "speech_seconds": 4.58,
+   "chars_per_s": 10.9,
+   "checks": {
+    "duration": 4.62,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/find_L1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "قل الصوت مرة أخرى"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "قل الصّوت مرّة أخرى، ثمّ ساعد طفلك على إيجاد صورتين تبدآن به.",
+     "seed": 1976825523,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.22,
+     "characters": 61,
+     "letters": 45,
+     "chars_per_s": 9.8,
+     "longest_silence_s": 0.22,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.27,
+   "speech_seconds": 6.22,
+   "chars_per_s": 9.8,
+   "checks": {
+    "duration": 6.27,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم ساعد طفلك على إيجاد صورتين تبدآن به"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/find_L2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اسأل طفلك"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اسأل طفلك: أيّ صورتين تبدآن بهذا الصّوت؟",
+     "seed": 1988536034,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 4.08,
+     "characters": 40,
+     "letters": 30,
+     "chars_per_s": 9.8,
+     "longest_silence_s": 0.26,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 4.12,
+   "speech_seconds": 4.08,
+   "chars_per_s": 9.8,
+   "checks": {
+    "duration": 4.12,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "أي صورتين تبدآن بهذا الصوت"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/find_L3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك يختار وحده"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك يختار وحده. إذا احتاج، يمكنه أن ينقر على زرّ التّلميح.",
+     "seed": 1212421959,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.58,
+     "characters": 62,
+     "letters": 46,
+     "chars_per_s": 9.4,
+     "longest_silence_s": 0.27,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.63,
+   "speech_seconds": 6.58,
+   "chars_per_s": 9.4,
+   "checks": {
+    "duration": 6.63,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "إذا احتاج"
-    ],
-    [
-     "ar",
-     "يمكنه أن ينقر على زر التلميح"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/review_L3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "مراجعة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "مراجعة: دع طفلك ينقر على الحروف السّتّة، ويقول صوت كلّ حرف. أنت تشجّع فقط.",
+     "seed": 2036852683,
+     "retake": 1,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 8.98,
+     "characters": 74,
+     "letters": 53,
+     "chars_per_s": 8.2,
+     "longest_silence_s": 0.63,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 9.01,
+   "speech_seconds": 8.98,
+   "chars_per_s": 8.2,
+   "checks": {
+    "duration": 9.01,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "دع طفلك ينقر على الحروف الستة"
-    ],
-    [
-     "ar",
-     "ويقول صوت كل حرف"
-    ],
-    [
-     "ar",
-     "أنت تشجع فقط"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tapsay_L1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "نسمع الأصوات واحدا واحدا"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "نسمع الأصوات واحدا واحدا. قلها مع طفلك، ثمّ انقر على القطار ليجمع الأصوات في كلمة.",
+     "seed": 551075662,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.8,
+     "characters": 82,
+     "letters": 64,
+     "chars_per_s": 10.5,
+     "longest_silence_s": 0.25,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.83,
+   "speech_seconds": 7.8,
+   "chars_per_s": 10.5,
+   "checks": {
+    "duration": 7.83,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "قلها مع طفلك"
-    ],
-    [
-     "ar",
-     "ثم انقر على القطار ليجمع الأصوات في كلمة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tapsay_L2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اسأل طفلك"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اسأل طفلك: ما صوت كلّ حرف؟ دعه ينقر على الحرف ليتأكّد، ثمّ ينقر على القطار.",
+     "seed": 1026605755,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 8.0,
+     "characters": 75,
+     "letters": 54,
+     "chars_per_s": 9.4,
+     "longest_silence_s": 0.22,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 8.04,
+   "speech_seconds": 8.0,
+   "chars_per_s": 9.4,
+   "checks": {
+    "duration": 8.04,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ما صوت كل حرف"
-    ],
-    [
-     "ar",
-     "دعه ينقر على الحرف ليتأكد"
-    ],
-    [
-     "ar",
-     "ثم ينقر على القطار"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/tapsay_L3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك يقرأ الأصوات وحده"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك يقرأ الأصوات وحده، ثمّ ينقر على القطار. التّلميح عند الطّلب فقط.",
+     "seed": 187443340,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.7,
+     "characters": 72,
+     "letters": 54,
+     "chars_per_s": 9.4,
+     "longest_silence_s": 0.34,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.73,
+   "speech_seconds": 7.7,
+   "chars_per_s": 9.4,
+   "checks": {
+    "duration": 7.73,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم ينقر على القطار"
-    ],
-    [
-     "ar",
-     "التلميح عند الطلب فقط"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/blend_L1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اقرأ الأصوات مع طفلك ببطء"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اقرأ الأصوات مع طفلك ببطء، ثمّ دعه يقول الكلمة. إذا قالها، انقر: قالها صحّ.",
+     "seed": 1598851413,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 8.25,
+     "characters": 75,
+     "letters": 55,
+     "chars_per_s": 9.1,
+     "longest_silence_s": 0.26,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 8.28,
+   "speech_seconds": 8.25,
+   "chars_per_s": 9.1,
+   "checks": {
+    "duration": 8.28,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم دعه يقول الكلمة"
-    ],
-    [
-     "ar",
-     "إذا قالها"
-    ],
-    [
-     "ar",
-     "انقر"
-    ],
-    [
-     "ar",
-     "قالها صح"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/blend_L2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اسأل طفلك"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اسأل طفلك: ما هذه الكلمة؟ إذا احتاج مساعدة، انقر على زرّ التّلميح.",
+     "seed": 72455535,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.28,
+     "characters": 66,
+     "letters": 49,
+     "chars_per_s": 10.5,
+     "longest_silence_s": 0.23,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.32,
+   "speech_seconds": 6.28,
+   "chars_per_s": 10.5,
+   "checks": {
+    "duration": 6.32,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ما هذه الكلمة"
-    ],
-    [
-     "ar",
-     "إذا احتاج مساعدة"
-    ],
-    [
-     "ar",
-     "انقر على زر التلميح"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/blend_L3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك يقرأ الكلمة وحده"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك يقرأ الكلمة وحده. أنت تشجّع فقط، والتّلميح عند الطّلب.",
+     "seed": 521558678,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.67,
+     "characters": 62,
+     "letters": 46,
+     "chars_per_s": 10.9,
+     "longest_silence_s": 0.25,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.71,
+   "speech_seconds": 5.67,
+   "chars_per_s": 10.9,
+   "checks": {
+    "duration": 5.71,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "أنت تشجع فقط"
-    ],
-    [
-     "ar",
-     "والتلميح عند الطلب"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/blend_retry.mp3": {
-   "plan": [
-    [
-     "ar",
-     "لا بأس"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "لا بأس! نستمع إلى الأصوات مرّة أخرى، ثمّ يحاول طفلك من جديد.",
+     "seed": 27478540,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.99,
+     "characters": 60,
+     "letters": 44,
+     "chars_per_s": 8.6,
+     "longest_silence_s": 0.37,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.04,
+   "speech_seconds": 6.99,
+   "chars_per_s": 8.6,
+   "checks": {
+    "duration": 7.04,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "نستمع إلى الأصوات مرة أخرى"
-    ],
-    [
-     "ar",
-     "ثم يحاول طفلك من جديد"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/challenge_intro.mp3": {
-   "plan": [
-    [
-     "ar",
-     "تحدي سند"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "تحدّي سند: ثلاثة أسئلة سريعة. دع طفلك يختار وحده، والتّطبيق يتحقّق من الإجابة.",
+     "seed": 1543219932,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 8.79,
+     "characters": 78,
+     "letters": 59,
+     "chars_per_s": 8.9,
+     "longest_silence_s": 0.26,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 8.82,
+   "speech_seconds": 8.79,
+   "chars_per_s": 8.9,
+   "checks": {
+    "duration": 8.82,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثلاثة أسئلة سريعة"
-    ],
-    [
-     "ar",
-     "دع طفلك يختار وحده"
-    ],
-    [
-     "ar",
-     "والتطبيق يتحقق من الإجابة"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/final_intro.mp3": {
-   "plan": [
-    [
-     "ar",
-     "الفحص النهائي"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "الفحص النّهائيّ: ستّة أسئلة للأصوات، وعشرة للكلمات. دع طفلك يجيب وحده هذه المرّة، وشجّعه بعد كلّ إجابة.",
+     "seed": 280399876,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 11.87,
+     "characters": 103,
+     "letters": 76,
+     "chars_per_s": 8.7,
+     "longest_silence_s": 0.31,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 11.9,
+   "speech_seconds": 11.87,
+   "chars_per_s": 8.7,
+   "checks": {
+    "duration": 11.9,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ستة أسئلة للأصوات"
-    ],
-    [
-     "ar",
-     "وعشرة للكلمات"
-    ],
-    [
-     "ar",
-     "دع طفلك يجيب وحده هذه المرة"
-    ],
-    [
-     "ar",
-     "وشجعه بعد كل إجابة"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ch_sound.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك يستمع إلى الصوت"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك يستمع إلى الصّوت، ثمّ يختار الحرف الصّحيح.",
+     "seed": 1724658720,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 4.38,
+     "characters": 50,
+     "letters": 37,
+     "chars_per_s": 11.4,
+     "longest_silence_s": 0.12,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 4.42,
+   "speech_seconds": 4.38,
+   "chars_per_s": 11.4,
+   "checks": {
+    "duration": 4.42,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم يختار الحرف الصحيح"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ch_blend.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك يستمع إلى الأصوات ويجمعها في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك يستمع إلى الأصوات ويجمعها في كلمة، ثمّ يختار الصّورة الصّحيحة.",
+     "seed": 47415060,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.57,
+     "characters": 70,
+     "letters": 54,
+     "chars_per_s": 10.7,
+     "longest_silence_s": 0.2,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.6,
+   "speech_seconds": 6.57,
+   "chars_per_s": 10.7,
+   "checks": {
+    "duration": 6.6,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم يختار الصورة الصحيحة"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ch_sound_L3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك ينقر على زر الصوت ويستمع"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك ينقر على زرّ الصّوت ويستمع، ثمّ يختار الحرف.",
+     "seed": 923154955,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 4.42,
+     "characters": 52,
+     "letters": 38,
+     "chars_per_s": 11.8,
+     "longest_silence_s": 0.12,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 4.45,
+   "speech_seconds": 4.42,
+   "chars_per_s": 11.8,
+   "checks": {
+    "duration": 4.45,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم يختار الحرف"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ch_blend_L3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دع طفلك ينقر على زر الصوت"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دع طفلك ينقر على زرّ الصّوت، ويجمع الأصوات، ثمّ يختار الصّورة.",
+     "seed": 191951734,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.59,
+     "characters": 62,
+     "letters": 45,
+     "chars_per_s": 11.1,
+     "longest_silence_s": 0.22,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.64,
+   "speech_seconds": 5.59,
+   "chars_per_s": 11.1,
+   "checks": {
+    "duration": 5.64,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ويجمع الأصوات"
-    ],
-    [
-     "ar",
-     "ثم يختار الصورة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/celebrate.mp3": {
-   "plan": [
-    [
-     "ar",
-     "أحسنتما"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "أحسنتما! انتهت جلسة اليوم. أطفئا الشّاشة الآن، وجرّبا نشاط البيت معا.",
+     "seed": 740584689,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.76,
+     "characters": 69,
+     "letters": 53,
+     "chars_per_s": 8.9,
+     "longest_silence_s": 0.33,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.81,
+   "speech_seconds": 7.76,
+   "chars_per_s": 8.9,
+   "checks": {
+    "duration": 7.81,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "انتهت جلسة اليوم"
-    ],
-    [
-     "ar",
-     "أطفئا الشاشة الآن"
-    ],
-    [
-     "ar",
-     "وجربا نشاط البيت معا"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/celebrate_d5.mp3": {
-   "plan": [
-    [
-     "ar",
-     "أحسنتما"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "أحسنتما! أكملتما الأيّام الخمسة. انظر إلى النّتائج لتعرف ما يحتاج طفلك إلى التّدرّب عليه.",
+     "seed": 1782125935,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 9.03,
+     "characters": 89,
+     "letters": 69,
+     "chars_per_s": 9.9,
+     "longest_silence_s": 0.42,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 9.07,
+   "speech_seconds": 9.03,
+   "chars_per_s": 9.9,
+   "checks": {
+    "duration": 9.07,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "أكملتما الأيام الخمسة"
-    ],
-    [
-     "ar",
-     "انظر إلى النتائج لتعرف ما يحتاج طفلك إلى التدرب عليه"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/home1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ارسما على ورقة شمسا"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ارسما على ورقة شمسا:",
+     "seed": 1256065017,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.07,
+     "characters": 20,
+     "letters": 16,
+     "chars_per_s": 9.7,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ونملة:",
+     "seed": 513628533,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.74,
+     "characters": 6,
+     "letters": 5,
+     "chars_per_s": 8.1,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "وخيمة:",
+     "seed": 471128973,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.81,
+     "characters": 6,
+     "letters": 5,
+     "chars_per_s": 7.4,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "قل صوتا:",
+     "seed": 341984511,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.05,
+     "characters": 8,
+     "letters": 6,
+     "chars_per_s": 7.6,
+     "longest_silence_s": 0.03,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "أو",
+     "seed": 1382174547,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.31,
+     "characters": 2,
+     "letters": 2,
+     "chars_per_s": 6.6,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "أو",
+     "seed": 1382174547,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.42,
+     "characters": 2,
+     "letters": 2,
+     "chars_per_s": 4.8,
+     "longest_silence_s": 0.01,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ودع طفلك يشير إلى الصّورة الّتي تبدأ به.",
+     "seed": 1075622902,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 3.73,
+     "characters": 40,
+     "letters": 30,
+     "chars_per_s": 10.7,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:sun",
+     "gap_before": 0.32,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "w:ant",
+     "gap_before": 0.32,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "w:tent",
+     "gap_before": 0.32,
+     "gap_after": 0.48
+    },
+    {
+     "insert": "ph:s",
+     "gap_before": 0.32,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "ph:a",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "ph:t",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    }
+   ],
+   "seconds": 15.25,
+   "speech_seconds": 9.13,
+   "chars_per_s": 9.2,
+   "checks": {
+    "duration": 15.251,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "sun"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "ونملة"
-    ],
-    [
-     "w",
-     "ant"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "وخيمة"
-    ],
-    [
-     "w",
-     "tent"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "قل صوتا"
-    ],
-    [
-     "ph",
-     "s"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "أو"
-    ],
-    [
-     "ph",
-     "a"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "أو"
-    ],
-    [
-     "ph",
-     "t"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "ودع طفلك يشير إلى الصورة التي تبدأ به"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/home2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ابحثا في المطبخ عن شيء يبدأ بصوت"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ابحثا في المطبخ عن شيء يبدأ بصوت",
+     "seed": 1107398351,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 3.53,
+     "characters": 32,
+     "letters": 26,
+     "chars_per_s": 9.1,
+     "longest_silence_s": 0.1,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "مثل المقلاة:",
+     "seed": 298133775,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.32,
+     "characters": 12,
+     "letters": 10,
+     "chars_per_s": 9.1,
+     "longest_silence_s": 0.13,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "قولا معا:",
+     "seed": 113559196,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.93,
+     "characters": 9,
+     "letters": 7,
+     "chars_per_s": 9.7,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "وضعا أيديكما أمام الفم لتشعرا بهواء",
+     "seed": 1822849740,
+     "retake": 1,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 4.07,
+     "characters": 35,
+     "letters": 30,
+     "chars_per_s": 8.6,
+     "longest_silence_s": 0.2,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:p",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "w:pan",
+     "gap_before": 0.32,
+     "gap_after": 0.48
+    },
+    {
+     "insert": "ph:p",
+     "gap_before": 0.32,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:a",
+     "gap_before": 0.1,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:n",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "ph:p",
+     "gap_before": 0.1,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 14.77,
+   "speech_seconds": 9.85,
+   "chars_per_s": 8.9,
+   "checks": {
+    "duration": 14.77,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ph",
-     "p"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "مثل المقلاة"
-    ],
-    [
-     "w",
-     "pan"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "قولا معا"
-    ],
-    [
-     "ph",
-     "p"
-    ],
-    [
-     "ph",
-     "a"
-    ],
-    [
-     "ph",
-     "n"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "وضعا أيديكما أمام الفم لتشعرا بهواء"
-    ],
-    [
-     "ph",
-     "p"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/home3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "لعبة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "لعبة: اجلس وقف. إذا قلت",
+     "seed": 2094193442,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.88,
+     "characters": 23,
+     "letters": 17,
+     "chars_per_s": 8.0,
+     "longest_silence_s": 0.27,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "يجلس طفلك، وإذا قلت",
+     "seed": 1748718083,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.23,
+     "characters": 19,
+     "letters": 15,
+     "chars_per_s": 8.5,
+     "longest_silence_s": 0.12,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "يقف. استمعا جيّدا للفرق بين",
+     "seed": 765366666,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 3.2,
+     "characters": 27,
+     "letters": 21,
+     "chars_per_s": 8.4,
+     "longest_silence_s": 0.19,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "و",
+     "seed": 809572278,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.27,
+     "characters": 1,
+     "letters": 1,
+     "chars_per_s": 3.7,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ثمّ بدّلا الأدوار!",
+     "seed": 503054114,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.69,
+     "characters": 18,
+     "letters": 13,
+     "chars_per_s": 10.7,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:sit",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    },
+    {
+     "insert": "w:sat",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    },
+    {
+     "insert": "ph:i",
+     "gap_before": 0.1,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:a",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    }
+   ],
+   "seconds": 13.71,
+   "speech_seconds": 10.27,
+   "chars_per_s": 8.6,
+   "checks": {
+    "duration": 13.712,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "اجلس وقف"
-    ],
-    [
-     "ar",
-     "إذا قلت"
-    ],
-    [
-     "w",
-     "sit"
-    ],
-    [
-     "ar",
-     "يجلس طفلك"
-    ],
-    [
-     "ar",
-     "وإذا قلت"
-    ],
-    [
-     "w",
-     "sat"
-    ],
-    [
-     "ar",
-     "يقف"
-    ],
-    [
-     "ar",
-     "استمعا جيدا للفرق بين"
-    ],
-    [
-     "ph",
-     "i"
-    ],
-    [
-     "ar",
-     "و"
-    ],
-    [
-     "ph",
-     "a"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "ثم بدلا الأدوار"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/home4.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ابحثا في البيت عن علبة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ابحثا في البيت عن علبة:",
+     "seed": 2145471776,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.9,
+     "characters": 23,
+     "letters": 18,
+     "chars_per_s": 12.1,
+     "longest_silence_s": 0.01,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ومقلاة:",
+     "seed": 1742205239,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.8,
+     "characters": 7,
+     "letters": 6,
+     "chars_per_s": 8.8,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "انقرا عليهما بالملعقة بلطف مع كلّ صوت:",
+     "seed": 639190194,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 3.9,
+     "characters": 38,
+     "letters": 30,
+     "chars_per_s": 9.7,
+     "longest_silence_s": 0.13,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:tin",
+     "gap_before": 0.32,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "w:pan",
+     "gap_before": 0.32,
+     "gap_after": 0.48
+    },
+    {
+     "insert": "ph:t",
+     "gap_before": 0.32,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:i",
+     "gap_before": 0.1,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:n",
+     "gap_before": 0.1,
+     "gap_after": 0.45
+    }
+   ],
+   "seconds": 11.54,
+   "speech_seconds": 6.6,
+   "chars_per_s": 10.3,
+   "checks": {
+    "duration": 11.54,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "tin"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "ومقلاة"
-    ],
-    [
-     "w",
-     "pan"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "انقرا عليهما بالملعقة بلطف مع كل صوت"
-    ],
-    [
-     "ph",
-     "t"
-    ],
-    [
-     "ph",
-     "i"
-    ],
-    [
-     "ph",
-     "n"
-    ],
-    [
-     "gap",
-     0.45
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/home5.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اكتبا الحروف الستة على أوراق صغيرة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اكتبا الحروف السّتّة على أوراق صغيرة، أو استخدما البطاقات المطبوعة. قل صوتا، ودع طفلك يلتقط الورقة الصّحيحة، ثمّ كوّنا كلمات مثل",
+     "seed": 1798454123,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 14.91,
+     "characters": 128,
+     "letters": 99,
+     "chars_per_s": 8.6,
+     "longest_silence_s": 0.59,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "و",
+     "seed": 809572278,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.32,
+     "characters": 1,
+     "letters": 1,
+     "chars_per_s": 3.1,
+     "longest_silence_s": 0.01,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:pin",
+     "gap_before": 0.08,
+     "gap_after": 0.26
+    },
+    {
+     "insert": "w:sat",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 16.64,
+   "speech_seconds": 15.23,
+   "chars_per_s": 8.5,
+   "checks": {
+    "duration": 16.64,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "أو استخدما البطاقات المطبوعة"
-    ],
-    [
-     "ar",
-     "قل صوتا"
-    ],
-    [
-     "ar",
-     "ودع طفلك يلتقط الورقة الصحيحة"
-    ],
-    [
-     "ar",
-     "ثم كونا كلمات مثل"
-    ],
-    [
-     "w",
-     "pin"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "و"
-    ],
-    [
-     "w",
-     "sat"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d1_at.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما أول صوت في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما أوّل صوت في كلمة",
+     "seed": 267715578,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.81,
+     "characters": 19,
+     "letters": 14,
+     "chars_per_s": 10.5,
+     "longest_silence_s": 0.03,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:at",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 2.32,
+   "speech_seconds": 1.81,
+   "chars_per_s": 10.5,
+   "checks": {
+    "duration": 2.32,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "at"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d1_sat.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما أول صوت في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما أوّل صوت في كلمة",
+     "seed": 267715578,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.81,
+     "characters": 19,
+     "letters": 14,
+     "chars_per_s": 10.5,
+     "longest_silence_s": 0.03,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:sat",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 2.42,
+   "speech_seconds": 1.81,
+   "chars_per_s": 10.5,
+   "checks": {
+    "duration": 2.42,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "sat"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d2_pat.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ضع يدك أمام فمك وقل"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ضع يدك أمام فمك وقل",
+     "seed": 859939558,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.2,
+     "characters": 19,
+     "letters": 15,
+     "chars_per_s": 8.6,
+     "longest_silence_s": 0.01,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "هل تشعر بالهواء؟",
+     "seed": 1680805859,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.43,
+     "characters": 16,
+     "letters": 13,
+     "chars_per_s": 11.2,
+     "longest_silence_s": 0.09,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:pat",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 4.69,
+   "speech_seconds": 3.63,
+   "chars_per_s": 9.6,
+   "checks": {
+    "duration": 4.686,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "pat"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "هل تشعر بالهواء"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d2_tap.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما آخر صوت في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما آخر صوت في كلمة",
+     "seed": 911372072,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.8,
+     "characters": 18,
+     "letters": 14,
+     "chars_per_s": 10.0,
+     "longest_silence_s": 0.06,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:tap",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 2.39,
+   "speech_seconds": 1.8,
+   "chars_per_s": 10.0,
+   "checks": {
+    "duration": 2.39,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "tap"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d2_sat.mp3": {
-   "plan": [
-    [
-     "ar",
-     "قل الأصوات ببطء"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "قل الأصوات ببطء، ثمّ بسرعة!",
+     "seed": 1448689675,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.54,
+     "characters": 27,
+     "letters": 20,
+     "chars_per_s": 10.6,
+     "longest_silence_s": 0.22,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 2.58,
+   "speech_seconds": 2.54,
+   "chars_per_s": 10.6,
+   "checks": {
+    "duration": 2.58,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم بسرعة"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d2_at.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما الصوت الذي سمعته"
-    ]
-   ]
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما الصّوت الّذي سمعته؟",
+     "seed": 375269686,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.8,
+     "characters": 22,
+     "letters": 16,
+     "chars_per_s": 12.2,
+     "longest_silence_s": 0.06,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 1.83,
+   "speech_seconds": 1.8,
+   "chars_per_s": 12.2,
+   "checks": {
+    "duration": 1.83,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d3_it.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما أول صوت في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما أوّل صوت في كلمة",
+     "seed": 267715578,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.81,
+     "characters": 19,
+     "letters": 14,
+     "chars_per_s": 10.5,
+     "longest_silence_s": 0.03,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:it",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 2.3,
+   "speech_seconds": 1.81,
+   "chars_per_s": 10.5,
+   "checks": {
+    "duration": 2.3,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "it"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d3_sit.mp3": {
-   "plan": [
-    [
-     "ar",
-     "كم صوتا في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "كم صوتا في كلمة",
+     "seed": 355018330,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.41,
+     "characters": 15,
+     "letters": 12,
+     "chars_per_s": 10.6,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "؟ صفّقا مع كلّ صوت.",
+     "seed": 1068628142,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.79,
+     "characters": 19,
+     "letters": 11,
+     "chars_per_s": 10.6,
+     "longest_silence_s": 0.1,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:sit",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 4.22,
+   "speech_seconds": 3.2,
+   "chars_per_s": 10.6,
+   "checks": {
+    "duration": 4.218,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "sit"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "صفقا مع كل صوت"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d3_sip.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما آخر صوت في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما آخر صوت في كلمة",
+     "seed": 911372072,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.8,
+     "characters": 18,
+     "letters": 14,
+     "chars_per_s": 10.0,
+     "longest_silence_s": 0.06,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:sip",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 2.48,
+   "speech_seconds": 1.8,
+   "chars_per_s": 10.0,
+   "checks": {
+    "duration": 2.48,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "sip"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d3_tip.mp3": {
-   "plan": [
-    [
-     "ar",
-     "قل الكلمة مثل الروبوت"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "قل الكلمة مثل الرّوبوت:",
+     "seed": 896832048,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.76,
+     "characters": 23,
+     "letters": 18,
+     "chars_per_s": 13.1,
+     "longest_silence_s": 0.05,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ثمّ قلها بسرعة!",
+     "seed": 521928674,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.12,
+     "characters": 15,
+     "letters": 11,
+     "chars_per_s": 13.4,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "ph:t",
+     "gap_before": 0.32,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:i",
+     "gap_before": 0.1,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:p",
+     "gap_before": 0.1,
+     "gap_after": 0.26
+    }
+   ],
+   "seconds": 5.09,
+   "speech_seconds": 2.88,
+   "chars_per_s": 13.2,
+   "checks": {
+    "duration": 5.086,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ph",
-     "t"
-    ],
-    [
-     "ph",
-     "i"
-    ],
-    [
-     "ph",
-     "p"
-    ],
-    [
-     "gap",
-     0.26
-    ],
-    [
-     "ar",
-     "ثم قلها بسرعة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d3_pit.mp3": {
-   "plan": [
-    [
-     "ar",
-     "غير أول صوت في"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "غيّر أوّل صوت في",
+     "seed": 668677800,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.68,
+     "characters": 16,
+     "letters": 11,
+     "chars_per_s": 9.5,
+     "longest_silence_s": 0.04,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "إلى",
+     "seed": 179831591,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.33,
+     "characters": 3,
+     "letters": 3,
+     "chars_per_s": 9.2,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ما الكلمة الجديدة؟",
+     "seed": 302447140,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.43,
+     "characters": 18,
+     "letters": 15,
+     "chars_per_s": 12.6,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:pit",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    },
+    {
+     "insert": "ph:s",
+     "gap_before": 0.1,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 5.43,
+   "speech_seconds": 3.44,
+   "chars_per_s": 10.8,
+   "checks": {
+    "duration": 5.429,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "pit"
-    ],
-    [
-     "ar",
-     "إلى"
-    ],
-    [
-     "ph",
-     "s"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "ما الكلمة الجديدة"
-    ]
-   ]
+    "active_rms_db": -20.3,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d4_in.mp3": {
-   "plan": [
-    [
-     "ar",
-     "قل"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "قل",
+     "seed": 106019933,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.24,
+     "characters": 2,
+     "letters": 2,
+     "chars_per_s": 8.4,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ببطء:",
+     "seed": 1025733225,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.58,
+     "characters": 5,
+     "letters": 4,
+     "chars_per_s": 8.6,
+     "longest_silence_s": 0.08,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "أيّ صوت يمكن مدّه؟",
+     "seed": 1303640474,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.61,
+     "characters": 18,
+     "letters": 12,
+     "chars_per_s": 11.2,
+     "longest_silence_s": 0.07,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:in",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    },
+    {
+     "insert": "ph:i",
+     "gap_before": 0.32,
+     "gap_after": 0.22
+    },
+    {
+     "insert": "ph:n",
+     "gap_before": 0.1,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 5.83,
+   "speech_seconds": 2.43,
+   "chars_per_s": 10.3,
+   "checks": {
+    "duration": 5.827,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "in"
-    ],
-    [
-     "ar",
-     "ببطء"
-    ],
-    [
-     "ph",
-     "i"
-    ],
-    [
-     "ph",
-     "n"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "أي صوت يمكن مده"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d4_pin.mp3": {
-   "plan": [
-    [
-     "ar",
-     "غير أول صوت في"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "غيّر أوّل صوت في",
+     "seed": 668677800,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.68,
+     "characters": 16,
+     "letters": 11,
+     "chars_per_s": 9.5,
+     "longest_silence_s": 0.04,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "إلى",
+     "seed": 179831591,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.33,
+     "characters": 3,
+     "letters": 3,
+     "chars_per_s": 9.2,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ما الكلمة الجديدة؟",
+     "seed": 302447140,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.43,
+     "characters": 18,
+     "letters": 15,
+     "chars_per_s": 12.6,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:pin",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    },
+    {
+     "insert": "ph:t",
+     "gap_before": 0.1,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 4.94,
+   "speech_seconds": 3.44,
+   "chars_per_s": 10.8,
+   "checks": {
+    "duration": 4.939,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "pin"
-    ],
-    [
-     "ar",
-     "إلى"
-    ],
-    [
-     "ph",
-     "t"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "ما الكلمة الجديدة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d4_tin.mp3": {
-   "plan": [
-    [
-     "ar",
-     "كم صوتا في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "كم صوتا في كلمة",
+     "seed": 355018330,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.41,
+     "characters": 15,
+     "letters": 12,
+     "chars_per_s": 10.6,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "؟ صفّقا مع كلّ صوت.",
+     "seed": 1068628142,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.79,
+     "characters": 19,
+     "letters": 11,
+     "chars_per_s": 10.6,
+     "longest_silence_s": 0.1,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:tin",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 4.25,
+   "speech_seconds": 3.2,
+   "chars_per_s": 10.6,
+   "checks": {
+    "duration": 4.246,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "tin"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "صفقا مع كل صوت"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d4_nap.mp3": {
-   "plan": [
-    [
-     "ar",
-     "قل الأصوات ببطء"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "قل الأصوات ببطء، ثمّ بسرعة!",
+     "seed": 1448689675,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.54,
+     "characters": 27,
+     "letters": 20,
+     "chars_per_s": 10.6,
+     "longest_silence_s": 0.22,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 2.58,
+   "speech_seconds": 2.54,
+   "chars_per_s": 10.6,
+   "checks": {
+    "duration": 2.58,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم بسرعة"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d4_pan.mp3": {
-   "plan": [
-    [
-     "ar",
-     "أين نجد"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "أين نجد",
+     "seed": 121116545,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.89,
+     "characters": 7,
+     "letters": 6,
+     "chars_per_s": 7.9,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "في بيتنا؟",
+     "seed": 1181130850,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.67,
+     "characters": 9,
+     "letters": 7,
+     "chars_per_s": 13.4,
+     "longest_silence_s": 0.01,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:pan",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    }
+   ],
+   "seconds": 2.27,
+   "speech_seconds": 1.56,
+   "chars_per_s": 10.3,
+   "checks": {
+    "duration": 2.268,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "pan"
-    ],
-    [
-     "ar",
-     "في بيتنا"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d5_pan.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما أول صوت في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما أوّل صوت في كلمة",
+     "seed": 267715578,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.81,
+     "characters": 19,
+     "letters": 14,
+     "chars_per_s": 10.5,
+     "longest_silence_s": 0.03,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:pan",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 2.38,
+   "speech_seconds": 1.81,
+   "chars_per_s": 10.5,
+   "checks": {
+    "duration": 2.38,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "pan"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d5_pin.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما الصوت الذي سمعته في وسط الكلمة"
-    ]
-   ]
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما الصّوت الّذي سمعته في وسط الكلمة؟",
+     "seed": 215581300,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.78,
+     "characters": 36,
+     "letters": 27,
+     "chars_per_s": 12.9,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 2.81,
+   "speech_seconds": 2.78,
+   "chars_per_s": 12.9,
+   "checks": {
+    "duration": 2.81,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d5_tin.mp3": {
-   "plan": [
-    [
-     "ar",
-     "ما آخر صوت في كلمة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "ما آخر صوت في كلمة",
+     "seed": 911372072,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.8,
+     "characters": 18,
+     "letters": 14,
+     "chars_per_s": 10.0,
+     "longest_silence_s": 0.06,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:tin",
+     "gap_before": 0.08,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 2.42,
+   "speech_seconds": 1.8,
+   "chars_per_s": 10.0,
+   "checks": {
+    "duration": 2.42,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "tin"
-    ],
-    [
-     "gap",
-     0.48
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d5_tap.mp3": {
-   "plan": [
-    [
-     "ar",
-     "غير أول صوت في"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "غيّر أوّل صوت في",
+     "seed": 668677800,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.68,
+     "characters": 16,
+     "letters": 11,
+     "chars_per_s": 9.5,
+     "longest_silence_s": 0.04,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "إلى",
+     "seed": 179831591,
+     "retake": 0,
+     "context": true,
+     "credits": 0,
+     "cached": true,
+     "seconds": 0.33,
+     "characters": 3,
+     "letters": 3,
+     "chars_per_s": 9.2,
+     "longest_silence_s": 0.0,
+     "rate_ok": true,
+     "silence_ok": true
+    },
+    {
+     "text": "ما الكلمة الجديدة؟",
+     "seed": 302447140,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 1.43,
+     "characters": 18,
+     "letters": 15,
+     "chars_per_s": 12.6,
+     "longest_silence_s": 0.02,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [
+    {
+     "insert": "w:tap",
+     "gap_before": 0.08,
+     "gap_after": 0.2
+    },
+    {
+     "insert": "ph:n",
+     "gap_before": 0.1,
+     "gap_after": 0.48
+    }
+   ],
+   "seconds": 5.61,
+   "speech_seconds": 3.44,
+   "chars_per_s": 10.8,
+   "checks": {
+    "duration": 5.611,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "w",
-     "tap"
-    ],
-    [
-     "ar",
-     "إلى"
-    ],
-    [
-     "ph",
-     "n"
-    ],
-    [
-     "gap",
-     0.48
-    ],
-    [
-     "ar",
-     "ما الكلمة الجديدة"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/ask_d5_nap.mp3": {
-   "plan": [
-    [
-     "ar",
-     "أين نجد هذا الصوت في بيتنا"
-    ]
-   ]
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "أين نجد هذا الصّوت في بيتنا؟",
+     "seed": 315213273,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 2.49,
+     "characters": 28,
+     "letters": 21,
+     "chars_per_s": 11.2,
+     "longest_silence_s": 0.03,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 2.52,
+   "speech_seconds": 2.49,
+   "chars_per_s": 11.2,
+   "checks": {
+    "duration": 2.52,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/obj_o1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "الهدف الأول"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "الهدف الأوّل: بنهاية الجلسات الخمس، يعرف الطّفل صوت خمسة حروف على الأقلّ من ستّة، ويختار الحرف الصّحيح من ثلاثة بعد سماع الصّوت.",
+     "seed": 195658063,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 13.7,
+     "characters": 128,
+     "letters": 97,
+     "chars_per_s": 9.3,
+     "longest_silence_s": 0.37,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 13.74,
+   "speech_seconds": 13.7,
+   "chars_per_s": 9.3,
+   "checks": {
+    "duration": 13.74,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "بنهاية الجلسات الخمس"
-    ],
-    [
-     "ar",
-     "يعرف الطفل صوت خمسة حروف على الأقل من ستة"
-    ],
-    [
-     "ar",
-     "ويختار الحرف الصحيح من ثلاثة بعد سماع الصوت"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/obj_o2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "الهدف الثاني"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "الهدف الثّاني: بنهاية الجلسات الخمس، يدمج الطّفل ثماني كلمات على الأقلّ من عشر، ويختار الصّورة المناسبة من ثلاث بعد سماع الأصوات منفصلة.",
+     "seed": 299158602,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 13.63,
+     "characters": 136,
+     "letters": 107,
+     "chars_per_s": 10.0,
+     "longest_silence_s": 0.16,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 13.67,
+   "speech_seconds": 13.63,
+   "chars_per_s": 10.0,
+   "checks": {
+    "duration": 13.67,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "بنهاية الجلسات الخمس"
-    ],
-    [
-     "ar",
-     "يدمج الطفل ثماني كلمات على الأقل من عشر"
-    ],
-    [
-     "ar",
-     "ويختار الصورة المناسبة من ثلاث بعد سماع الأصوات منفصلة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/obj_o3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "الهدف الثالث"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "الهدف الثّالث: يكمل وليّ الأمر كلّ جلسة يوميّة باتّباع الإرشادات العربيّة وحدها، دون حاجة إلى الإنجليزيّة. يقاس بعدد الجلسات المكتملة.",
+     "seed": 775841248,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 13.29,
+     "characters": 134,
+     "letters": 104,
+     "chars_per_s": 10.1,
+     "longest_silence_s": 0.15,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 13.32,
+   "speech_seconds": 13.29,
+   "chars_per_s": 10.1,
+   "checks": {
+    "duration": 13.32,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "يكمل ولي الأمر كل جلسة يومية باتباع الإرشادات العربية وحدها"
-    ],
-    [
-     "ar",
-     "دون حاجة إلى الإنجليزية"
-    ],
-    [
-     "ar",
-     "يقاس بعدد الجلسات المكتملة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_intro.mp3": {
-   "plan": [
-    [
-     "ar",
-     "هنا ترى ما أنجزه طفلك في كل يوم"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "هنا ترى ما أنجزه طفلك في كلّ يوم. النّتائج محفوظة في هذا الجهاز فقط.",
+     "seed": 1760077725,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.24,
+     "characters": 68,
+     "letters": 51,
+     "chars_per_s": 10.9,
+     "longest_silence_s": 0.18,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.28,
+   "speech_seconds": 6.24,
+   "chars_per_s": 10.9,
+   "checks": {
+    "duration": 6.28,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "النتائج محفوظة في هذا الجهاز فقط"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_before.mp3": {
-   "plan": [
-    [
-     "ar",
-     "تظهر نتيجة الهدفين الأول والثاني بعد الفحص النهائي في اليوم الخامس"
-    ]
-   ]
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "تظهر نتيجة الهدفين الأوّل والثّاني بعد الفحص النّهائيّ في اليوم الخامس.",
+     "seed": 86815842,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.08,
+     "characters": 71,
+     "letters": 56,
+     "chars_per_s": 10.0,
+     "longest_silence_s": 0.17,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.11,
+   "speech_seconds": 7.08,
+   "chars_per_s": 10.0,
+   "checks": {
+    "duration": 7.11,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_o1_met.mp3": {
-   "plan": [
-    [
-     "ar",
-     "تحقق الهدف الأول"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "تحقّق الهدف الأوّل: عرف طفلك أصوات خمسة حروف أو أكثر من ستّة.",
+     "seed": 1218108658,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.74,
+     "characters": 61,
+     "letters": 45,
+     "chars_per_s": 9.1,
+     "longest_silence_s": 0.18,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.78,
+   "speech_seconds": 6.74,
+   "chars_per_s": 9.1,
+   "checks": {
+    "duration": 6.78,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "عرف طفلك أصوات خمسة حروف أو أكثر من ستة"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_o1_not.mp3": {
-   "plan": [
-    [
-     "ar",
-     "لم يتحقق الهدف الأول بعد"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "لم يتحقّق الهدف الأوّل بعد. تدرّبا مرّة أخرى على الأصوات المذكورة أدناه.",
+     "seed": 1414523636,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.04,
+     "characters": 72,
+     "letters": 55,
+     "chars_per_s": 10.2,
+     "longest_silence_s": 0.18,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.07,
+   "speech_seconds": 7.04,
+   "chars_per_s": 10.2,
+   "checks": {
+    "duration": 7.07,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "تدربا مرة أخرى على الأصوات المذكورة أدناه"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_o2_met.mp3": {
-   "plan": [
-    [
-     "ar",
-     "تحقق الهدف الثاني"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "تحقّق الهدف الثّاني: دمج طفلك ثماني كلمات أو أكثر من عشر.",
+     "seed": 2028098620,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.85,
+     "characters": 57,
+     "letters": 43,
+     "chars_per_s": 9.7,
+     "longest_silence_s": 0.23,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.88,
+   "speech_seconds": 5.85,
+   "chars_per_s": 9.7,
+   "checks": {
+    "duration": 5.88,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "دمج طفلك ثماني كلمات أو أكثر من عشر"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_o2_not.mp3": {
-   "plan": [
-    [
-     "ar",
-     "لم يتحقق الهدف الثاني بعد"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "لم يتحقّق الهدف الثّاني بعد. أعيدا خطوة: ادمج وحدك، مع الكلمات المذكورة أدناه.",
+     "seed": 189624778,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 8.57,
+     "characters": 78,
+     "letters": 60,
+     "chars_per_s": 9.1,
+     "longest_silence_s": 0.32,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 8.62,
+   "speech_seconds": 8.57,
+   "chars_per_s": 9.1,
+   "checks": {
+    "duration": 8.62,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "أعيدا خطوة"
-    ],
-    [
-     "ar",
-     "ادمج وحدك"
-    ],
-    [
-     "ar",
-     "مع الكلمات المذكورة أدناه"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_o3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "الهدف الثالث يقيس عدد الجلسات التي أكملتماها باتباع الإرشادات العربية"
-    ]
-   ]
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "الهدف الثّالث يقيس عدد الجلسات الّتي أكملتماها باتّباع الإرشادات العربيّة.",
+     "seed": 503023314,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.94,
+     "characters": 74,
+     "letters": 60,
+     "chars_per_s": 10.7,
+     "longest_silence_s": 0.28,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.97,
+   "speech_seconds": 6.94,
+   "chars_per_s": 10.7,
+   "checks": {
+    "duration": 6.97,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_practise.mp3": {
-   "plan": [
-    [
-     "ar",
-     "تدربا مرة أخرى على هذه الأصوات"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "تدرّبا مرّة أخرى على هذه الأصوات، وأعيدا اليوم الّذي تعلّمتما فيه كلّ صوت.",
+     "seed": 404374579,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.91,
+     "characters": 74,
+     "letters": 55,
+     "chars_per_s": 10.7,
+     "longest_silence_s": 0.19,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.94,
+   "speech_seconds": 6.91,
+   "chars_per_s": 10.7,
+   "checks": {
+    "duration": 6.94,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "وأعيدا اليوم الذي تعلمتما فيه كل صوت"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/res_good.mp3": {
-   "plan": [
-    [
-     "ar",
-     "رائع"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "رائع! لا توجد أصوات تحتاج إلى تدريب إضافيّ. يمكنكما إعادة أيّ يوم للمتعة.",
+     "seed": 11218431,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 8.5,
+     "characters": 73,
+     "letters": 56,
+     "chars_per_s": 8.6,
+     "longest_silence_s": 0.26,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 8.55,
+   "speech_seconds": 8.5,
+   "chars_per_s": 8.6,
+   "checks": {
+    "duration": 8.55,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "لا توجد أصوات تحتاج إلى تدريب إضافي"
-    ],
-    [
-     "ar",
-     "يمكنكما إعادة أي يوم للمتعة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/gate_hold.mp3": {
-   "plan": [
-    [
-     "ar",
-     "هذا القسم لولي الأمر"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "هذا القسم لوليّ الأمر. اضغط على الزّرّ، واستمرّ بالضّغط ثلاث ثوان.",
+     "seed": 1348943220,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.51,
+     "characters": 66,
+     "letters": 48,
+     "chars_per_s": 10.1,
+     "longest_silence_s": 0.21,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.54,
+   "speech_seconds": 6.51,
+   "chars_per_s": 10.1,
+   "checks": {
+    "duration": 6.54,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "اضغط على الزر"
-    ],
-    [
-     "ar",
-     "واستمر بالضغط ثلاث ثوان"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/howto_1.mp3": {
-   "plan": [
-    [
-     "ar",
-     "قبل البدء"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "قبل البدء: اجلسا معا في مكان هادئ، وارفع صوت الهاتف. الجلسة خمس دقائق فقط، مرّة واحدة في اليوم.",
+     "seed": 501932944,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 10.68,
+     "characters": 95,
+     "letters": 72,
+     "chars_per_s": 8.9,
+     "longest_silence_s": 0.34,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 10.71,
+   "speech_seconds": 10.68,
+   "chars_per_s": 8.9,
+   "checks": {
+    "duration": 10.71,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "اجلسا معا في مكان هادئ"
-    ],
-    [
-     "ar",
-     "وارفع صوت الهاتف"
-    ],
-    [
-     "ar",
-     "الجلسة خمس دقائق فقط"
-    ],
-    [
-     "ar",
-     "مرة واحدة في اليوم"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/howto_2.mp3": {
-   "plan": [
-    [
-     "ar",
-     "الخطوات"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "الخطوات: كلّ جلسة لها الخطوات نفسها. اسمع الصّوت، ثمّ انقر على الحروف وقل أصواتها، ثمّ يدمج طفلك الكلمة وحده، ثمّ تحدّي سند.",
+     "seed": 1550941988,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 14.69,
+     "characters": 124,
+     "letters": 91,
+     "chars_per_s": 8.4,
+     "longest_silence_s": 0.4,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 14.72,
+   "speech_seconds": 14.69,
+   "chars_per_s": 8.4,
+   "checks": {
+    "duration": 14.72,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "كل جلسة لها الخطوات نفسها"
-    ],
-    [
-     "ar",
-     "اسمع الصوت"
-    ],
-    [
-     "ar",
-     "ثم انقر على الحروف وقل أصواتها"
-    ],
-    [
-     "ar",
-     "ثم يدمج طفلك الكلمة وحده"
-    ],
-    [
-     "ar",
-     "ثم تحدي سند"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/howto_3.mp3": {
-   "plan": [
-    [
-     "ar",
-     "البطاقة الرملية لك أنت"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "البطاقة الرّمليّة لك أنت: فيها ما تقوله أو تسأله، وزرّ الصّوت يقرؤها لك. شاشات الطّفل فيها صور وأصوات فقط.",
+     "seed": 6001951,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 10.71,
+     "characters": 106,
+     "letters": 79,
+     "chars_per_s": 9.9,
+     "longest_silence_s": 0.16,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 10.75,
+   "speech_seconds": 10.71,
+   "chars_per_s": 9.9,
+   "checks": {
+    "duration": 10.75,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "فيها ما تقوله أو تسأله"
-    ],
-    [
-     "ar",
-     "وزر الصوت يقرؤها لك"
-    ],
-    [
-     "ar",
-     "شاشات الطفل فيها صور وأصوات فقط"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/howto_4.mp3": {
-   "plan": [
-    [
-     "ar",
-     "الدعم يقل تدريجيا"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "الدّعم يقلّ تدريجيّا: في اليومين الأوّل والثّاني تقول أنت ويكرّر طفلك. في اليومين الثّالث والرّابع تسأل وتساعد. في اليوم الخامس يحاول طفلك وحده.",
+     "seed": 1819015375,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 14.11,
+     "characters": 144,
+     "letters": 110,
+     "chars_per_s": 10.2,
+     "longest_silence_s": 0.24,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 14.14,
+   "speech_seconds": 14.11,
+   "chars_per_s": 10.2,
+   "checks": {
+    "duration": 14.14,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "في اليومين الأول والثاني تقول أنت ويكرر طفلك"
-    ],
-    [
-     "ar",
-     "في اليومين الثالث والرابع تسأل وتساعد"
-    ],
-    [
-     "ar",
-     "في اليوم الخامس يحاول طفلك وحده"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/howto_5.mp3": {
-   "plan": [
-    [
-     "ar",
-     "بعد الجلسة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "بعد الجلسة: بعد الملصق، أطفئا الشّاشة وجرّبا نشاط البيت. اليوم التّالي يفتح غدا.",
+     "seed": 1177914085,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.82,
+     "characters": 80,
+     "letters": 61,
+     "chars_per_s": 10.2,
+     "longest_silence_s": 0.24,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.86,
+   "speech_seconds": 7.82,
+   "chars_per_s": 10.2,
+   "checks": {
+    "duration": 7.86,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "بعد الملصق"
-    ],
-    [
-     "ar",
-     "أطفئا الشاشة وجربا نشاط البيت"
-    ],
-    [
-     "ar",
-     "اليوم التالي يفتح غدا"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/howto_6.mp3": {
-   "plan": [
-    [
-     "ar",
-     "لا يوجد جهاز"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "لا يوجد جهاز؟ يستطيع المعلّم أن يطبع لكم بطاقات الأيّام الخمسة، وفيها التّعليمات نفسها بالعربيّة.",
+     "seed": 1122504743,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 8.9,
+     "characters": 97,
+     "letters": 76,
+     "chars_per_s": 10.9,
+     "longest_silence_s": 0.23,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 8.95,
+   "speech_seconds": 8.9,
+   "chars_per_s": 10.9,
+   "checks": {
+    "duration": 8.95,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "يستطيع المعلم أن يطبع لكم بطاقات الأيام الخمسة"
-    ],
-    [
-     "ar",
-     "وفيها التعليمات نفسها بالعربية"
-    ]
-   ]
-  },
-  "ar/teacher_guide.mp3": {
-   "plan": [
-    [
-     "ar",
-     "دليل المعلم في دقيقة"
-    ],
-    [
-     "ar",
-     "أولا"
-    ],
-    [
-     "ar",
-     "عرف أولياء الأمور بالتطبيق في اجتماع أو عبر واتساب"
-    ],
-    [
-     "ar",
-     "خمس دقائق في اليوم"
-    ],
-    [
-     "ar",
-     "لمدة خمسة أيام"
-    ],
-    [
-     "ar",
-     "ثانيا"
-    ],
-    [
-     "ar",
-     "طمئنهم"
-    ],
-    [
-     "ar",
-     "لا يحتاجون إلى معرفة الإنجليزية"
-    ],
-    [
-     "ar",
-     "فالتطبيق ينطق الأصوات"
-    ],
-    [
-     "ar",
-     "وهم يشجعون ويسألون"
-    ],
-    [
-     "ar",
-     "ثالثا"
-    ],
-    [
-     "ar",
-     "وزع النشرة التي فيها الرمز"
-    ],
-    [
-     "ar",
-     "أو أرسل رسالة واتساب الجاهزة"
-    ],
-    [
-     "ar",
-     "رابعا"
-    ],
-    [
-     "ar",
-     "للأسر التي لا تملك جهازا"
-    ],
-    [
-     "ar",
-     "اطبع بطاقات الأيام الخمسة"
-    ],
-    [
-     "ar",
-     "خامسا"
-    ],
-    [
-     "ar",
-     "بعد أسبوع"
-    ],
-    [
-     "ar",
-     "اسأل الأطفال في الصف عن الأصوات الستة"
-    ],
-    [
-     "ar",
-     "واستمع إلى ملاحظات الأسر"
-    ]
-   ]
-  },
-  "ar/teacher_edit.mp3": {
-   "plan": [
-    [
-     "ar",
-     "يمكن تغيير الحروف والكلمات في ملف المحتوى"
-    ],
-    [
-     "ar",
-     "الكلمات المكونة من الأصوات الستة تعمل مباشرة"
-    ],
-    [
-     "ar",
-     "لأن التطبيق يجمع أصوات الحروف بنفسه"
-    ],
-    [
-     "ar",
-     "الحروف الجديدة تحتاج إلى ملفات صوت جديدة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/map_hint.mp3": {
-   "plan": [
-    [
-     "ar",
-     "انقر مع طفلك على المحطة المضيئة لتبدأ جلسة اليوم"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "انقر مع طفلك على المحطّة المضيئة لتبدأ جلسة اليوم. المحطّات المكتملة تلمع بنجمة، ويمكن إعادتها في أيّ وقت.",
+     "seed": 1297374760,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 10.74,
+     "characters": 106,
+     "letters": 83,
+     "chars_per_s": 9.9,
+     "longest_silence_s": 0.19,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 10.77,
+   "speech_seconds": 10.74,
+   "chars_per_s": 9.9,
+   "checks": {
+    "duration": 10.77,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "المحطات المكتملة تلمع بنجمة"
-    ],
-    [
-     "ar",
-     "ويمكن إعادتها في أي وقت"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/stickers_intro.mp3": {
-   "plan": [
-    [
-     "ar",
-     "كل يوم مكتمل يعطي طفلك ملصقا واحدا"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "كلّ يوم مكتمل يعطي طفلك ملصقا واحدا. خمسة أيّام، خمسة ملصقات.",
+     "seed": 1564647074,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.94,
+     "characters": 61,
+     "letters": 46,
+     "chars_per_s": 8.8,
+     "longest_silence_s": 0.23,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.98,
+   "speech_seconds": 6.94,
+   "chars_per_s": 8.8,
+   "checks": {
+    "duration": 6.98,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "خمسة أيام"
-    ],
-    [
-     "ar",
-     "خمسة ملصقات"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/review_intro.mp3": {
-   "plan": [
-    [
-     "ar",
-     "قيم كل عبارة من واحد إلى خمسة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "قيّم كلّ عبارة من واحد إلى خمسة، واكتب ملاحظة إن أردت. لا يرسل أيّ شيء من هذا الجهاز؛ انسخ ملاحظاتك وشاركها بنفسك.",
+     "seed": 1132872584,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 11.35,
+     "characters": 114,
+     "letters": 86,
+     "chars_per_s": 10.0,
+     "longest_silence_s": 0.2,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 11.38,
+   "speech_seconds": 11.35,
+   "chars_per_s": 10.0,
+   "checks": {
+    "duration": 11.38,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "واكتب ملاحظة إن أردت"
-    ],
-    [
-     "ar",
-     "لا يرسل أي شيء من هذا الجهاز"
-    ],
-    [
-     "ar",
-     "انسخ ملاحظاتك وشاركها بنفسك"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/apps_intro.mp3": {
-   "plan": [
-    [
-     "ar",
-     "تطبيقات ومواقع مجانية ودون إعلانات"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "تطبيقات ومواقع مجّانيّة ودون إعلانات، اخترناها لتعلّم القراءة المبكّرة. استخدمها مع طفلك بعد جلسة اليوم، لا بدلا منها.",
+     "seed": 2029420126,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 11.37,
+     "characters": 118,
+     "letters": 93,
+     "chars_per_s": 10.4,
+     "longest_silence_s": 0.12,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 11.41,
+   "speech_seconds": 11.37,
+   "chars_per_s": 10.4,
+   "checks": {
+    "duration": 11.41,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "اخترناها لتعلم القراءة المبكرة"
-    ],
-    [
-     "ar",
-     "استخدمها مع طفلك بعد جلسة اليوم"
-    ],
-    [
-     "ar",
-     "لا بدلا منها"
-    ]
-   ]
-  },
-  "ar/about_purpose.mp3": {
-   "plan": [
-    [
-     "ar",
-     "خمس دقائق معا"
-    ],
-    [
-     "ar",
-     "نموذج أولي أعدته مجموعة من طلبة مقرر تقنيات تعليم القراءة والكتابة المبكرة باللغة الإنجليزية"
-    ],
-    [
-     "ar",
-     "في كلية التربية بالرستاق"
-    ],
-    [
-     "ar",
-     "جامعة التقنية والعلوم التطبيقية"
-    ],
-    [
-     "ar",
-     "يساعد الأسر العمانية على دعم أطفال الصف الأول والثاني في تعلم أصوات الحروف الإنجليزية ودمجها"
-    ],
-    [
-     "ar",
-     "عبر روتين يومي مدته خمس دقائق"
-    ]
-   ]
-  },
-  "ar/about_privacy.mp3": {
-   "plan": [
-    [
-     "ar",
-     "لا تغادر أي بيانات هذا الجهاز"
-    ],
-    [
-     "ar",
-     "لا حسابات"
-    ],
-    [
-     "ar",
-     "ولا إعلانات"
-    ],
-    [
-     "ar",
-     "ولا محادثة"
-    ],
-    [
-     "ar",
-     "ولا تتبع"
-    ],
-    [
-     "ar",
-     "التقدم محفوظ في هذا الجهاز فقط"
-    ],
-    [
-     "ar",
-     "ويمكن مسحه من الإعدادات"
-    ]
-   ]
-  },
-  "ar/about_ai.mp3": {
-   "plan": [
-    [
-     "ar",
-     "بني هذا التطبيق بمساعدة الذكاء الاصطناعي"
-    ],
-    [
-     "ar",
-     "كلود كود"
-    ],
-    [
-     "ar",
-     "تحت إشراف المجموعة وتوجيهها"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/app_khankids_why.mp3": {
-   "plan": [
-    [
-     "ar",
-     "تطبيق مجاني تماما ودون إعلانات"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "تطبيق مجاني تماما ودون إعلانات، فيه ألعاب وقصص قصيرة للقراءة والحروف للأطفال من عمر سنتين إلى ثماني سنوات.. يتدرّج مع طفلك خطوة بخطوة، ويمكن استخدامه في البيت أو في المدرسة.",
+     "seed": 1262713753,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 18.94,
+     "characters": 173,
+     "letters": 138,
+     "chars_per_s": 9.1,
+     "longest_silence_s": 0.3,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 18.97,
+   "speech_seconds": 18.94,
+   "chars_per_s": 9.1,
+   "checks": {
+    "duration": 18.97,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "فيه ألعاب وقصص قصيرة للقراءة والحروف للأطفال من عمر سنتين إلى ثماني سنوات"
-    ],
-    [
-     "ar",
-     "يتدرج مع طفلك خطوة بخطوة"
-    ],
-    [
-     "ar",
-     "ويمكن استخدامه في البيت أو في المدرسة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/app_khankids_ask.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اسأل طفلك بعد اللعب"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اسأل طفلك بعد اللعب: ما الحرف الذي تعلّمته اليوم؟ وما صوته؟",
+     "seed": 933005420,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.23,
+     "characters": 59,
+     "letters": 45,
+     "chars_per_s": 11.3,
+     "longest_silence_s": 0.11,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.27,
+   "speech_seconds": 5.23,
+   "chars_per_s": 11.3,
+   "checks": {
+    "duration": 5.27,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ما الحرف الذي تعلمته اليوم"
-    ],
-    [
-     "ar",
-     "وما صوته"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/app_duoabc_why.mp3": {
-   "plan": [
-    [
-     "ar",
-     "مجاني بالكامل ودون إعلانات"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "مجاني بالكامل ودون إعلانات، يعلّم أصوات الحروف والقراءة بدروس قصيرة تشبه اللعب.. فيه قصص مضحكة وتمارين لكتابة الحروف الصغيرة والكبيرة.",
+     "seed": 2041143716,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 15.98,
+     "characters": 134,
+     "letters": 110,
+     "chars_per_s": 8.4,
+     "longest_silence_s": 0.62,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 16.01,
+   "speech_seconds": 15.98,
+   "chars_per_s": 8.4,
+   "checks": {
+    "duration": 16.01,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "يعلم أصوات الحروف والقراءة بدروس قصيرة تشبه اللعب"
-    ],
-    [
-     "ar",
-     "فيه قصص مضحكة وتمارين لكتابة الحروف الصغيرة والكبيرة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/app_duoabc_ask.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اطلب من طفلك أن يقرأ لك كلمة من القصة"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اطلب من طفلك أن يقرأ لك كلمة من القصة، ثم صفّقا مع كل صوت فيها.",
+     "seed": 23809614,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 6.57,
+     "characters": 63,
+     "letters": 46,
+     "chars_per_s": 9.6,
+     "longest_silence_s": 0.12,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 6.61,
+   "speech_seconds": 6.57,
+   "chars_per_s": 9.6,
+   "checks": {
+    "duration": 6.61,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ثم صفقا مع كل صوت فيها"
-    ]
-   ]
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/app_readalong_why.mp3": {
-   "plan": [
-    [
-     "ar",
-     "مجاني ودون إعلانات"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "مجاني ودون إعلانات، ويعمل دون إنترنت بعد تحميله، ويدعم أكثر من مستخدم على هاتف واحد.. فيه مساعدة قراءة تستمع إلى طفلك وهو يقرأ بصوت عال، وتساعده في الكلمات الصعبة.",
+     "seed": 1841788838,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 18.13,
+     "characters": 163,
+     "letters": 129,
+     "chars_per_s": 9.0,
+     "longest_silence_s": 0.29,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 18.16,
+   "speech_seconds": 18.13,
+   "chars_per_s": 9.0,
+   "checks": {
+    "duration": 18.16,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ويعمل دون إنترنت بعد تحميله"
-    ],
-    [
-     "ar",
-     "ويدعم أكثر من مستخدم على هاتف واحد"
-    ],
-    [
-     "ar",
-     "فيه مساعدة قراءة تستمع إلى طفلك وهو يقرأ بصوت عال"
-    ],
-    [
-     "ar",
-     "وتساعده في الكلمات الصعبة"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
   },
   "ar/app_readalong_ask.mp3": {
-   "plan": [
-    [
-     "ar",
-     "اسأل طفلك"
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "اسأل طفلك: ما الكلمة التي كانت صعبة؟ لنقرأها معا ببطء.",
+     "seed": 26525198,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 5.28,
+     "characters": 54,
+     "letters": 42,
+     "chars_per_s": 10.2,
+     "longest_silence_s": 0.2,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 5.31,
+   "speech_seconds": 5.28,
+   "chars_per_s": 10.2,
+   "checks": {
+    "duration": 5.31,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "ما الكلمة التي كانت صعبة"
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
+  },
+  "ar/teacher_guide.mp3": {
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "دليل المعلّم في دقيقة. أوّلا: عرّف أولياء الأمور بالتّطبيق في اجتماع أو عبر واتساب: خمس دقائق في اليوم، لمدّة خمسة أيّام. ثانيا: طمئنهم: لا يحتاجون إلى معرفة الإنجليزيّة، فالتّطبيق ينطق الأصوات، وهم يشجّعون ويسألون. ثالثا: وزّع النّشرة الّتي فيها الرّمز، أو أرسل رسالة واتساب الجاهزة. رابعا: للأسر الّتي لا تملك جهازا، اطبع بطاقات الأيّام الخمسة. خامسا: بعد أسبوع، اسأل الأطفال في الصّفّ عن الأصوات السّتّة، واستمع إلى ملاحظات الأسر.",
+     "seed": 641621014,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 37.43,
+     "characters": 433,
+     "letters": 326,
+     "chars_per_s": 11.6,
+     "longest_silence_s": 0.25,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 37.46,
+   "speech_seconds": 37.43,
+   "chars_per_s": 11.6,
+   "checks": {
+    "duration": 37.46,
+    "range": [
+     0.8,
+     75.0
     ],
-    [
-     "ar",
-     "لنقرأها معا ببطء"
-    ]
-   ]
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
+  },
+  "ar/about_purpose.mp3": {
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "خمس دقائق معا: نموذج أوّليّ أعدّته مجموعة من طلبة مقرّر تقنيّات تعليم القراءة والكتابة المبكّرة باللّغة الإنجليزيّة، في كلّيّة التّربية بالرّستاق، جامعة التّقنية والعلوم التّطبيقيّة. يساعد الأسر العمانيّة على دعم أطفال الصّفّ الأوّل والثّاني في تعلّم أصوات الحروف الإنجليزيّة ودمجها، عبر روتين يوميّ مدّته خمس دقائق.",
+     "seed": 986241379,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 26.93,
+     "characters": 316,
+     "letters": 241,
+     "chars_per_s": 11.7,
+     "longest_silence_s": 0.21,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 26.98,
+   "speech_seconds": 26.93,
+   "chars_per_s": 11.7,
+   "checks": {
+    "duration": 26.98,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
+  },
+  "ar/teacher_edit.mp3": {
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "يمكن تغيير الحروف والكلمات في ملفّ المحتوى. الكلمات المكوّنة من الأصوات السّتّة تعمل مباشرة، لأنّ التّطبيق يجمع أصوات الحروف بنفسه. الحروف الجديدة تحتاج إلى ملفّات صوت جديدة.",
+     "seed": 755809337,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 18.48,
+     "characters": 174,
+     "letters": 137,
+     "chars_per_s": 9.4,
+     "longest_silence_s": 0.25,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 18.51,
+   "speech_seconds": 18.48,
+   "chars_per_s": 9.4,
+   "checks": {
+    "duration": 18.51,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
+  },
+  "ar/about_privacy.mp3": {
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "لا تغادر أيّ بيانات هذا الجهاز. لا حسابات، ولا إعلانات، ولا محادثة، ولا تتبّع. التّقدّم محفوظ في هذا الجهاز فقط، ويمكن مسحه من الإعدادات.",
+     "seed": 13350011,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 14.14,
+     "characters": 137,
+     "letters": 103,
+     "chars_per_s": 9.7,
+     "longest_silence_s": 0.3,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 14.18,
+   "speech_seconds": 14.14,
+   "chars_per_s": 9.7,
+   "checks": {
+    "duration": 14.18,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.4,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
+  },
+  "ar/about_ai.mp3": {
+   "source": "ElevenLabs",
+   "voice": "Five Minutes Together – Omani teacher (Arabic)",
+   "voice_id": "kSsnyUBsiuYL1XzsZVus",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true,
+    "speed": 0.9
+   },
+   "segments": [
+    {
+     "text": "بني هذا التّطبيق بمساعدة الذّكاء الاصطناعيّ، كلود كود، تحت إشراف المجموعة وتوجيهها.",
+     "seed": 138122436,
+     "retake": 0,
+     "context": false,
+     "credits": 0,
+     "cached": true,
+     "seconds": 7.9,
+     "characters": 83,
+     "letters": 66,
+     "chars_per_s": 10.5,
+     "longest_silence_s": 0.26,
+     "rate_ok": true,
+     "silence_ok": true
+    }
+   ],
+   "inserts": [],
+   "seconds": 7.93,
+   "speech_seconds": 7.9,
+   "chars_per_s": 10.5,
+   "checks": {
+    "duration": 7.93,
+    "range": [
+     0.8,
+     75.0
+    ],
+    "active_rms_db": -20.5,
+    "clipped_samples": 0,
+    "pass": true
+   },
+   "pass": true
+  },
+  "en/ph-s.mp3": {
+   "source": "ElevenLabs (the team's recordings were not good enough; changed at the user's request)",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "text_sent": "Sssssun.",
+   "kind": "prompt",
+   "method": "frication → lengthened to 0.72 s (noise grains)",
+   "natural_part_s": 0.56,
+   "processing": "trim, steady middle <= 0.85 s, normalise, fades 35/100 ms, MP3 24 kHz 64 kbps",
+   "measures": {
+    "duration": 0.72,
+    "rms_db": -20.482,
+    "peak_db": -7.062,
+    "clipped_samples": 0,
+    "voiced_fraction": 0.0,
+    "longest_voiced_ms": 0,
+    "centroid_hz": 6582.361,
+    "low_ratio_0_500": 0.001,
+    "high_ratio_3k_plus": 0.979
+   },
+   "check_phoneme": "pass (after MP3)"
+  },
+  "en/ph-a.mp3": {
+   "source": "ElevenLabs (the team's recordings were not good enough; changed at the user's request)",
+   "voice": "Alice",
+   "voice_id": "Xb7hH8MSUJpSbSDYk0k2",
+   "model": "eleven_multilingual_v2",
+   "text_sent": "Haaaaand.",
+   "kind": "prompt",
+   "method": "whole drawn-out vowel",
+   "natural_part_s": 0.65,
+   "processing": "trim, steady middle <= 0.85 s, normalise, fades 35/100 ms, MP3 24 kHz 64 kbps",
+   "measures": {
+    "duration": 0.65,
+    "rms_db": -21.194,
+    "peak_db": -6.799,
+    "clipped_samples": 0,
+    "voiced_fraction": 1.0,
+    "longest_voiced_ms": 620,
+    "centroid_hz": 1733.123,
+    "low_ratio_0_500": 0.019,
+    "high_ratio_3k_plus": 0.123,
+    "F1": 1066.406,
+    "F2": 1740.234,
+    "F1_start": 1089.844,
+    "F1_end": 1013.672,
+    "F2_start": 1746.094,
+    "F2_end": 1845.703,
+    "frames": 57
+   },
+   "check_phoneme": "pass (after MP3)"
+  },
+  "en/ph-t.mp3": {
+   "source": "ElevenLabs (the team's recordings were not good enough; changed at the user's request)",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "text_sent": "Too. (speed 0.7)",
+   "kind": "prompt",
+   "method": "burst + aspiration → aspiration lengthened to 0.15 s (natural part 0.078 s)",
+   "natural_part_s": 0.078,
+   "processing": "trim, <= 0.30 s, normalise, fades 2/12 ms, 0.1 s lead silence, MP3 24 kHz 64 kbps",
+   "measures": {
+    "duration": 0.155,
+    "rms_db": -21.238,
+    "peak_db": -3.247,
+    "clipped_samples": 0,
+    "voiced_fraction": 0.0,
+    "longest_voiced_ms": 0,
+    "centroid_hz": 5126.087,
+    "low_ratio_0_500": 0.012,
+    "high_ratio_3k_plus": 0.829
+   },
+   "check_phoneme": "pass (after MP3)"
+  },
+  "en/ph-p.mp3": {
+   "source": "ElevenLabs (the team's recordings were not good enough; changed at the user's request)",
+   "voice": "George",
+   "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+   "model": "eleven_multilingual_v2",
+   "text_sent": "Pea. (speed 0.7)",
+   "kind": "prompt",
+   "method": "burst + aspiration → aspiration lengthened to 0.15 s (natural part 0.088 s)",
+   "natural_part_s": 0.088,
+   "processing": "trim, <= 0.30 s, normalise, fades 2/12 ms, 0.1 s lead silence, MP3 24 kHz 64 kbps",
+   "measures": {
+    "duration": 0.155,
+    "rms_db": -20.897,
+    "peak_db": -3.872,
+    "clipped_samples": 0,
+    "voiced_fraction": 0.0,
+    "longest_voiced_ms": 0,
+    "centroid_hz": 2206.7,
+    "low_ratio_0_500": 0.119,
+    "high_ratio_3k_plus": 0.192
+   },
+   "check_phoneme": "pass (after MP3)"
+  },
+  "en/ph-i.mp3": {
+   "source": "ElevenLabs (the team's recordings were not good enough; changed at the user's request)",
+   "voice": "Alice",
+   "voice_id": "Xb7hH8MSUJpSbSDYk0k2",
+   "model": "eleven_multilingual_v2",
+   "text_sent": "Hiiiiiss.",
+   "kind": "prompt",
+   "method": "steady vowel",
+   "natural_part_s": 0.65,
+   "processing": "trim, steady middle <= 0.85 s, normalise, fades 35/100 ms, MP3 24 kHz 64 kbps",
+   "measures": {
+    "duration": 0.65,
+    "rms_db": -21.176,
+    "peak_db": -10.248,
+    "clipped_samples": 0,
+    "voiced_fraction": 1.0,
+    "longest_voiced_ms": 620,
+    "centroid_hz": 1061.181,
+    "low_ratio_0_500": 0.62,
+    "high_ratio_3k_plus": 0.143,
+    "F1": 398.438,
+    "F2": 2715.82,
+    "F1_start": 401.367,
+    "F1_end": 369.141,
+    "F2_start": 2715.82,
+    "F2_end": 2680.664,
+    "frames": 60
+   },
+   "check_phoneme": "pass (after MP3)"
+  },
+  "en/ph-n.mp3": {
+   "source": "ElevenLabs (the team's recordings were not good enough; changed at the user's request)",
+   "voice": "Alice",
+   "voice_id": "Xb7hH8MSUJpSbSDYk0k2",
+   "model": "eleven_multilingual_v2",
+   "text_sent": "Nnnnnnnnnnn… (speed 0.7)",
+   "kind": "prompt",
+   "method": "murmur (start)",
+   "natural_part_s": 1.55,
+   "processing": "trim, steady middle <= 0.85 s, normalise, fades 35/100 ms, MP3 24 kHz 64 kbps",
+   "measures": {
+    "duration": 0.85,
+    "rms_db": -21.201,
+    "peak_db": -14.705,
+    "clipped_samples": 0,
+    "voiced_fraction": 1.0,
+    "longest_voiced_ms": 820,
+    "centroid_hz": 461.824,
+    "low_ratio_0_500": 0.899,
+    "high_ratio_3k_plus": 0.001,
+    "F1": 410.156,
+    "F2": 1863.281,
+    "F1_start": 410.156,
+    "F1_end": 416.016,
+    "F2_start": 1875.0,
+    "F2_end": 1839.844,
+    "frames": 81
+   },
+   "check_phoneme": "pass (after MP3)"
+  },
+  "en/b-at.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-sat.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-pat.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-tap.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-it.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-sit.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-sip.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-tip.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-pit.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-in.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-pin.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-tin.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-nap.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
+  },
+  "en/b-pan.mp3": {
+   "source": "joined from the recorded letter sounds, 0.4 s gaps"
   }
  },
- "words": {
-  "at": {
-   "method": "second of two",
-   "speed": 0.8,
-   "whisper": "at.",
-   "whisper_match": true,
-   "tried": 4
-  },
-  "sat": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.8,
-   "whisper": "to be sat.",
-   "whisper_match": true,
-   "tried": 3
-  },
-  "pat": {
-   "method": "second of two",
-   "speed": 0.85,
-   "whisper": "Pat.",
-   "whisper_match": true,
-   "tried": 3
-  },
-  "tap": {
-   "method": "second of two",
-   "speed": 0.9,
-   "whisper": "Tap.",
-   "whisper_match": true,
-   "tried": 2
-  },
-  "it": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "It.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "sit": {
-   "method": "second of two",
-   "speed": 0.85,
-   "whisper": "SIT.",
-   "whisper_match": true,
-   "tried": 3
-  },
-  "sip": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "and sepa.",
-   "whisper_match": false,
-   "tried": [
+ "words_failed": [
+  "pan"
+ ],
+ "arabic_failing_checks": [],
+ "arabic_retakes": {
+  "مثل كسرة قصيرة: إ، كما في": {
+   "clip": "tip_i",
+   "tries": [
     {
-     "how": "solo, start-up sound removed",
-     "speed": 0.9,
-     "onset_ok": true,
-     "whisper": "and sepa."
+     "retake": 0,
+     "seconds": 3.76,
+     "characters": 25,
+     "chars_per_s": 6.6,
+     "longest_silence_s": 0.41,
+     "rate_ok": false,
+     "silence_ok": true
     },
     {
-     "how": "solo, start-up sound removed",
-     "speed": 0.85,
-     "onset_ok": true,
-     "whisper": "Insep."
-    },
-    {
-     "how": "solo, start-up sound removed",
-     "speed": 0.8,
-     "onset_ok": true,
-     "whisper": "Insep."
+     "retake": 1,
+     "seconds": 2.66,
+     "characters": 25,
+     "chars_per_s": 9.4,
+     "longest_silence_s": 0.3,
+     "rate_ok": true,
+     "silence_ok": true
     }
-   ]
+   ],
+   "used_retake": 1
   },
-  "tip": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "sebe.",
-   "whisper_match": false,
-   "tried": [
+  "مراجعة: دع طفلك ينقر على الحروف السّتّة، ويقول صوت كلّ حرف. أنت تشجّع فقط.": {
+   "clip": "review_L3",
+   "tries": [
     {
-     "how": "solo, start-up sound removed",
-     "speed": 0.9,
-     "onset_ok": true,
-     "whisper": "sebe."
+     "retake": 0,
+     "seconds": 9.99,
+     "characters": 74,
+     "chars_per_s": 7.4,
+     "longest_silence_s": 0.38,
+     "rate_ok": false,
+     "silence_ok": true
     },
     {
-     "how": "solo, start-up sound removed",
-     "speed": 0.85,
-     "onset_ok": false,
-     "whisper": "Thank you!"
-    },
-    {
-     "how": "solo, start-up sound removed",
-     "speed": 0.8,
-     "onset_ok": false,
-     "whisper": "in sepe."
+     "retake": 1,
+     "seconds": 8.98,
+     "characters": 74,
+     "chars_per_s": 8.2,
+     "longest_silence_s": 0.63,
+     "rate_ok": true,
+     "silence_ok": true
     }
-   ]
+   ],
+   "used_retake": 1
   },
-  "pit": {
-   "method": "second of two",
-   "speed": 0.9,
-   "whisper": "pit.",
-   "whisper_match": true,
-   "tried": 2
-  },
-  "in": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "in.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "pin": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "pin.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "tin": {
-   "method": "second of two",
-   "speed": 0.9,
-   "whisper": "10.",
-   "whisper_match": true,
-   "tried": 2
-  },
-  "nap": {
-   "method": "second of two",
-   "speed": 0.9,
-   "whisper": "NAP",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "pan": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "Pan.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "sun": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "A son.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "sand": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "the sand.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "ant": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "and...",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "apple": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "Apple.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "tent": {
-   "method": "second of two",
-   "speed": 0.9,
-   "whisper": "TENT",
-   "whisper_match": true,
-   "tried": 2
-  },
-  "tomato": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "tomato.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "palm": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "POM.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "pen": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "pen.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "insect": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "Insect.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "ink": {
-   "method": "solo, start-up sound removed",
-   "speed": 0.9,
-   "whisper": "ink.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "net": {
-   "method": "second of two",
-   "speed": 0.85,
-   "whisper": "net.",
-   "whisper_match": true,
-   "tried": 1
-  },
-  "nest": {
-   "method": "plain (no clean-onset candidate)",
-   "whisper_match": false,
-   "tried": []
-  },
-  "cat": {
-   "method": "plain (no clean-onset candidate)",
-   "whisper_match": false,
-   "tried": [
+  "وضعا أيديكما أمام الفم لتشعرا بهواء": {
+   "clip": "home2",
+   "tries": [
     {
-     "how": "solo, start-up sound removed",
-     "speed": 0.9,
-     "onset_ok": false,
-     "whisper": "A cat."
+     "retake": 0,
+     "seconds": 4.83,
+     "characters": 35,
+     "chars_per_s": 7.2,
+     "longest_silence_s": 0.11,
+     "rate_ok": false,
+     "silence_ok": true
     },
     {
-     "how": "solo, start-up sound removed",
-     "speed": 0.85,
-     "onset_ok": false,
-     "whisper": "A cat."
-    },
-    {
-     "how": "solo, start-up sound removed",
-     "speed": 0.8,
-     "onset_ok": false,
-     "whisper": "and cat."
+     "retake": 1,
+     "seconds": 4.07,
+     "characters": 35,
+     "chars_per_s": 8.6,
+     "longest_silence_s": 0.2,
+     "rate_ok": true,
+     "silence_ok": true
     }
-   ]
+   ],
+   "used_retake": 1
   }
  }
 }
