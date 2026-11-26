@@ -1,0 +1,9 @@
+{
+ "pan": {
+  "extra_retakes": 5,
+  "respell": {"text": "Pan!", "tries": 3},
+  "approvals": "2026-11-26, by the user: 2 tries beyond the brief's two retakes, then 3 more, then 3 tries with the text \"Pan!\" (brief §4.3: at most two retakes per item unless the user approves more)",
+  "chosen": {"retake": 3, "onset_from": 2},
+  "why": "Chosen by the team by ear on 2026-11-26 from six candidates on a local listening page: the vowel and /n/ of try 3 (heard as \"pan\") after the natural /p/ burst and aspiration of try 2 (same voice and text), from the processed tries. Whisper \"small\" heard most tries and candidates with a clearly aspirated /p/ as \"pun\" or \"pum\" (all three \"Pan!\" tries in 15 of 15 runs), and its answer for such clips changes with small differences and from run to run (this one: \"pan\" in 10 of 10 runs while choosing), so the choice was left to the ear."
+ }
+}

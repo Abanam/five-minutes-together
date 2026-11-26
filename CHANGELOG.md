@@ -10,7 +10,7 @@ Feedback from reviewers (the in-app checklist) should be added under a new "Unre
 
 ### What changed
 - **New voices (ElevenLabs, Multilingual v2, generated once at build time; the app still makes no network requests):**
-  - English words and Sanad's phrases: the default British voice "George", chosen by the team after a Whisper check of the five words v1.0 got wrong.
+  - English words and Sanad's phrases: the default British voice "George", chosen by the team after a Whisper check of the five words v1.0 got wrong. "pan" joins the natural /p/ (burst and aspiration) of one try to the vowel and /n/ of another try of the same word, chosen by the team by ear: the tries heard as "pan" had almost no aspiration, and Whisper heard most versions with a clear /p/ as "pun".
   - Arabic instructions: a voice made with ElevenLabs Voice Design ("a warm Omani teacher reading simple Modern Standard Arabic"), one request per text segment with the neighbouring text as context; English sounds and words are still spliced in, so the Arabic voice never says a letter name.
   - Letter sounds: cut to the pure sound from ElevenLabs prompts (Alice for /æ/ /ɪ/ /n/, George for /s/ /t/ /p/) and checked with the unchanged acoustic rules; the vowels and /n/ are natural drawn-out sounds (no looping). The team's own recordings were tried first and were not good enough.
 - **A local studio page** (`tools/studio/`, never published) to choose the voices and letter sounds by ear and to record takes.
@@ -28,13 +28,13 @@ Feedback from reviewers (the in-app checklist) should be added under a new "Unre
 | English words Whisper heard as intended | 22/27 | 27/27 |
 | Letter sounds passing the acoustic checks / letter-name controls rejected | 6/6 / 6/6 | 6/6 / 6/6 |
 | /t/ and /p/ (trimmed length) | 0.09 s / 0.12 s | 0.15 s / 0.15 s (natural burst 0.078 / 0.088 s, aspiration continued) |
-| Arabic Whisper similarity, mean / median (n = 107) | 0.856 / 0.878 | 0.948 / 0.979 |
+| Arabic Whisper similarity, mean / median (n = 107) | 0.856 / 0.878 | 0.949 / 0.979 |
 | Arabic clips below 0.80 | 22 | 2 |
-| Arabic similarity with difflib's autojunk off (supplementary), mean / min | 0.859 / 0.375 | 0.957 / 0.531 |
+| Arabic similarity with difflib's autojunk off (supplementary), mean / min | 0.859 / 0.375 | 0.958 / 0.750 |
 | Total Arabic duration | 1,248 s | 896 s |
 | Total audio / offline cache | 5.86 MB / 6.60 MB | 5.72 MB / 6.46 MB |
 
-Not met: the lowest official v1.1 Arabic score is 0.050 (`about_purpose`), a scoring artefact – Whisper's transcript matches the text (0.975 with autojunk off); `ask_d4_in` scores 0.531 because Whisper writes the held English sounds as Arabic letters. "pan" is heard as "pan" but its /p/ has almost no aspiration, so it fails the onset check. Details: `deliverables/audio-comparison-v1.0-v1.1.md` (local).
+Not met: the lowest official v1.1 Arabic score is 0.050 (`about_purpose`), a scoring artefact – Whisper's transcript matches the text (0.975 with autojunk off); `ask_d4_in` scores 0.750 because Whisper writes the held English sounds as Arabic letters. Note on "pan": Whisper heard most versions with a clear /p/ as "pun", so the team chose the clip by ear; Whisper heard it as "pan" in the official run, but its answer for this word changes from run to run. Details: `deliverables/audio-comparison-v1.0-v1.1.md` (local).
 
 ## [1.0] – 2026-11-25
 

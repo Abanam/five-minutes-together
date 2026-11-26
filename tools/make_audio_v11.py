@@ -144,62 +144,118 @@ def process_english(mp3: Path, word: str, out_name: str) -> tuple[Path, bool]:
     return out, bool(M.onset_ok(back, first) and verify_onset(back, first))
 
 
-def build_words(log: dict, retakes: bool = True, extra: dict | None = None) -> list[str]:
-    """extra = {word: n}: retakes beyond the brief's two, only where the user approved them (e.g. "pan": 2)."""
+WORD_PLAN = ROOT / "tools" / "word_choices.json"
+
+
+def word_plan() -> dict:
+    """What the team approved or chose for single words (tracked in git, so the build can be repeated exactly):
+    {word: {"extra_retakes": n, "respell": {"text": t, "tries": n}, "chosen": {"retake": r, "onset_from": d|null}, "why": …}}"""
+    return json.loads(WORD_PLAN.read_text(encoding="utf-8")) if WORD_PLAN.exists() else {}
+
+
+def build_words(log: dict, retakes: bool = True, extra: dict | None = None, respell: dict | None = None) -> list[str]:
+    """extra = {word: n}: retakes beyond the brief's two, only where the user approved them (e.g. "pan": 5).
+    respell = {word: (text, n)}: n more tries with another text (brief §4.4: "respell it"), approved by the user.
+    Both are also read from tools/word_choices.json, together with the try the team chose by ear ("chosen"): that try is
+    used even where the automatic checks disagree, and the checks are still run and logged."""
     import eleven
     c = load_content()
     v = voices()["english"]
     words = list(c["words"]) + list(c["keywords"]) + ["cat"]
+    plan_all = word_plan()
     failed = []
     for w in words:
+        wp = plan_all.get(w, {})
+        n_plain = (3 + (extra or {}).get(w, wp.get("extra_retakes", 0))) if retakes else 1
+        todo = [(f"{w}.", r) for r in range(n_plain)]
+        rs = (respell or {}).get(w) or ((wp["respell"]["text"], wp["respell"]["tries"]) if wp.get("respell") else None)
+        if retakes and rs:
+            todo += [(rs[0], n_plain + j) for j in range(rs[1])]
+        pick = wp.get("chosen")
+        if pick:   # the team chose by ear among tries already made: only cached tries are listed again (no credits)
+            def made(p: tuple[str, int]) -> bool:
+                key = eleven.tts_key(p[0], v["voice_id"], seed_for(f"w-{w}", p[1]))
+                return (eleven.CACHE / "tts" / (key + ".mp3")).exists()
+            todo = [p for p in todo if made(p)]
         tries, chosen = [], None
-        for r in range((3 + (extra or {}).get(w, 0)) if retakes else 1):
+        src_of = lambda t: eleven.tts(f"w-{w}", t["text"], v["voice_id"], t["seed"])[0]   # noqa: E731  (cached: no cost)
+        for text, r in todo:
             if r and eleven.credits_left() < RETAKE_FLOOR:
                 print(f"  w-{w}: no retake, fewer than {RETAKE_FLOOR} credits left")
                 break
-            src, cached, used = eleven.tts(f"w-{w}", f"{w}.", v["voice_id"], seed_for(f"w-{w}", r))
+            src, cached, used = eleven.tts(f"w-{w}", text, v["voice_id"], seed_for(f"w-{w}", r))
             mp3, onset = process_english(src, w, f"w-{w}-r{r}")
             heard = whisper(mp3, "en", ENGLISH_PROMPT)
             ok, exact = whisper_word_ok(heard, w)
-            tries.append({"retake": r, "seed": seed_for(f"w-{w}", r), "onset_ok": onset, "whisper": heard, "match": ok,
-                          "exact": exact, "credits": used, "cached": cached})
-            if onset and ok:
+            tries.append({"retake": r, "text": text, "seed": seed_for(f"w-{w}", r), "onset_ok": onset, "whisper": heard,
+                          "match": ok, "exact": exact, "credits": used, "cached": cached})
+            if onset and ok and not pick:
                 chosen = r
                 break
         passed = chosen is not None
-        stripped = None
-        if not passed:   # a try that Whisper heard right but whose onset failed: cut the voiced lead (free), re-check
+        stripped, how, by_ear = None, "natural", None
+        if pick:   # the team's choice by ear; the unchanged checks are run on it and logged
+            base = next(t for t in tries if t["retake"] == pick["retake"])
+            if pick.get("onset_from") is not None:   # from the processed tries, exactly as on the listening page
+                donor = next(t for t in tries if t["retake"] == pick["onset_from"])
+                path, onset = transplant_stop(WORK / "en" / f"w-{w}-r{donor['retake']}.mp3", WORK / "en" / f"w-{w}-r{base['retake']}.mp3",
+                                              w, f"w-{w}-r{base['retake']}-onset-r{donor['retake']}-chosen")
+                how = f"onset from try {donor['retake']}"
+                heard = whisper(path, "en", ENGLISH_PROMPT)
+                ok = whisper_word_ok(heard, w)[0]
+                stripped = path
+            else:
+                onset, heard, ok = base["onset_ok"], base["whisper"], base["match"]
+            chosen, passed = base["retake"], bool(onset and ok)
+            by_ear = {"why": wp.get("why"), "onset_ok": bool(onset), "whisper": heard, "match": ok}
+        if not passed and not pick:   # a try that Whisper heard right but whose onset failed: cut the voiced lead (free)
             for t in tries:
                 if t["match"] and not t["onset_ok"]:
-                    src, _, _ = eleven.tts(f"w-{w}", f"{w}.", v["voice_id"], t["seed"])   # cached: no cost
+                    src = src_of(t)
                     res = strip_try(src, w, f"w-{w}-r{t['retake']}-stripped")
                     if res and res[1]:
                         heard = whisper(res[0], "en", ENGLISH_PROMPT)
                         ok, exact = whisper_word_ok(heard, w)
                         t["onset_stripped"] = {"onset_ok": True, "whisper": heard, "match": ok}
                         if ok:
-                            stripped, chosen, passed = res[0], t["retake"], True
+                            stripped, chosen, passed, how = res[0], t["retake"], True, "voiced lead cut"
                             break
-        if not passed and first_sound(w) in STOPS:
+        if not passed and not pick and first_sound(w) in STOPS:
             # Whisper heard a try right but its stop had almost no aspiration (voicing ~10 ms after the burst, which
             # sounds like /b/ to Arabic speakers): put the natural burst + aspiration of a try whose onset passed in front
             # of the right try's voiced part (same voice, same text, no extra credits), then check both again
             base = next((t for t in tries if t["match"]), None)
             donor = next((t for t in tries if t["onset_ok"]), None)
             if base and donor:
-                res = splice_stop(eleven.tts(f"w-{w}", f"{w}.", v["voice_id"], donor["seed"])[0],
-                                  eleven.tts(f"w-{w}", f"{w}.", v["voice_id"], base["seed"])[0], w, f"w-{w}-spliced")
+                res = splice_stop(src_of(donor), src_of(base), w, f"w-{w}-spliced")
                 if res and res[1]:
                     heard = whisper(res[0], "en", ENGLISH_PROMPT)
                     ok, exact = whisper_word_ok(heard, w)
                     base["spliced_onset_from_retake"] = {"donor": donor["retake"], "onset_ok": True, "whisper": heard, "match": ok}
                     if ok:
-                        stripped, chosen, passed = res[0], base["retake"], True
+                        stripped, chosen, passed, how = res[0], base["retake"], True, f"aspiration from try {donor['retake']}"
+        if not passed and not pick and first_sound(w) in STOPS:
+            # still not: the whole natural onset (burst + aspiration up to the voicing) of each try whose onset passed, in
+            # front of the voiced part of each try Whisper heard right; pairs in try order, the first that passes both
+            # unchanged checks is used (same voice, same text, cached tries: no extra credits)
+            for base in [t for t in tries if t["match"]]:
+                for donor in [t for t in tries if t["onset_ok"]]:
+                    res = transplant_stop(src_of(donor), src_of(base), w, f"w-{w}-r{base['retake']}-onset-r{donor['retake']}")
+                    tr = {"donor": donor["retake"], "onset_ok": bool(res and res[1])}
+                    if res and res[1]:
+                        heard = whisper(res[0], "en", ENGLISH_PROMPT)
+                        tr["whisper"], tr["match"] = heard, whisper_word_ok(heard, w)[0]
+                    base.setdefault("onset_transplants", []).append(tr)
+                    if tr.get("match"):
+                        stripped, chosen, passed, how = res[0], base["retake"], True, f"onset from try {donor['retake']}"
+                        break
+                if passed:
+                    break
         if not passed:
             failed.append(w)
             chosen = next((t["retake"] for t in tries if t["match"]), next((t["retake"] for t in tries if t["onset_ok"]), 0))
         rec = ROOT / "recordings" / "chosen" / f"w-{w}.wav"
-        if not passed and rec.exists():   # a word that failed twice and was recorded in the studio page
+        if not passed and not pick and rec.exists():   # a word that failed twice and was recorded in the studio page
             y, _ = sf.read(rec, dtype="float32")
             M.to_mp3(M.normalise(M.fade(trim(y, SR, top_db=45, pad_ms=12), 6, 30)), AUD / "en" / f"w-{w}.mp3", 64)
             log["clips"][f"en/w-{w}.mp3"] = {"source": "human recording (project team member)", "file": str(rec.relative_to(ROOT)),
@@ -208,12 +264,17 @@ def build_words(log: dict, retakes: bool = True, extra: dict | None = None) -> l
             continue
         (AUD / "en").mkdir(parents=True, exist_ok=True)
         (AUD / "en" / f"w-{w}.mp3").write_bytes((stripped or WORK / "en" / f"w-{w}-r{chosen}.mp3").read_bytes())
+        used_try = next(t for t in tries if t["retake"] == chosen)
         log["clips"][f"en/w-{w}.mp3"] = {"source": "ElevenLabs", "voice": v["name"], "voice_id": v["voice_id"],
-                                          "model": "eleven_multilingual_v2", "settings": v.get("settings"), "text": f"{w}.",
-                                          "retake_used": chosen, "onset_stripped": bool(stripped), "tries": tries, "passed": passed,
-                                          **({"extra_retakes_approved_by_user": (extra or {})[w]} if (extra or {}).get(w) else {})}
-        print(f"  w-{w:7} {'OK ' if passed else 'FAIL'} heard {tries[-1]['whisper']!r} (tries {len(tries)}"
-              f"{', voiced lead cut' if stripped else ''})")
+                                          "model": "eleven_multilingual_v2", "settings": v.get("settings"), "text": used_try["text"],
+                                          "retake_used": chosen, "onset_stripped": bool(stripped), "onset_method": how,
+                                          "tries": tries, "passed": passed,
+                                          **({"extra_retakes_approved_by_user": n_plain - 3} if n_plain > 3 else {}),
+                                          **({"respelled_tries_approved_by_user": {"text": rs[0], "tries": rs[1]}} if retakes and rs else {}),
+                                          **({"chosen_by_team_by_ear": by_ear} if by_ear else {})}
+        print(f"  w-{w:7} {'OK ' if passed else 'FAIL'} try {chosen} {used_try['text']!r} heard "
+              f"{(by_ear or {}).get('whisper', used_try['whisper'])!r} (tries {len(tries)}"
+              f"{'' if how == 'natural' else ', ' + how}{', chosen by ear' if by_ear else ''})")
     set_record_words(failed)
     return failed
 
@@ -243,6 +304,30 @@ def splice_stop(donor_src: Path, base_src: Path, word: str, out_name: str, vot: 
     xf = int(0.004 * SR)
     f = np.linspace(0, 1, xf)
     head = np.concatenate([burst, fill]) if n else burst
+    y = np.concatenate([head[:-xf], head[-xf:] * (1 - f) + rest[:xf] * f, rest[xf:]])
+    out = WORK / "en" / f"{out_name}.mp3"
+    M.to_mp3(M.normalise(M.fade(y, 3, 30)), out, 64)
+    back = trim(decode(out), SR)
+    first = first_sound(word)
+    return out, bool(M.onset_ok(back, first) and verify_onset(back, first))
+
+
+def transplant_stop(donor_src: Path, base_src: Path, word: str, out_name: str) -> tuple[Path, bool] | None:
+    """The donor try's own onset (silence pad, burst and aspiration up to its voicing onset) joined to the base try's
+    voiced part (from its voicing onset), with a 4 ms crossfade; then the unchanged onset checks."""
+    def voicing_onset(y: np.ndarray) -> int | None:
+        db, v, _, hop = frame_labels(y, SR, 10.0)
+        aud = next((i for i in range(len(db)) if db[i] > -35), 0)
+        on = next((i for i in range(aud, len(db)) if v[i] and db[i] > -30), None)
+        return None if on is None else max(0, on * hop - int(0.004 * SR))
+    donor = trim(decode(donor_src), SR, top_db=45, pad_ms=12)
+    base = trim(decode(base_src), SR, top_db=45, pad_ms=12)
+    d_on, b_on = voicing_onset(donor), voicing_onset(base)
+    xf = int(0.004 * SR)
+    if d_on is None or b_on is None or d_on < 2 * xf:
+        return None
+    head, rest = donor[:d_on + xf], base[b_on:]
+    f = np.linspace(0, 1, xf)
     y = np.concatenate([head[:-xf], head[-xf:] * (1 - f) + rest[:xf] * f, rest[xf:]])
     out = WORK / "en" / f"{out_name}.mp3"
     M.to_mp3(M.normalise(M.fade(y, 3, 30)), out, 64)
@@ -599,10 +684,13 @@ def main() -> None:
     ap.add_argument("--no-retakes", action="store_true")
     ap.add_argument("--calibrate", action="store_true")
     ap.add_argument("--extra-retakes", default="", help="word=n,… retakes beyond the brief's two, approved by the user")
+    ap.add_argument("--respell", default="", help="word=text:n,… n more tries with another text, approved by the user "
+                                                  "(both are normally read from tools/word_choices.json)")
     ap.add_argument("--fix-arabic", action="store_true", help="re-make Arabic segments that fail a §7.4 check (≤ 2 retakes)")
     ap.add_argument("--retake-segments", default="", help="file with Arabic segments to re-make (one per line), e.g. after Whisper")
     a = ap.parse_args()
     extra = {k: int(n) for k, n in (p.split("=") for p in a.extra_retakes.split(",") if p)}
+    respell = {k: (t.rsplit(":", 1)[0], int(t.rsplit(":", 1)[1])) for k, t in (p.split("=", 1) for p in a.respell.split(",") if p)}
     try:
         if a.calibrate:
             calibrate()
@@ -621,7 +709,7 @@ def main() -> None:
                 return
             if a.only in ("all", "en"):
                 print("English words:")
-                log["words_failed"] = build_words(log, retakes=not a.no_retakes, extra=extra)
+                log["words_failed"] = build_words(log, retakes=not a.no_retakes, extra=extra, respell=respell)
                 print("English phrases:")
                 build_phrases(log)
             if a.only in ("all", "ph"):

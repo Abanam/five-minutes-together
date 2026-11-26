@@ -16,9 +16,11 @@
    "text": "at.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "at.",
      "seed": 603322711,
      "onset_ok": true,
      "whisper": "at.",
@@ -45,9 +47,11 @@
    "text": "sat.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "sat.",
      "seed": 1316070102,
      "onset_ok": true,
      "whisper": "sat.",
@@ -74,9 +78,11 @@
    "text": "pat.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "pat.",
      "seed": 751602543,
      "onset_ok": true,
      "whisper": "Pat.",
@@ -103,9 +109,11 @@
    "text": "tap.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "tap.",
      "seed": 1210638778,
      "onset_ok": true,
      "whisper": "TAP",
@@ -132,9 +140,11 @@
    "text": "it.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "it.",
      "seed": 1504253287,
      "onset_ok": true,
      "whisper": "It.",
@@ -161,9 +171,11 @@
    "text": "sit.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "sit.",
      "seed": 1621148695,
      "onset_ok": true,
      "whisper": "Sit.",
@@ -190,9 +202,11 @@
    "text": "sip.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "sip.",
      "seed": 890976852,
      "onset_ok": true,
      "whisper": "sip.",
@@ -219,9 +233,11 @@
    "text": "tip.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "tip.",
      "seed": 1042798332,
      "onset_ok": true,
      "whisper": "tip.",
@@ -248,9 +264,11 @@
    "text": "pit.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "pit.",
      "seed": 2058243816,
      "onset_ok": true,
      "whisper": "pit.",
@@ -277,9 +295,11 @@
    "text": "in.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "in.",
      "seed": 689853012,
      "onset_ok": true,
      "whisper": "in.",
@@ -306,9 +326,11 @@
    "text": "pin.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "pin.",
      "seed": 483429493,
      "onset_ok": true,
      "whisper": "pin.",
@@ -335,9 +357,11 @@
    "text": "tin.",
    "retake_used": 1,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "tin.",
      "seed": 1972427435,
      "onset_ok": false,
      "whisper": "tin.",
@@ -348,6 +372,7 @@
     },
     {
      "retake": 1,
+     "text": "tin.",
      "seed": 1972435354,
      "onset_ok": true,
      "whisper": "tin.",
@@ -374,9 +399,11 @@
    "text": "nap.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "nap.",
      "seed": 2049228967,
      "onset_ok": true,
      "whisper": "NAP",
@@ -401,27 +428,24 @@
     "speed": 0.9
    },
    "text": "pan.",
-   "retake_used": 0,
-   "onset_stripped": false,
+   "retake_used": 3,
+   "onset_stripped": true,
+   "onset_method": "onset from try 2",
    "tries": [
     {
      "retake": 0,
+     "text": "pan.",
      "seed": 1719529736,
      "onset_ok": false,
      "whisper": "PAN.",
      "match": true,
      "exact": true,
      "credits": 0,
-     "cached": true,
-     "spliced_onset_from_retake": {
-      "donor": 1,
-      "onset_ok": true,
-      "whisper": "fun.",
-      "match": false
-     }
+     "cached": true
     },
     {
      "retake": 1,
+     "text": "pan.",
      "seed": 1719537655,
      "onset_ok": true,
      "whisper": "pun.",
@@ -432,6 +456,7 @@
     },
     {
      "retake": 2,
+     "text": "pan.",
      "seed": 1719545574,
      "onset_ok": true,
      "whisper": "PUM",
@@ -442,6 +467,7 @@
     },
     {
      "retake": 3,
+     "text": "pan.",
      "seed": 1719553493,
      "onset_ok": false,
      "whisper": "Pan.",
@@ -452,6 +478,7 @@
     },
     {
      "retake": 4,
+     "text": "pan.",
      "seed": 1719561412,
      "onset_ok": true,
      "whisper": "PUM.",
@@ -459,10 +486,86 @@
      "exact": false,
      "credits": 0,
      "cached": true
+    },
+    {
+     "retake": 5,
+     "text": "pan.",
+     "seed": 1719569331,
+     "onset_ok": true,
+     "whisper": "PUM.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 6,
+     "text": "pan.",
+     "seed": 1719577250,
+     "onset_ok": true,
+     "whisper": "PUN.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 7,
+     "text": "pan.",
+     "seed": 1719585169,
+     "onset_ok": true,
+     "whisper": "fun.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 8,
+     "text": "Pan!",
+     "seed": 1719593088,
+     "onset_ok": true,
+     "whisper": "PUN.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 9,
+     "text": "Pan!",
+     "seed": 1719601007,
+     "onset_ok": true,
+     "whisper": "pun.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
+    },
+    {
+     "retake": 10,
+     "text": "Pan!",
+     "seed": 1719608926,
+     "onset_ok": true,
+     "whisper": "pun.",
+     "match": false,
+     "exact": false,
+     "credits": 0,
+     "cached": true
     }
    ],
-   "passed": false,
-   "extra_retakes_approved_by_user": 2
+   "passed": true,
+   "extra_retakes_approved_by_user": 5,
+   "respelled_tries_approved_by_user": {
+    "text": "Pan!",
+    "tries": 3
+   },
+   "chosen_by_team_by_ear": {
+    "why": "Chosen by the team by ear on 2026-11-26 from six candidates on a local listening page: the vowel and /n/ of try 3 (heard as \"pan\") after the natural /p/ burst and aspiration of try 2 (same voice and text), from the processed tries. Whisper \"small\" heard most tries and candidates with a clearly aspirated /p/ as \"pun\" or \"pum\" (all three \"Pan!\" tries in 15 of 15 runs), and its answer for such clips changes with small differences and from run to run (this one: \"pan\" in 10 of 10 runs while choosing), so the choice was left to the ear.",
+    "onset_ok": true,
+    "whisper": "PAN.",
+    "match": true
+   }
   },
   "en/w-sun.mp3": {
    "source": "ElevenLabs",
@@ -479,9 +582,11 @@
    "text": "sun.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "sun.",
      "seed": 2053618775,
      "onset_ok": true,
      "whisper": "sun.",
@@ -508,9 +613,11 @@
    "text": "sand.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "sand.",
      "seed": 463024055,
      "onset_ok": true,
      "whisper": "sand.",
@@ -537,9 +644,11 @@
    "text": "ant.",
    "retake_used": 1,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "ant.",
      "seed": 272116298,
      "onset_ok": true,
      "whisper": "end.",
@@ -550,6 +659,7 @@
     },
     {
      "retake": 1,
+     "text": "ant.",
      "seed": 272124217,
      "onset_ok": true,
      "whisper": "and.",
@@ -576,9 +686,11 @@
    "text": "apple.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "apple.",
      "seed": 448885056,
      "onset_ok": true,
      "whisper": "Apple",
@@ -605,9 +717,11 @@
    "text": "tent.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "tent.",
      "seed": 53261284,
      "onset_ok": true,
      "whisper": "TENT",
@@ -634,9 +748,11 @@
    "text": "tomato.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "tomato.",
      "seed": 1142698430,
      "onset_ok": true,
      "whisper": "tomato.",
@@ -663,9 +779,11 @@
    "text": "palm.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "palm.",
      "seed": 550216303,
      "onset_ok": true,
      "whisper": "Palm.",
@@ -692,9 +810,11 @@
    "text": "pen.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "pen.",
      "seed": 1708948272,
      "onset_ok": true,
      "whisper": "pen.",
@@ -721,9 +841,11 @@
    "text": "insect.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "insect.",
      "seed": 44542603,
      "onset_ok": true,
      "whisper": "Insect",
@@ -750,9 +872,11 @@
    "text": "ink.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "ink.",
      "seed": 719211408,
      "onset_ok": true,
      "whisper": "ink.",
@@ -779,9 +903,11 @@
    "text": "net.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "net.",
      "seed": 1543813420,
      "onset_ok": true,
      "whisper": "net.",
@@ -808,9 +934,11 @@
    "text": "nest.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "nest.",
      "seed": 1066964366,
      "onset_ok": true,
      "whisper": "nest.",
@@ -837,9 +965,11 @@
    "text": "cat.",
    "retake_used": 0,
    "onset_stripped": false,
+   "onset_method": "natural",
    "tries": [
     {
      "retake": 0,
+     "text": "cat.",
      "seed": 1384046024,
      "onset_ok": true,
      "whisper": "cat.",
@@ -2030,11 +2160,11 @@
      "gap_after": 0.48
     }
    ],
-   "seconds": 6.53,
+   "seconds": 6.54,
    "speech_seconds": 3.96,
    "chars_per_s": 9.3,
    "checks": {
-    "duration": 6.53,
+    "duration": 6.54,
     "range": [
      0.8,
      75.0
@@ -3867,11 +3997,11 @@
      "gap_after": 0.48
     }
    ],
-   "seconds": 14.77,
+   "seconds": 14.8,
    "speech_seconds": 9.85,
    "chars_per_s": 8.9,
    "checks": {
-    "duration": 14.77,
+    "duration": 14.8,
     "range": [
      0.8,
      75.0
@@ -4094,16 +4224,16 @@
      "gap_after": 0.45
     }
    ],
-   "seconds": 11.54,
+   "seconds": 11.57,
    "speech_seconds": 6.6,
    "chars_per_s": 10.3,
    "checks": {
-    "duration": 11.54,
+    "duration": 11.57,
     "range": [
      0.8,
      75.0
     ],
-    "active_rms_db": -20.4,
+    "active_rms_db": -20.5,
     "clipped_samples": 0,
     "pass": true
    },
@@ -5158,16 +5288,16 @@
      "gap_after": 0.2
     }
    ],
-   "seconds": 2.27,
+   "seconds": 2.3,
    "speech_seconds": 1.56,
    "chars_per_s": 10.3,
    "checks": {
-    "duration": 2.268,
+    "duration": 2.298,
     "range": [
      0.8,
      75.0
     ],
-    "active_rms_db": -20.4,
+    "active_rms_db": -20.5,
     "clipped_samples": 0,
     "pass": true
    },
@@ -5209,11 +5339,11 @@
      "gap_after": 0.48
     }
    ],
-   "seconds": 2.38,
+   "seconds": 2.4,
    "speech_seconds": 1.81,
    "chars_per_s": 10.5,
    "checks": {
-    "duration": 2.38,
+    "duration": 2.4,
     "range": [
      0.8,
      75.0
@@ -7183,9 +7313,7 @@
    "source": "joined from the recorded letter sounds, 0.4 s gaps"
   }
  },
- "words_failed": [
-  "pan"
- ],
+ "words_failed": [],
  "arabic_failing_checks": [],
  "arabic_retakes": {
   "مثل كسرة قصيرة: إ، كما في": {

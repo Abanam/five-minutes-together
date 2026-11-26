@@ -277,15 +277,15 @@
    "pass": true
   },
   "ar/ask_d4_pan.mp3": {
-   "duration": 2.268,
+   "duration": 2.298,
    "range": [
     0.8,
     75.0
    ],
-   "active_rms_db": -20.4,
-   "peak_dbfs": -2.82,
+   "active_rms_db": -20.5,
+   "peak_dbfs": -3.34,
    "clipped_samples": 0,
-   "kbytes": 13.9,
+   "kbytes": 14.0,
    "pass": true
   },
   "ar/ask_d4_pin.mp3": {
@@ -325,13 +325,13 @@
    "pass": true
   },
   "ar/ask_d5_pan.mp3": {
-   "duration": 2.38,
+   "duration": 2.4,
    "range": [
     0.8,
     75.0
    ],
    "active_rms_db": -20.4,
-   "peak_dbfs": -2.89,
+   "peak_dbfs": -3.32,
    "clipped_samples": 0,
    "kbytes": 14.6,
    "pass": true
@@ -541,13 +541,13 @@
    "pass": true
   },
   "ar/d4_tip.mp3": {
-   "duration": 6.53,
+   "duration": 6.54,
    "range": [
     0.8,
     75.0
    ],
    "active_rms_db": -20.5,
-   "peak_dbfs": -2.81,
+   "peak_dbfs": -3.19,
    "clipped_samples": 0,
    "kbytes": 38.9,
    "pass": true
@@ -673,15 +673,15 @@
    "pass": true
   },
   "ar/home2.mp3": {
-   "duration": 14.77,
+   "duration": 14.8,
    "range": [
     0.8,
     75.0
    ],
    "active_rms_db": -20.5,
-   "peak_dbfs": -2.91,
+   "peak_dbfs": -3.33,
    "clipped_samples": 0,
-   "kbytes": 87.1,
+   "kbytes": 87.3,
    "pass": true
   },
   "ar/home3.mp3": {
@@ -697,15 +697,15 @@
    "pass": true
   },
   "ar/home4.mp3": {
-   "duration": 11.54,
+   "duration": 11.57,
    "range": [
     0.8,
     75.0
    ],
-   "active_rms_db": -20.4,
-   "peak_dbfs": -3.11,
+   "active_rms_db": -20.5,
+   "peak_dbfs": -3.09,
    "clipped_samples": 0,
-   "kbytes": 68.2,
+   "kbytes": 68.4,
    "pass": true
   },
   "ar/home5.mp3": {
@@ -1669,13 +1669,13 @@
    "pass": true
   },
   "en/w-pan.mp3": {
-   "duration": 0.424,
+   "duration": 0.432,
    "range": [
     0.25,
     1.6
    ],
-   "active_rms_db": -20.5,
-   "peak_dbfs": -2.78,
+   "active_rms_db": -20.4,
+   "peak_dbfs": -3.2,
    "clipped_samples": 0,
    "kbytes": 4.0,
    "pass": true
@@ -2384,8 +2384,8 @@
    "heard": "قلي الكلمة مثل الروبوت ثم قلها بسرعة"
   },
   "ask_d4_in": {
-   "similarity": 0.531,
-   "heard": "قل بن ببطء ييييييييييييييييييييييين.. أي أصوط يمكن يمده"
+   "similarity": 0.75,
+   "heard": "قل بيبط ايه ايه سوط يمكن مده"
   },
   "ask_d4_nap": {
    "similarity": 1.0,
@@ -2393,7 +2393,7 @@
   },
   "ask_d4_pan": {
    "similarity": 0.812,
-   "heard": "اينا نجي دوفن تفي بيتنا"
+   "heard": "اينا نجي دوفم تفي بيتنا"
   },
   "ask_d4_pin": {
    "similarity": 0.897,
@@ -2476,12 +2476,12 @@
    "heard": "صوت اليوم وهو غير موجود في العربية ضعيدك أمام فمك لتشعر بالهواء عندما تقوله"
   },
   "d3_tip": {
-   "similarity": 0.893,
-   "heard": "صوت اليوم إستمعة جيدا للفرق بين"
+   "similarity": 0.822,
+   "heard": "صوت اليوم ايض أستمع جيدا للفرق بين في وقت وفق ايض في سط"
   },
   "d4_tip": {
    "similarity": 0.889,
-   "heard": "صوت اليوم ويمكن مدى سنقرأ كلمات مثل"
+   "heard": "صوت اليوم و يمكن مدى سنقرأ كلمات مثل"
   },
   "d5_tip": {
    "similarity": 1.0,
@@ -2532,8 +2532,8 @@
    "heard": "لعبة يجلس وقف إذا قلتي يجلس طفلك وإذا قلتي يقف استمعا جيدا للفرق بين ثم بدلال أدوار"
   },
   "home4": {
-   "similarity": 0.953,
-   "heard": "ابحثاف البيت عن علبة ومقلا انقرا عليهم بالملعقة بالطفن مع كل صوت"
+   "similarity": 0.935,
+   "heard": "إبحثاف البيت عن علبة ومقلا انقرى عليهم بالملعقة بالطفن مع كل صوت"
   },
   "home5": {
    "similarity": 0.96,
@@ -2731,19 +2731,16 @@
  "summary": {
   "files_checked": 168,
   "files_pass": 168,
-  "total_kb": 5859.8,
+  "total_kb": 5860.3,
   "phonemes_pass": 6,
   "controls_rejected": 6,
   "whisper_en_match": "27/27",
-  "whisper_ar_mean_similarity": 0.948,
+  "whisper_ar_mean_similarity": 0.949,
   "whisper_ar_min_similarity": 0.05,
   "whisper_ar_below_0_6": [
-   "about_purpose",
-   "ask_d4_in"
+   "about_purpose"
   ],
-  "hard_failures": [
-   "w-pan: unclean onset (voiced frames before /p/: 2)"
-  ]
+  "hard_failures": []
  },
  "onsets": {
   "at": {
@@ -2799,8 +2796,8 @@
    "why": "nasal onset (not checked)"
   },
   "pan": {
-   "ok": false,
-   "why": "voiced frames before /p/: 2"
+   "ok": true,
+   "why": "voiced frames before /p/: 0"
   },
   "sun": {
    "ok": true,

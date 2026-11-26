@@ -65,6 +65,65 @@ def credits() -> dict:
             "left": int(s["character_limit"]) - int(s["character_count"]), "reset": eleven.reset_date()}
 
 
+def vot_ms(path: Path) -> int:
+    """Time from the first audible 5 ms frame to the voicing onset (the /p/ burst and aspiration), in ms."""
+    import make_audio_v11 as V
+    from audio_analysis import frame_labels, trim
+    y = trim(V.decode(path), V.SR)
+    db, v, _, hop = frame_labels(y, V.SR, 5.0)
+    aud = next(i for i in range(len(db)) if db[i] > -35)
+    on = next(i for i in range(aud, len(db)) if v[i] and db[i] > -30)
+    return round((on - aud) * hop / V.SR * 1000)
+
+
+def pan_note() -> str:
+    """How the "pan" clip was made, read from the build log (tries, approved extra tries, onset method)."""
+    c = LOG["clips"].get("en/w-pan.mp3", {})
+    tries = c.get("tries", [])
+    word = lambda t: re.sub(r"[^a-z]", "", t["whisper"].lower())  # noqa: E731
+    quoted = lambda xs: " / ".join(f"\"{h}\"" for h in sorted({word(x) for x in xs}))  # noqa: E731
+    take = lambda r: ROOT / "tools" / ".audio-cache" / "v11" / "en" / f"w-pan-r{r}.mp3"  # noqa: E731
+    plain = [t for t in tries if t.get("text", "pan.") == "pan."]
+    alt = [t for t in tries if t.get("text", "pan.") != "pan."]
+    right = [t for t in plain if t["match"]]
+    clear = [t for t in plain if t["onset_ok"]]
+    vots = sorted(vot_ms(take(t["retake"])) for t in right)
+    method = c.get("onset_method", "natural")
+    note = (f"- \"pan\": {len(plain)} ElevenLabs tries with the text \"pan.\" (the brief's two retakes plus "
+            f"{c.get('extra_retakes_approved_by_user', 0)} approved by the team). The {len(right)} tries heard as \"pan\" have "
+            f"almost no aspiration on /p/ (voicing starts {'–'.join(str(x) for x in dict.fromkeys(vots))} ms after the burst, "
+            f"measured in 5 ms frames), so they fail the unchanged onset check; the {len(clear)} with a clear /p/ were heard as "
+            f"{quoted(clear)}.")
+    if alt:
+        note += (f" {len(alt)} more tries with the respelling \"{alt[0]['text']}\" (approved by the team) all had a clear /p/ "
+                 f"({sum(t['onset_ok'] for t in alt)} of {len(alt)} pass the onset check) and were heard as {quoted(alt)}.")
+    ear = c.get("chosen_by_team_by_ear")
+    if ear and method.startswith("onset from try"):
+        donor = int(method.rsplit(" ", 1)[1])
+        official = B["whisper_en"].get("pan", {})
+        note += (f" The team then chose the clip by ear from six candidates on a local listening page (`tools/word_choices.json`): "
+                 f"the vowel and /n/ of try {c['retake_used']} after the natural /p/ burst and aspiration of try {donor} (same "
+                 f"voice and text, no extra credits). It has {vot_ms(ROOT / 'app' / 'audio' / 'en' / 'w-pan.mp3')} ms of burst and "
+                 f"aspiration before the voicing and passes the onset check. Whisper's answer for clips like this changes with "
+                 f"small differences and from run to run (\"pan\" in 10 of 10 runs while choosing); in the official run above it "
+                 f"heard \"{official.get('heard', '–')}\".")
+    elif method.startswith("onset from try"):
+        base = next(t for t in tries if t["retake"] == c["retake_used"])
+        tr = base.get("onset_transplants", [])
+        donor = int(method.rsplit(" ", 1)[1])
+        before = [x for x in tr if x["donor"] != donor]
+        note += (f" The app uses the vowel and /n/ of try {c['retake_used']} after the natural /p/ onset (burst and aspiration "
+                 f"up to the voicing) of try {donor}: the same voice and text, no extra credits. The onsets of tries "
+                 f"{', '.join(str(x['donor']) for x in tr)} were tried in that order; "
+                 + (f"with the first {len(before)} Whisper heard {quoted(before)}, " if before else "")
+                 + f"with try {donor}'s it heard \"{word(tr[-1])}\". The app's clip has "
+                 f"{vot_ms(ROOT / 'app' / 'audio' / 'en' / 'w-pan.mp3')} ms of burst and aspiration before the voicing and "
+                 "passes both unchanged checks.")
+    elif not c.get("passed"):
+        note += f" The app uses try {c.get('retake_used')} (heard as \"pan\")."
+    return note
+
+
 def main() -> None:
     a, b = ar_stats(A), ar_stats(B)
     ja, jb = no_autojunk(A), no_autojunk(B)
@@ -130,9 +189,7 @@ def main() -> None:
            "0.6 s were lengthened to 0.72 s as in v1.0, and a stop shorter than 0.12 s could have its natural aspiration continued "
            "to 0.15 s (see `tools/audio_build_log.json` for each sound's source and method).",
            "- Arabic speaking rate = characters sent (letters, spaces, punctuation; no harakat) per second of speech.",
-           "- \"pan\": five ElevenLabs tries (the brief's two retakes plus two approved by the team). Two were heard as \"pan\" "
-           "but their /p/ has almost no aspiration (voicing starts about 10 ms after the burst), so they fail the unchanged "
-           "onset check; three had a clear /p/ but were heard as \"pun\"/\"pum\". The app uses try 0 (heard as \"pan\").",
+           pan_note(),
            "- The optional check with a large Whisper model (§8.1.3) was not run: on this PC's CPU it would take well over "
            "30 minutes for both versions.", ""]
     para = (f"Version 1.1 replaced the synthetic voices of version 1.0 with ElevenLabs voices (Multilingual v2). With the same "
