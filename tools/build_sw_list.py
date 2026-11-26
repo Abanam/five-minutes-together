@@ -12,6 +12,8 @@ files, h = [], hashlib.sha256()
 for p in sorted(APP.rglob("*")):
     if not p.is_file() or p.name in SKIP or p.name.startswith("_"):
         continue
+    if p.relative_to(APP).parts[0] == "v1.0":  # the archived v1.0 is not part of the v1.1 offline cache
+        continue
     rel = p.relative_to(APP).as_posix()
     files.append(rel)
     h.update(rel.encode())

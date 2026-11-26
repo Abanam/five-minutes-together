@@ -6,9 +6,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "app"
 OUT = ROOT / "deliverables" / "five-minutes-together.zip"
-live = json.loads((APP / "content.json").read_text(encoding="utf-8"))["meta"].get("liveUrl", "")
+meta = json.loads((APP / "content.json").read_text(encoding="utf-8"))["meta"]
+live = meta.get("liveUrl", "")
 
-NOTE = f"""5 Minutes Together – خمس دقائق معًا  (v1.0)
+NOTE = f"""5 Minutes Together – خمس دقائق معًا  (v{meta['version']})
 
 This zip is the complete app folder (plain HTML, CSS and JavaScript; no build step).
 
@@ -28,6 +29,6 @@ Teachers can change letters, words and Arabic texts in app/content.json.
 with zipfile.ZipFile(OUT, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
     z.writestr("five-minutes-together/README.txt", NOTE)
     for p in sorted(APP.rglob("*")):
-        if p.is_file() and not p.name.startswith("_"):
+        if p.is_file() and not p.name.startswith("_") and p.relative_to(APP).parts[0] != "v1.0":
             z.write(p, "five-minutes-together/app/" + p.relative_to(APP).as_posix())
 print(f"wrote {OUT.name} ({OUT.stat().st_size / 1024 / 1024:.2f} MB)")

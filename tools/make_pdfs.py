@@ -39,8 +39,8 @@ def print_route(b, base, route, out):
     print("wrote", out.name)
 
 
-def all_screens(b, live_url):
-    order = json.loads((DELIV / "screenshots" / "order.json").read_text(encoding="utf-8"))
+def all_screens(b, live_url, shots: Path, version: str):
+    order = json.loads((shots / "order.json").read_text(encoding="utf-8"))
     main = [o for o in order if "/extra/" not in o[0]]
     extra = [o for o in order if "/extra/" in o[0]]
     qr = (ROOT / "app" / "img" / "qr-code.svg")
@@ -61,7 +61,7 @@ def all_screens(b, live_url):
     figure img {{ width: 88mm; border: 1px solid #ccc; border-radius: 4mm; }}
     ol {{ text-align: left; display: inline-block; font-size: 10pt; }}
     </style></head><body>
-    <div class="cover"><h1>5 Minutes Together – خمس دقائق معًا</h1><h2>Appendix A backup: every screen of the v1.0 prototype, in order</h2>
+    <div class="cover"><h1>5 Minutes Together – خمس دقائق معًا</h1><h2>Backup: every screen of the v{html.escape(version)} prototype, in order</h2>
     <div class="qr">{qr_html}</div><p><b>{html.escape(live_url)}</b></p>
     <p>Mobile screenshots at 390 × 844 (2× scale), taken {dt.date.today().isoformat()} from real app states (the five days were actually played in an automated browser).</p>
     <ol>{''.join(f'<li>{html.escape(t)}</li>' for _, t in main + extra)}</ol></div>
@@ -80,7 +80,9 @@ def all_screens(b, live_url):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", default=None)
+    ap.add_argument("--shots", default="deliverables/screenshots", help="screenshot folder with order.json")
     a = ap.parse_args()
+    shots = ROOT / a.shots
     content = json.loads((ROOT / "app" / "content.json").read_text(encoding="utf-8"))
     live = content["meta"].get("liveUrl", "")
     httpd = None
@@ -93,8 +95,8 @@ def main():
         b = p.chromium.launch()
         print_route(b, base, "#/cards", DELIV / "printable-cards.pdf")
         print_route(b, base, "#/flyer", DELIV / "teacher-flyer.pdf")
-        if (DELIV / "screenshots" / "order.json").exists():
-            all_screens(b, live)
+        if (shots / "order.json").exists():
+            all_screens(b, live, shots, content["meta"]["version"])
         b.close()
     if httpd:
         httpd.shutdown()

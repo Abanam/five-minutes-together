@@ -9,16 +9,26 @@
 4. Visual checks: Arabic right-to-left layout, Andika's single-storey "a", every picture renders,
    every audio file decodes in the browser, tap targets ≥ 64 px, parent gate, offline badge.
 5. Size and a simulated 3G first load.
+v1.1 (brief §11): version, reviewer checklist with A1–A3, one-time update notice, no speech fallback,
+audio checks, header layout, update path from v1.0, the /v1.0/ archive, secrets and attribution.
 """
 from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
+import io
 import json
+import os
+import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import threading
 import time
 import traceback
+import zipfile
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
@@ -192,6 +202,9 @@ def test_playthrough(browser, base):
         c.goto("#/stickers")
         earned = pg.locator('[data-test="sticker"][data-earned="true"]').count()
         record(sec, "Sticker book holds exactly one sticker per completed day", earned == 5, f"earned={earned}")
+        st = pg.evaluate("({fallbacks: window.FMT.audio.fallbacks, played: window.FMT.audio.played, failed: window.FMT.audio.failed})")
+        record(sec, "No speech fallback in the five-day play-through: every clip played was a recorded one (FMT.audio.fallbacks = 0)",
+               st["fallbacks"] == 0 and not st["failed"], json.dumps(st)[:300])
         record(sec, "No console errors during the five-day play-through", not c.errors, "; ".join(c.errors[:5]))
     except Exception as e:
         record(sec, "Play-through crashed", False, f"{e!r}\n{traceback.format_exc()[-1500:]}")
@@ -495,8 +508,9 @@ def test_screens(browser, base):
         pg.locator('[data-test="comment-clarity"]').fill("Clear Arabic.")
         pg.locator('[data-test="copy-feedback"]').click()
         out = pg.locator('[data-test="feedback-out"]').input_value()
+        n_main = pg.locator('[data-test="review-item"]:not([data-test="audio-recheck"] [data-test="review-item"])').count()
         record(sec4, "Reviewer checklist: 8 items on a 1–5 scale with comments; 'Copy my feedback' builds a text summary (nothing sent)",
-               pg.locator('[data-test="review-item"]').count() == 8 and "Clarity for parents: 4/5 – Clear Arabic." in out, out.splitlines()[2] if out else "")
+               n_main == 8 and "Clarity for parents: 4/5 – Clear Arabic." in out, out.splitlines()[2] if out else "")
         # large text + calm mode
         c.goto("#/settings")
         pass_gate_if_shown()
@@ -553,10 +567,21 @@ def test_backup(browser):
         c.close()
 
 
+def sw_list() -> tuple[str, list[str]]:
+    """FMT_VERSION and FMT_FILES from app/sw-files.js (what the service worker caches)."""
+    s = (APP / "sw-files.js").read_text(encoding="utf-8")
+    ver = re.search(r"FMT_VERSION = '([0-9a-f]+)'", s).group(1)
+    files = json.loads(s.split("self.FMT_FILES = ", 1)[1].rstrip().rstrip(";"))
+    return ver, files
+
+
 def test_size_and_3g(browser, base):
     sec = "6. Size and slow network"
-    total = sum(p.stat().st_size for p in APP.rglob("*") if p.is_file())
-    record(sec, f"Whole app is under 10 MB ({total / 1024 / 1024:.2f} MB)", total < 10 * 1024 * 1024)
+    _, files = sw_list()
+    cached = sum((APP / f).stat().st_size for f in files if f != "./")
+    archive = sum(p.stat().st_size for p in (APP / "v1.0").rglob("*") if p.is_file()) if (APP / "v1.0").exists() else 0
+    record(sec, f"Offline cache (every file the service worker stores) is under 8 MB ({cached / 1024 / 1024:.2f} MB, {len(files)} entries); "
+           f"the /v1.0/ archive ({archive / 1024 / 1024:.2f} MB) is served online only and not counted", cached < 8 * 1024 * 1024)
     c = Ctx(browser, base)
     try:
         cdp = c.ctx.new_cdp_session(c.page)
@@ -582,7 +607,8 @@ def test_live(browser, live: str):
     sec = "0. Published site (" + live + ")"
     import urllib.request
     ok_all, notes = True, []
-    for path in ("", "content.json", "audio/manifest.json", "audio/en/ph-p.mp3", "audio/ar/ob3.mp3", "sw.js", "img/qr-code.svg", "fonts/Andika-Medium.woff2"):
+    for path in ("", "content.json", "audio/manifest.json", "audio/en/ph-p.mp3", "audio/ar/ob3.mp3", "sw.js", "img/qr-code.svg", "fonts/Andika-Medium.woff2",
+                 "v1.0/", "v1.0/content.json", "v1.0/audio/en/ph-t.mp3"):
         try:
             with urllib.request.urlopen(urllib.request.Request(live + path, headers={"User-Agent": "fmt-test"}), timeout=60) as r:
                 notes.append(f"/{path} {r.status}")
@@ -590,14 +616,39 @@ def test_live(browser, live: str):
         except Exception as e:
             notes.append(f"/{path} {e}")
             ok_all = False
-    record(sec, "Public link and key files return HTTP 200 without any login", ok_all, "; ".join(notes))
+    record(sec, "Public link, key files and the /v1.0/ archive return HTTP 200 without any login", ok_all, "; ".join(notes))
+    try:
+        vers = {}
+        for path in ("content.json", "v1.0/content.json", "audio/manifest.json"):
+            with urllib.request.urlopen(urllib.request.Request(live + path + "?t=" + str(int(time.time())), headers={"User-Agent": "fmt-test"}), timeout=60) as r:
+                d = json.loads(r.read().decode("utf-8"))
+                vers[path] = d.get("meta", {}).get("version") if "meta" in d else d.get("version")
+        record(sec, f"The live root reports version {CONTENT['meta']['version']} (content and audio manifest) and /v1.0/ reports 1.0",
+               vers["content.json"] == CONTENT["meta"]["version"] == vers["audio/manifest.json"] and vers["v1.0/content.json"] == "1.0", json.dumps(vers))
+    except Exception as e:
+        record(sec, "Live version check", False, repr(e)[:300])
     try:
         import cv2
         img = cv2.imread(str(DELIV / "qr-code.png"))
         val = cv2.QRCodeDetector().detectAndDecode(img)[0]
         record(sec, "QR code (deliverables/qr-code.png) decodes to the public link", val == live, f"decoded: {val}")
+        img = cv2.imread(str(DELIV / "qr-code-v1.0.png"))
+        val = cv2.QRCodeDetector().detectAndDecode(img)[0]
+        record(sec, "Archive QR code (deliverables/qr-code-v1.0.png) decodes to the /v1.0/ link", val == live + "v1.0/", f"decoded: {val}")
     except Exception as e:
-        record(sec, "QR code decodes to the public link", False, repr(e))
+        record(sec, "QR codes decode to the public links", False, repr(e))
+    c = Ctx(browser, live)
+    try:
+        c.page.goto(live + "v1.0/")
+        c.page.locator("#archive-banner").wait_for(timeout=90000)
+        c.page.wait_for_timeout(3000)
+        regs = c.page.evaluate("navigator.serviceWorker.getRegistrations().then(r => r.length)")
+        record(sec, "The published /v1.0/ archive opens with its banner and registers no service worker", regs == 0,
+               c.page.locator("#archive-banner").inner_text().replace("\n", " / ")[:160])
+    except Exception as e:
+        record(sec, "Published archive check crashed", False, repr(e)[:300])
+    finally:
+        c.close()
     c = Ctx(browser, live)
     pg = c.page
     try:
@@ -626,10 +677,293 @@ def test_live(browser, live: str):
         c.close()
 
 
+# ------------------------------------------------------------------ v1.1 (brief §11)
+SHA_CACHE_JS = """async (u) => { const r = await caches.match(u); if (!r) return null;
+  const h = await crypto.subtle.digest('SHA-256', await r.arrayBuffer());
+  return Array.from(new Uint8Array(h)).map((x) => x.toString(16).padStart(2, '0')).join(''); }"""
+SHA_FETCH_JS = """async (u) => { const r = await fetch(u, {cache: 'no-store'}); if (!r.ok) return 'HTTP ' + r.status;
+  const h = await crypto.subtle.digest('SHA-256', await r.arrayBuffer());
+  return Array.from(new Uint8Array(h)).map((x) => x.toString(16).padStart(2, '0')).join(''); }"""
+
+
+def sha_file(p: Path) -> str:
+    return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def git_exe() -> str:
+    return shutil.which("git") or str(Path(os.environ.get("LOCALAPPDATA", "")) / "Programs" / "fmt-tools" / "git" / "cmd" / "git.exe")
+
+
+def pass_gate(pg):
+    pg.wait_for_timeout(300)
+    if pg.locator('[data-test="gate-hold"]').count():
+        b = pg.locator('[data-test="gate-hold"]').bounding_box()
+        pg.mouse.move(b["x"] + b["width"] / 2, b["y"] + b["height"] / 2)
+        pg.mouse.down()
+        pg.wait_for_timeout(700)
+        pg.mouse.up()
+
+
+def test_v11_app(browser, base):
+    """Checks 1–3 and 10: version, reviewer checklist (A1–A3, per version), update notice, attribution."""
+    sec = "7. Version 1.1: label, reviewer checklist, update notice, attribution"
+    v = CONTENT["meta"]["version"]
+    c = Ctx(browser, base)
+    pg = c.page
+    try:
+        c.goto("#/home")
+        pg.evaluate("localStorage.setItem('fmt1.settings', JSON.stringify({onboarded:true}))")
+        c.goto("#/home")
+        pg.locator('[data-test="home"]').wait_for()
+        home = pg.locator(".footer-note").first.inner_text()
+        title = pg.title()
+        c.goto("#/about")
+        pg.locator('[data-test="about"]').wait_for()
+        about = pg.locator(".footer-note").first.inner_text()
+        credits = pg.locator('[data-test="credits-heading"]').inner_text() + " " + pg.locator('[data-test="credits"]').inner_text()
+        c.goto("#/settings")
+        pass_gate(pg)
+        pg.locator('[data-test="settings"]').wait_for()
+        sett = pg.locator(".footer-note").first.inner_text()
+        record(sec, f"Version {v} is shown in the home footer, on About and in Settings (read from content.json)",
+               all(v in x and "1.0" not in x.replace(v, "") for x in (home, about, sett)), f"home: {home} | about: {about} | settings: {sett}")
+        record(sec, "Attribution: 'elevenlabs.io' is in the page <title> and on the About screen (credits heading and list)",
+               "elevenlabs.io" in title and "elevenlabs.io" in credits and "non-commercial use with attribution" in credits, f"title: {title}")
+        # reviewer checklist: v1.0 answers (key fmt1.review) must not appear in the v1.1 checklist
+        from urllib.parse import urlsplit
+        o = urlsplit(c.base)
+        c.ctx.grant_permissions(["clipboard-read", "clipboard-write"], origin=f"{o.scheme}://{o.netloc}")
+        pg.evaluate("localStorage.setItem('fmt1.review', JSON.stringify({clarity: {score: 5, comment: 'v1.0 answer'}, role: 'old'}))")
+        c.goto("#/review")
+        pass_gate(pg)
+        pg.locator('[data-test="review"]').wait_for()
+        ids = pg.locator('[data-test="review-item"]').evaluate_all("els => els.map(e => [e.dataset.item, !!e.closest('[data-test=audio-recheck]')])")
+        prefilled = pg.evaluate("document.querySelectorAll('[data-test=review] input[type=radio]:checked').length + "
+                                "(document.querySelector('[data-test=comment-clarity]').value ? 1 : 0) + (document.querySelector('[data-test=review-role]').value ? 1 : 0)")
+        heading = pg.locator('[data-test="audio-recheck"] h2').inner_text()
+        main_ids = ["clarity", "ease", "culture", "access", "learning", "routine", "safety", "technical"]
+        order_ok = ids == [[i, False] for i in main_ids] + [["A1", True], ["A2", True], ["A3", True]]
+        old_items = re.search(r"const ITEMS = \[(.*?)\];", (APP / "v1.0" / "js" / "screens" / "teacher.js").read_text(encoding="utf-8"), re.S)
+        new_items = re.search(r"const ITEMS = \[(.*?)\];", (APP / "js" / "screens" / "teacher.js").read_text(encoding="utf-8"), re.S)
+        same_text = bool(old_items and new_items and old_items.group(1) == new_items.group(1))
+        record(sec, "Checklist: the 8 original items are word for word as in v1.0, followed by A1–A3 under 'Audio re-check (v1.1) / مراجعة الأصوات (الإصدار 1.1)'",
+               order_ok and same_text and heading.strip() == "Audio re-check (v1.1) / مراجعة الأصوات (الإصدار 1.1)", json.dumps(ids))
+        record(sec, "Checklist answers are stored per version: v1.0 answers are not pre-filled in the v1.1 checklist", prefilled == 0, f"pre-filled fields: {prefilled}")
+        pg.locator('[data-test="rate-clarity-4"]').check(force=True)
+        pg.locator('[data-test="rate-A1-4"]').check(force=True)
+        pg.locator('[data-test="comment-A1"]').fill("clear")
+        pg.locator('[data-test="rate-A3-5"]').check(force=True)
+        pg.locator('[data-test="copy-feedback"]').click()
+        out = pg.locator('[data-test="feedback-out"]').input_value()
+        lines = out.splitlines()
+        ok = (lines and lines[0] == f"5 Minutes Together v{v} – reviewer feedback / ملاحظات المراجع"
+              and "A1. English sounds and words: 4/5 – clear" in lines and "A2. Arabic voice: –" in lines
+              and "A3. Pronunciation compared with version 1.0: 5/5" in lines)
+        record(sec, f"'Copy my feedback' starts with 'v{v}' and adds A1–A3 lines (e.g. 'A1. English sounds and words: 4/5 – clear')", ok,
+               " | ".join(lines[:1] + lines[-3:]))
+        stored = pg.evaluate(f"JSON.parse(localStorage.getItem('fmt1.review.{v}'))")
+        old = pg.evaluate("JSON.parse(localStorage.getItem('fmt1.review'))")
+        record(sec, f"v{v} answers are saved under their own key and the v1.0 answers stay stored", bool(stored and stored.get("A1")) and old.get("clarity", {}).get("score") == 5,
+               f"fmt1.review.{v}: {json.dumps(stored)[:120]}")
+        record(sec, "No console errors on these screens", not c.errors, "; ".join(c.errors[:4]))
+    except Exception as e:
+        record(sec, "v1.1 app checks crashed", False, f"{e!r}\n{traceback.format_exc()[-1200:]}")
+    finally:
+        c.close()
+    # update notice: never for a first-time user; once for a device that ran v1.0
+    try:
+        c = Ctx(browser, base)
+        c.goto("")
+        c.page.locator('[data-test="onboarding"]').wait_for()
+        c.page.wait_for_timeout(400)
+        new_user = c.page.locator('[data-test="update-notice"]').count()
+        c.close()
+        c = Ctx(browser, base)
+        c.ctx.add_init_script("if (!sessionStorage.getItem('seeded')) { sessionStorage.setItem('seeded', '1');"
+                              " localStorage.setItem('fmt1.settings', JSON.stringify({onboarded: true}));"
+                              " localStorage.setItem('fmt1.progress', JSON.stringify({days: {'1': {done: true, firstDate: '2026-11-01', date: '2026-11-01'}}})); }")
+        c.goto("#/home")
+        c.page.locator('[data-test="home"]').wait_for()
+        first = c.page.locator('[data-test="update-notice"]').count()
+        text = c.page.locator('[data-test="update-notice"]').inner_text() if first else ""
+        c.page.reload()
+        c.page.locator('[data-test="home"]').wait_for()
+        c.page.wait_for_timeout(400)
+        again = c.page.locator('[data-test="update-notice"]').count()
+        record(sec, "Update notice: shown once to a device with v1.0 data, never again after a reload, and never to a first-time user",
+               new_user == 0 and first == 1 and again == 0 and text.startswith("تم التحديث إلى الإصدار 1.1"),
+               f"new user: {new_user}, v1.0 user first load: {first} ('{text.splitlines()[0] if text else ''}'), after reload: {again}")
+        c.close()
+    except Exception as e:
+        record(sec, "Update-notice check crashed", False, repr(e)[:400])
+
+
+HEADER_JS = """() => {
+  const bar = document.querySelector('.topbar'); if (!bar) return {error: 'no topbar'};
+  const badge = bar.querySelector('[data-test=offline-badge]'); if (badge) badge.hidden = false;   // as when the app is ready offline
+  const title = bar.querySelector('.brand-name') || bar.querySelector('h1');
+  const els = [title, bar.querySelector('[data-test=lang-toggle]'), badge].filter(Boolean);
+  // the title is measured by where its text actually is (glyphs may extend a little beyond a box that does not clip)
+  const range = document.createRange(); range.selectNodeContents(title);
+  const r = els.map((e, i) => (i === 0 ? range.getBoundingClientRect() : e.getBoundingClientRect()));
+  const hit = (a, b) => a.left < b.right - 1 && b.left < a.right - 1 && a.top < b.bottom - 1 && b.top < a.bottom - 1;
+  const overlaps = []; for (let i = 0; i < r.length; i++) for (let j = i + 1; j < r.length; j++) if (hit(r[i], r[j])) overlaps.push(i + '-' + j);
+  // cut off = content larger than a box that clips it (overflow not visible) or ends in an ellipsis
+  const clips = (e) => { const s = getComputedStyle(e); return s.overflowX !== 'visible' || s.overflowY !== 'visible' || s.textOverflow === 'ellipsis'; };
+  const cut = els.filter((e) => clips(e) && (e.scrollWidth > e.clientWidth + 1 || e.scrollHeight > e.clientHeight + 1)).length;
+  const outside = r.filter((x) => x.left < -1 || x.right > innerWidth + 1).length;
+  return {overlaps, cut, outside, n: els.length, titleW: Math.round(r[0].width)}; }"""
+
+
+def test_header(browser, base):
+    """Check 6: no overlap or truncation in the header at 320, 360, 390 and 430 px, both languages, normal and large text."""
+    sec = "8. Header layout (v1.1 fix)"
+    bad, n = [], 0
+    for w in (320, 360, 390, 430):
+        c = Ctx(browser, base, viewport={"width": w, "height": 800})
+        try:
+            for lang in ("ar", "en"):
+                for large in (False, True):
+                    c.goto("#/home")
+                    c.page.evaluate("s => localStorage.setItem('fmt1.settings', JSON.stringify(s))", {"onboarded": True, "lang": lang, "large": large})
+                    for screen, ready in (("#/home", '[data-test="home"]'), ("#/about", '[data-test="about"]')):
+                        c.goto(screen)
+                        c.page.locator(ready).wait_for()
+                        c.page.evaluate("document.fonts.ready")
+                        r = c.page.evaluate(HEADER_JS)
+                        n += 1
+                        if r.get("error") or r["overlaps"] or r["cut"] or r["outside"] or r["n"] < 2:
+                            bad.append(f"{w}px {lang} {'large' if large else 'normal'} {screen}: {r}")
+        finally:
+            c.close()
+    record(sec, f"Title, language button and 'Ready offline' badge never overlap, overflow or get cut off ({n} layouts: 320/360/390/430 px × Arabic/English × normal/large text × home/About)",
+           not bad, "; ".join(bad[:4]))
+
+
+def test_update_and_archive(browser, base):
+    """Checks 7 and 8: a browser that cached v1.0 gets the v1.1 audio after a reload; /v1.0/ works without a service worker."""
+    sec = "9. Update from v1.0 and the archived v1.0"
+    ver11, files11 = sw_list()
+    v10_evidence = ROOT / "deliverables" / "evidence" / "v1.0" / "audio" / "en" / "ph-t.mp3"
+    tmp = Path(tempfile.mkdtemp())
+    port = 8813
+    url = f"http://127.0.0.1:{port}/"
+    try:
+        z = subprocess.run([git_exe(), "archive", "--format=zip", "v1.0", "app"], cwd=ROOT, capture_output=True, check=True).stdout
+        zipfile.ZipFile(io.BytesIO(z)).extractall(tmp)
+        srv = serve(port, str(tmp / "app"))
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        ctx = browser.new_context(viewport=VIEW, locale="ar-OM")
+        pg = ctx.new_page()
+        pg.goto(url + "?fast=1#/home")
+        pg.evaluate("localStorage.setItem('fmt1.settings', JSON.stringify({onboarded:true}))")
+        pg.goto(url + "?fast=1#/home")
+        pg.locator('[data-test="offline-badge"]:not([hidden])').wait_for(timeout=300000)
+        old_hash = pg.evaluate(SHA_CACHE_JS, "audio/en/ph-t.mp3")
+        old_label = pg.locator(".footer-note").first.inner_text()
+        srv.shutdown()
+        srv.server_close()
+        srv = serve(port, str(APP))   # the same address now serves v1.1
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        pg.reload()
+        keys = []
+        for _ in range(300):          # the v1.1 worker installs, fills its cache and removes the v1.0 cache
+            keys = pg.evaluate("caches.keys()")
+            if keys == ["fmt-" + ver11]:
+                break
+            pg.wait_for_timeout(1000)
+        new_hash = pg.evaluate(SHA_CACHE_JS, "audio/en/ph-t.mp3")
+        pg.reload()
+        pg.locator('[data-test="home"]').wait_for()
+        label = pg.locator(".footer-note").first.inner_text()
+        notice = pg.locator('[data-test="update-notice"]').count()
+        record(sec, "Update path: a browser that cached v1.0 gets the v1.1 audio after a reload (ph-t.mp3 in the cache changes from the v1.0 bytes to the v1.1 bytes; the v1.0 cache is removed)",
+               old_hash == sha_file(v10_evidence) and new_hash == sha_file(APP / "audio" / "en" / "ph-t.mp3") and keys == ["fmt-" + ver11] and "1.1" in label,
+               f"before: v1.0 cache, '{old_label}'; after: caches {keys}, '{label}', update notice shown: {notice}")
+        ctx.close()
+        srv.shutdown()
+        srv.server_close()
+    except Exception as e:
+        record(sec, "Update-path check crashed", False, f"{e!r}\n{traceback.format_exc()[-800:]}")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+    # the archive at /v1.0/ (served from the v1.1 site)
+    c = Ctx(browser, base)
+    pg = c.page
+    try:
+        pg.goto(base + "v1.0/?fast=1#/home")
+        pg.evaluate("localStorage.setItem('fmt10.settings', JSON.stringify({onboarded:true}))")
+        pg.goto(base + "v1.0/?fast=1#/home")
+        pg.locator('[data-test="home"]').wait_for()
+        banner = pg.locator("#archive-banner").inner_text()
+        href = pg.locator("#archive-banner a").get_attribute("href")
+        label = pg.locator(".footer-note").first.inner_text()
+        pg.wait_for_timeout(3000)
+        regs = pg.evaluate("navigator.serviceWorker.getRegistrations().then(r => r.length)")
+        pg.goto(base + "v1.0/?fast=1#/day/1?step=hear&demo=1")
+        pg.locator('[data-test="letter-card"]').click()
+        pg.wait_for_timeout(1500)
+        st = pg.evaluate("({played: window.FMT.audio.played, failed: window.FMT.audio.failed, fallbacks: window.FMT.audio.fallbacks})")
+        same = pg.evaluate(SHA_FETCH_JS, "audio/en/ph-t.mp3") == sha_file(v10_evidence)
+        keys10 = pg.evaluate("Object.keys(localStorage)")
+        record(sec, "Archive /v1.0/ opens with the banner (link to ../), reports version 1.0, registers no service worker and plays its own v1.0 audio",
+               "نسخة مؤرشفة" in banner and "Archived version 1.0" in banner and href == "../" and "1.0" in label and regs == 0
+               and st["played"] > 0 and not st["failed"] and same,
+               f"label '{label}', service workers {regs}, audio {json.dumps(st)}, ph-t.mp3 = v1.0 bytes: {same}")
+        record(sec, "Archive keeps its own storage (fmt10.…), separate from v1.1 (fmt1.…)",
+               keys10 and all(k.startswith("fmt10.") for k in keys10), json.dumps(keys10))
+        pg.goto(base + "?fast=1#/home")
+        pg.evaluate("localStorage.setItem('fmt1.settings', JSON.stringify({onboarded:true}))")
+        pg.goto(base + "?fast=1#/home")
+        pg.locator('[data-test="offline-badge"]:not([hidden])').wait_for(timeout=300000)
+        cached = pg.evaluate("caches.keys().then(ks => Promise.all(ks.map(k => caches.open(k).then(c => c.keys())))).then(a => a.flat().map(r => r.url))")
+        in_cache = [u for u in cached if "/v1.0/" in u]
+        hit = pg.evaluate("caches.match('v1.0/index.html').then(r => !!r)")
+        record(sec, "The v1.1 offline cache holds none of the /v1.0/ files, and its worker does not answer /v1.0/ requests",
+               not in_cache and not hit and len(cached) >= len(files11), f"{len(cached)} cached URLs, {len(in_cache)} under /v1.0/")
+        record(sec, "No console errors in the archive or the v1.1 app", not c.errors, "; ".join(c.errors[:4]))
+    except Exception as e:
+        record(sec, "Archive check crashed", False, f"{e!r}\n{traceback.format_exc()[-800:]}")
+    finally:
+        c.close()
+
+
+def test_v11_files():
+    """Checks 4 (hashes), 5 (audio rules) and 9 (secrets)."""
+    sec = "10. Audio rules, no fallback, secrets"
+    sys.path.insert(0, str(ROOT / "tools"))
+    from make_audio import fnv1a
+    man = json.loads((APP / "audio" / "manifest.json").read_text(encoding="utf-8"))
+    texts = {k: v["ar"] for k, v in CONTENT["texts"].items() if "ar" in v and not v.get("noAudio")}
+    for a in CONTENT["trustedApps"]:
+        for f in ("why", "ask"):
+            texts[f"app_{a['id']}_{f}"] = a[f]["ar"]
+    wrong = [k for k, ar in texts.items() if k not in man["ar"] or man["ar"][k]["h"] != fnv1a(ar) or not (APP / "audio" / "ar" / f"{k}.mp3").exists()]
+    record(sec, f"Every Arabic audio button has its recorded clip: all {len(texts)} texts are in the manifest with the hash of the current text (the app never needs the device voice)",
+           not wrong and man["version"] == CONTENT["meta"]["version"], f"manifest version {man['version']}; mismatches: {wrong[:5]}")
+    av = ROOT / "tools" / "audio_verification.json"
+    bl = ROOT / "tools" / "audio_build_log.json"
+    if av.exists() and bl.exists():
+        S = json.loads(av.read_text(encoding="utf-8"))["summary"]
+        log = json.loads(bl.read_text(encoding="utf-8"))
+        ar = {k: v for k, v in log["clips"].items() if k.startswith("ar/")}
+        ar_bad = [k for k, v in ar.items() if not v.get("pass")]
+        ph_ok = all(log["clips"].get(f"en/ph-{s}.mp3", {}).get("check_phoneme", "").startswith("pass") for s in CONTENT["sounds"])
+        record(sec, "Audio (§7.4): every clip exists, is in the manifest, has a plausible duration and no clipping; Arabic clips have 8–20 characters/s and no silence over 1.2 s; the letter sounds pass check_phoneme after MP3 encoding",
+               not S["hard_failures"] and S["phonemes_pass"] == 6 and S["controls_rejected"] == 6 and not ar_bad and len(ar) == len(texts) and ph_ok,
+               f"{S['files_pass']}/{S['files_checked']} clips; phonemes {S['phonemes_pass']}/6; controls rejected {S['controls_rejected']}/6; "
+               f"Arabic §7.4 failures {ar_bad[:5]}; Whisper English {S['whisper_en_match']}; Arabic mean {S['whisper_ar_mean_similarity']} (min {S['whisper_ar_min_similarity']})")
+    else:
+        record(sec, "Audio (§7.4) verification logs exist", False, "run tools/make_audio_v11.py and tools/verify_audio.py first")
+    r = subprocess.run([sys.executable, str(ROOT / "tools" / "secret_scan.py")], capture_output=True, text=True, encoding="utf-8")
+    record(sec, "Secrets: no API key and no sk_… string in any tracked file, deliverable or log; .env is gitignored and untracked",
+           r.returncode == 0, (r.stdout or r.stderr).strip()[:300])
+
+
 def write_report(base):
     DELIV.mkdir(exist_ok=True)
     passed = sum(r["ok"] for r in RESULTS)
-    lines = ["# Test report – 5 Minutes Together v1.0", "",
+    lines = [f"# Test report – 5 Minutes Together v{CONTENT['meta']['version']}", "",
              f"Run: {dt.datetime.now().strftime('%Y-%m-%d %H:%M')} · target: `{base}` · Playwright (Chromium) at 390 × 844 · axe-core {axe_version()} · duration {time.time() - T0:.0f} s", "",
              f"**Result: {passed} of {len(RESULTS)} checks passed.**", "",
              "These are automated checks run by the developer tooling. No testing with real children, parents or teachers has been done yet; "
@@ -682,7 +1016,9 @@ def main():
                  ("play", lambda: test_playthrough(browser, base)), ("results", lambda: test_objectives_not_met(browser, base)),
                  ("offline", lambda: test_offline(browser, base)), ("screens", lambda: test_screens(browser, base)),
                  ("motion", lambda: test_reduced_motion(browser, base)), ("backup", lambda: test_backup(browser)),
-                 ("size", lambda: test_size_and_3g(browser, local))]  # 3G is emulated on top of a local server
+                 ("size", lambda: test_size_and_3g(browser, local)),  # 3G is emulated on top of a local server
+                 ("v11", lambda: test_v11_app(browser, base)), ("header", lambda: test_header(browser, base)),
+                 ("update", lambda: test_update_and_archive(browser, base)), ("files", test_v11_files)]
         for name, fn in tests:
             if a.only and name not in a.only.split(","):
                 continue

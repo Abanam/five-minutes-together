@@ -2,7 +2,10 @@
 played with a fake calendar). Writes deliverables/screenshots/NN-name.png plus extra screens for
 the all-screens backup PDF (deliverables/screenshots/extra/).
 
-    python tools/screenshots.py [--base https://…]
+    python tools/screenshots.py [--base https://…] [--out deliverables/screenshots-v1.1]
+
+v1.1 adds extra screens: About credits with the attribution, the reviewer audio re-check block, the one-time
+update notice, the fixed English home header (390 and 320 px) and the /v1.0/ archive banner.
 """
 import argparse
 import datetime as dt
@@ -35,9 +38,14 @@ def shot(pg, name, title, extra=False, full=False):
 
 
 def main():
+    global OUT, EXTRA
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", default=None)
+    ap.add_argument("--out", default=None, help="folder for the screenshots (default deliverables/screenshots)")
     a = ap.parse_args()
+    if a.out:
+        OUT = (ROOT / a.out) if not Path(a.out).is_absolute() else Path(a.out)
+        EXTRA = OUT / "extra"
     httpd = None
     base = a.base
     if not base:
@@ -201,7 +209,9 @@ def main():
         c.goto("#/about")
         pg.locator('[data-test="about"]').wait_for()
         pg.locator('[data-test="privacy"]').scroll_into_view_if_needed()
-        shot(pg, "about-privacy", "About and privacy – “No data leaves this device”, credits, v1.0, AI note", extra=True)
+        shot(pg, "about-privacy", f"About and privacy – “No data leaves this device”, credits, v{CONTENT['meta']['version']}, AI note", extra=True)
+        pg.evaluate("document.querySelector('[data-test=credits-heading]').scrollIntoView({block: 'start'}); window.scrollBy(0, -96)")
+        shot(pg, "v11-about-credits", "About – voice credits “Voices: elevenlabs.io · الأصوات” (ElevenLabs free plan: non-commercial use with attribution)", extra=True)
         # parent gate and gated pages
         c.goto("#/teachers")
         pg.locator('[data-test="gate-hold"]').wait_for()
@@ -220,23 +230,51 @@ def main():
         c.goto("#/review")
         pg.locator('[data-test="review"]').wait_for()
         shot(pg, "15-reviewer-checklist", "Reviewer checklist – 8 items, 1–5 scale, comments, “Copy my feedback”; nothing is sent")
+        if pg.locator('[data-test="audio-recheck"]').count():
+            pg.evaluate("document.querySelector('[data-test=audio-recheck]').scrollIntoView({block: 'start'}); window.scrollBy(0, -96)")
+            shot(pg, "v11-review-audio-recheck", "Reviewer checklist – the v1.1 audio re-check block (A1–A3)", extra=True)
         c.goto("#/settings")
         pg.locator('[data-test="settings"]').wait_for()
         shot(pg, "settings", "Settings – language, large text, calm mode, sounds, unlock all days, reset", extra=True)
         c.goto("#/home")
         pg.locator('[data-test="lang-toggle"]').click()
         pg.locator('[data-test="home"]').wait_for()
-        shot(pg, "home-english", "English view of the parent area (left-to-right)", extra=True)
+        pg.evaluate("document.querySelectorAll('[data-test=offline-badge]').forEach(b => { b.hidden = false; })")  # as when ready offline
+        shot(pg, "home-english", "English view of the parent area (left-to-right); v1.1 header: the title uses the full width, the badge sits below", extra=True)
+        pg.set_viewport_size({"width": 320, "height": 700})
+        pg.wait_for_timeout(300)
+        shot(pg, "v11-home-english-320px", "v1.1 header fix at 320 px (English): nothing is squeezed, cut off or covered", extra=True)
+        pg.set_viewport_size({"width": 390, "height": 844})
         pg.locator('[data-test="lang-toggle"]').click()
         pg.locator('[data-test="home"]').wait_for()
         pg.locator('[data-test="tour"]').click()
         pg.locator('[data-test="tour-card"]').wait_for()
         pg.wait_for_timeout(600)
         shot(pg, "16-assessor-tour", "Assessor tour – English overlay; each stop names the requirement it meets")
+        c.close()
+        if CONTENT["meta"]["version"] != "1.0":
+            # the one-time update notice, as a device that used v1.0 sees it after the update
+            c = Ctx(b, base, device_scale_factor=2)
+            c.ctx.add_init_script("if (!sessionStorage.getItem('seeded')) { sessionStorage.setItem('seeded', '1');"
+                                  " localStorage.setItem('fmt1.settings', JSON.stringify({onboarded: true}));"
+                                  " localStorage.setItem('fmt1.progress', JSON.stringify({days: {'1': {done: true, firstDate: '2026-11-24', date: '2026-11-24'}}})); }")
+            c.goto("#/home")
+            c.page.locator('[data-test="update-notice"]').wait_for()
+            shot(c.page, "v11-update-notice", "One-time update notice (only on a device that used v1.0): “تم التحديث إلى الإصدار 1.1 …”", extra=True)
+            c.close()
+            # the archived v1.0 at …/v1.0/
+            c = Ctx(b, base, device_scale_factor=2)
+            c.page.goto(base + "v1.0/?fast=1#/home")
+            c.page.evaluate("localStorage.setItem('fmt10.settings', JSON.stringify({onboarded:true}))")
+            c.page.goto(base + "v1.0/?fast=1#/home")
+            c.page.locator("#archive-banner").wait_for()
+            c.page.locator('[data-test="home"]').wait_for()
+            shot(c.page, "v11-archive-banner", "The archived version 1.0 at …/v1.0/ with its banner linking to the current version", extra=True)
+            c.close()
         b.close()
     if httpd:
         httpd.shutdown()
-    (ROOT / "deliverables" / "screenshots" / "order.json").write_text(json.dumps(SHOTS, ensure_ascii=False, indent=1), encoding="utf-8")
+    (OUT / "order.json").write_text(json.dumps(SHOTS, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{len(SHOTS)} screenshots")
 
 
