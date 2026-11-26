@@ -54,14 +54,30 @@ a { color: var(--deep); }
 .screen-child { padding: 8px 12px 20px; }
 
 /* ---------- top bar ---------- */
-.topbar { display: flex; align-items: center; min-height: 72px; padding: 4px 8px; position: sticky; top: 0; z-index: 20; background: rgba(255,251,242,.96); border-bottom: 1px solid var(--line); }
-.topbar h1 { font-size: 1.15rem; margin: 0 8px; flex: 1; line-height: 1.25; }
+.topbar { display: flex; flex-wrap: wrap; align-items: center; min-height: 72px; padding: 4px 8px; position: sticky; top: 0; z-index: 20; background: rgba(255,251,242,.96); border-bottom: 1px solid var(--line); }
+.topbar h1 { font-size: 1.15rem; margin: 0 8px; flex: 1 1 0; min-width: 0; line-height: 1.25; overflow-wrap: anywhere; }
 .topbar .spacer { flex: 1; }
 .topbar > * + * { margin-inline-start: 6px; }
-.brand { display: flex; align-items: center; flex: 1; min-width: 0; }
+.topbar .lang-toggle { flex: none; }
+.topbar > .badge-row { order: 3; flex: 1 0 100%; margin: 0; padding: 4px 4px 4px; display: flex; align-items: center; }
+.topbar > .badge-row:empty { display: none; }
+@media (max-width: 380px) {
+  /* narrow phones: the title keeps the whole first row; the badge and the language button share the second */
+  .topbar:has(> .badge-row) > .brand { flex: 1 0 100%; }
+  .topbar:has(> .badge-row) > h1 { flex: 1 0 calc(100% - 90px); }
+  .topbar:has(> .badge-row) > .lang-toggle { order: 4; }
+  .topbar:has(> .badge-row) > .badge-row { flex: 1 1 auto; }
+}
+.brand { display: flex; align-items: center; flex: 1 1 0; min-width: 0; }
 .brand .logo { width: 46px; height: 46px; flex: none; margin-inline-end: 8px; }
-.brand-name { font-weight: 800; font-size: 1.05rem; line-height: 1.15; }
+.brand-name { font-weight: 800; font-size: 1.05rem; line-height: 1.15; min-width: 0; overflow-wrap: anywhere; }
 .brand-name small { display: block; font-weight: 400; font-size: .72rem; color: var(--muted); font-family: var(--en); }
+/* v1.1 one-time update notice (in the page flow, never covering anything) */
+.update-notice { display: flex; align-items: center; margin: 8px 12px 0; padding: 8px 12px; border-radius: 16px; background: #E3F2E8; border: 2px solid #8CC9A0; color: var(--ok); font-weight: 700; }
+.update-notice p { flex: 1; margin: 0; }
+.update-notice .btn { flex: none; margin-inline-start: 10px; }
+/* v1.1 reviewer audio re-check block */
+.audio-recheck { border-top: 3px dashed var(--sand-line); padding-top: 10px; }
 
 /* ---------- buttons (64 px minimum, bouncy press, visible focus) ---------- */
 .btn {

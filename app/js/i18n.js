@@ -2,10 +2,11 @@
 
 import { settings } from './store.js';
 import { arDigits } from './util.js';
+import { app } from './ctx.js';
 
 const S = {
   appName: ['خمس دقائق معًا', '5 Minutes Together'],
-  version: ['الإصدار ⁦1.0⁩', 'Version 1.0'],
+  version: ['الإصدار ⁦{v}⁩', 'Version {v}'],  // {v} = content.json meta.version
   forParent: ['لولي الأمر', 'For the parent'],
   listen: ['استمع', 'Listen'],
   listenAr: ['استمع إلى الإرشاد بالعربية', 'Play the Arabic audio'],
@@ -165,6 +166,7 @@ export function initLang() { setLang(settings.get().lang); }
 export function t(key, vars) {
   const pair = S[key];
   let s = pair ? pair[lang === 'ar' ? 0 : 1] : key;
+  if (s.indexOf('{v}') >= 0 && !(vars && 'v' in vars)) s = s.split('{v}').join(appVersion());
   if (vars) {
     for (const k of Object.keys(vars)) {
       const v = typeof vars[k] === 'number' && lang === 'ar' ? arDigits(vars[k]) : vars[k];
@@ -174,5 +176,7 @@ export function t(key, vars) {
   return s;
 }
 export function num(n) { return lang === 'ar' ? arDigits(n) : String(n); }
+/** The app version, read from content.json (meta.version) – never hard-coded. */
+export function appVersion() { return (app.content && app.content.meta && app.content.meta.version) || ''; }
 /** Separator between a day and its stop name ("·" looks like the Arabic zero "٠"). */
 export const SEP = ' – ';

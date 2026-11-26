@@ -7,6 +7,7 @@ import { app } from './ctx.js';
 import { settings } from './store.js';
 import { go } from './router.js';
 import { btn } from './ui.js';
+import { appVersion } from './i18n.js';
 import * as audio from './audio.js';
 
 const STOPS = [
@@ -17,7 +18,7 @@ const STOPS = [
   { hash: '#/day/1?step=start&demo=1', sel: '.pc-wrap', tags: ['R1', 'R2', 'Fading support'], title: 'Start: Sanad and the parent card',
     text: 'Sanad, an original baby green sea turtle, greets the child and shows today\'s sounds. The sand-coloured parent card (parent icon, Arabic text, speaker button) gives one Arabic tip and shows the current support level.' },
   { hash: '#/day/1?step=hear&demo=1', sel: '[data-test="letter-card"]', tags: ['Pedagogy', 'R2'], title: 'Hear it: correct sound models',
-    text: 'Tapping the letter plays the pure sound (/s/, not "ess"). All six sounds were generated from IPA phoneme input and checked acoustically, so the app models sounds a parent may not be able to produce, such as /p/, which Arabic lacks. Next come two keyword pictures ("s… sun") and "Find the sound" with instant feedback.' },
+    text: 'Tapping the letter plays the pure sound (/s/, not "ess"). All six sounds were made with ElevenLabs voices, cut to the pure sound and checked acoustically, so the app models sounds a parent may not be able to produce, such as /p/, which Arabic lacks. Next come two keyword pictures ("s… sun") and "Find the sound" with instant feedback.' },
   { hash: '#/day/2?step=tapsay&demo=1', sel: '.tiles', tags: ['R1', 'Explicit phonics'], title: 'Tap and say: the sound train',
     text: 'Each letter tile plays its sound (each letter keeps one colour everywhere and always shows the letter). The sound-train button slides the tiles together, plays the whole word and reveals its picture. An Arabic "Ask your child" card with audio follows.' },
   { hash: '#/day/3?step=blend&demo=1', sel: '.judge', tags: ['R1', 'R2', 'Feedback'], title: 'Blend on your own',
@@ -33,7 +34,7 @@ const STOPS = [
   { hash: '#/teachers', sel: '[data-test="flyer-preview"]', tags: ['R5', 'R4'], title: 'For teachers',
     text: 'A one-minute Arabic guide, a printable A4 Arabic flyer with the QR code, printable day cards for families without a device, and a ready WhatsApp message (copy or share). Letters and words can be changed in content.json. Normally behind the parent gate.' },
   { hash: '#/about', sel: '[data-test="privacy"]', tags: ['Safety', 'R4', 'Testing'], title: 'Safe, private and offline',
-    text: 'No accounts, ads, chat or tracking: nothing leaves the device (localStorage only). A service worker caches the whole small app, shown as "Ready offline ✓". Calm mode, large text and a reviewer checklist (v1.0) are in the parent area. End of the tour: all days stay unlocked.' },
+    text: 'No accounts, ads, chat or tracking: nothing leaves the device (localStorage only). A service worker caches the whole small app, shown as "Ready offline ✓". Calm mode, large text and a reviewer checklist (v{v}) are in the parent area. End of the tour: all days stay unlocked.' },
 ];
 
 let active = null;
@@ -94,7 +95,7 @@ export function startTour() {
     card.append(
       h('div', s.tags.map((x) => h('span.req', x))),
       h('h2', s.title),
-      h('p', s.text),
+      h('p', s.text.split('{v}').join(appVersion())),
       h('div.tour-nav', prev, h('span.tour-count', `${k + 1} / ${STOPS.length}`), next),
       h('div.center', btn('Close tour', { icon: 'close', cls: 'btn-ghost btn-small-text', test: 'tour-close', onClick: end })),
     );

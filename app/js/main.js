@@ -1,10 +1,10 @@
-// 5 Minutes Together – خمس دقائق معًا · v1.0
+// 5 Minutes Together – خمس دقائق معًا (the version is meta.version in content.json)
 // Boot: load content.json + audio manifest, apply settings, register routes and the service worker.
 
-import { $$ } from './util.js';
+import { $$, h } from './util.js';
 import { app } from './ctx.js';
-import { settings } from './store.js';
-import { initLang } from './i18n.js';
+import { settings, appState } from './store.js';
+import { initLang, getLang } from './i18n.js';
 import * as audio from './audio.js';
 import { route, startRouter } from './router.js';
 import { homeScreen, onboardingScreen, resultsScreen, stickersScreen, tipsScreen, howtoScreen, aboutScreen } from './screens/parent.js';
@@ -26,6 +26,27 @@ function applySettings() {
   root.classList.toggle('calm', s.calm === null ? reduce : !!s.calm);
   if (/[?&]fast=1/.test(location.search)) root.classList.add('fast');
   audio.setSfx(s.sfx);
+}
+
+/** One-time notice for devices that ran v1.0 (they have data but no stored version). Never for new users. */
+const UPDATE_NOTICE = {
+  ar: 'تم التحديث إلى الإصدار 1.1: أصوات أوضح للحروف والكلمات والإرشادات العربية.',
+  en: 'Updated to version 1.1: clearer letter sounds, words and Arabic voice.',
+};
+function checkUpdateNotice() {
+  // must run before anything writes settings, so a first-time user is never mistaken for an old one
+  const seen = appState.seenVersion();
+  const fromV10 = seen === null && appState.hasOldData();
+  appState.setSeenVersion(app.content.meta.version);
+  return fromV10;
+}
+function showUpdateNotice(root) {
+  // shown in the page flow (never covering buttons); it disappears on the next screen and never comes back
+  const ar = getLang() === 'ar';
+  const box = h('div.update-notice', { role: 'status', 'data-test': 'update-notice', lang: ar ? 'ar' : 'en', dir: ar ? 'rtl' : 'ltr' },
+    h('p', ar ? UPDATE_NOTICE.ar : UPDATE_NOTICE.en),
+    h('button.btn.btn-primary', { type: 'button', 'data-test': 'update-ok', onclick: () => box.remove() }, ar ? 'حسنًا' : 'OK'));
+  root.prepend(box);
 }
 
 function setOfflineReady() {
@@ -60,6 +81,7 @@ async function boot() {
     root.innerHTML = '<p style="padding:24px;font-size:18px">تعذّر تحميل المحتوى. افتح الرابط مرة أخرى عند توفر الإنترنت.<br><span lang="en" dir="ltr">The content could not be loaded. Please open the link again when you are online.</span></p>';
     return;
   }
+  const updatedFromV10 = checkUpdateNotice();
   initLang();
   applySettings();
   audio.initAudio({ manifest: app.manifest, content: app.content });
@@ -89,6 +111,7 @@ async function boot() {
   route('review', reviewScreen, { gated: true });
   route('settings', settingsScreen, { gated: true });
   startRouter(root);
+  if (updatedFromV10) showUpdateNotice(root);
 
   // after the first screen is up, warm the small Day 1 English clips so the session starts instantly
   setTimeout(() => audio.preload(dayAudioUrls(app.content.days[0]).filter((u) => u.indexOf('/en/') > 0)), 900);

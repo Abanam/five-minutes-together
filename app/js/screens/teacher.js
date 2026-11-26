@@ -2,7 +2,7 @@
 
 import { h, frag } from '../util.js';
 import { icon, family, picture, sanad, sticker } from '../art.js';
-import { t, num, getLang, setLang } from '../i18n.js';
+import { t, num, getLang, setLang, appVersion } from '../i18n.js';
 import { app, T, liveUrl } from '../ctx.js';
 import { settings, review, resetAll } from '../store.js';
 import * as audio from '../audio.js';
@@ -60,7 +60,7 @@ export function teachersScreen(root) {
     h('section.section-card.stack', h('h2', t('whatsapp')), ta, h('div.grid2', copy, share)),
     h('section.section-card.stack', h('h2', t('editContent')), parentCard('teacher_edit'),
       h('p.small', { lang: 'en', dir: 'ltr', style: { textAlign: 'left' } },
-        'For developers: all learning content is in ', h('code', 'app/content.json'), ' (days, sounds, words, pictures and Arabic prompts). Words built from the six sounds work at once; Arabic text changes are read by the device voice until tools/make_audio.py is run again. See README.md.'))));
+        'For developers: all learning content is in ', h('code', 'app/content.json'), ' (days, sounds, words, pictures and Arabic prompts). Words built from the six sounds work at once; Arabic text changes are read by the device voice until tools/make_audio_v11.py is run again. See README.md.'))));
 }
 
 async function copyText(text) {
@@ -96,7 +96,7 @@ export function flyerScreen(root) {
       h('div', '✔ مجاني، دون إعلانات، ودون حساب'), h('div', '✔ لا تحتاج إلى معرفة الإنجليزية'),
       h('div', '✔ يعمل دون إنترنت بعد فتحه أول مرة'), h('div', '✔ لا تغادر أي بيانات الهاتف')),
     h('p', { style: { fontSize: '11pt', marginTop: '6mm', color: '#4A5D66' } }, 'لا يوجد جهاز؟ اطلب من معلم اللغة الإنجليزية بطاقات الأيام الخمسة المطبوعة.'),
-    h('p', { style: { fontSize: '9pt', color: '#4A5D66', direction: 'ltr', textAlign: 'left', position: 'absolute', bottom: '10mm', left: '14mm' } }, '5 Minutes Together · v1.0 · EDEN4233 prototype, Rustaq College of Education'));
+    h('p', { style: { fontSize: '9pt', color: '#4A5D66', direction: 'ltr', textAlign: 'left', position: 'absolute', bottom: '10mm', left: '14mm' } }, '5 Minutes Together · v' + appVersion() + ' · EDEN4233 prototype, Rustaq College of Education'));
   root.append(topbar('flyer'), h('main.screen',
     h('div.print-tools.no-print', btn(t('print'), { icon: 'print', cls: 'btn-primary', onClick: () => window.print() }), btn(t('back'), { icon: 'back', iconCls: 'flip-rtl', cls: 'btn-ghost', onClick: () => go('#/teachers') })),
     h('div.print-scroll', { tabindex: '0', role: 'region', 'aria-label': t('flyer') }, page)));
@@ -133,7 +133,7 @@ export function cardsScreen(root) {
         h('div.box', h('b', 'نشاط في البيت دون شاشة'), h('p', richText(T(d.home).ar)))),
       h('p', { style: { marginTop: '3mm' } }, h('span.tick'), 'أكملنا اليوم ' + num(d.day) + ' — التاريخ: ____________'),
       d.day === 5 ? h('div', h('b', 'بطاقات حروف للقص:'), h('div.cutout', ['s', 'a', 't', 'p', 'i', 'n'].map((l) => h('div', { class: 'L-' + l, style: { color: 'var(--ld)' } }, l)))) : null,
-      h('p', { style: { fontSize: '9pt', color: '#4A5D66', position: 'absolute', bottom: '8mm', left: '14mm', direction: 'ltr' } }, '5 Minutes Together · v1.0 · ' + (liveUrl() || '')));
+      h('p', { style: { fontSize: '9pt', color: '#4A5D66', position: 'absolute', bottom: '8mm', left: '14mm', direction: 'ltr' } }, '5 Minutes Together · v' + appVersion() + ' · ' + (liveUrl() || '')));
   });
   root.append(topbar('printCards'), h('main.screen',
     h('div.print-tools.no-print', btn(t('print'), { icon: 'print', cls: 'btn-primary', onClick: () => window.print() }), btn(t('back'), { icon: 'back', iconCls: 'flip-rtl', cls: 'btn-ghost', onClick: () => go('#/teachers') })),
@@ -152,10 +152,18 @@ const ITEMS = [
   ['technical', 'Technical problems: the app worked without errors on my device.', 'المشكلات التقنية: عمل التطبيق دون أخطاء على جهازي.'],
 ];
 
+// v1.1: audio re-check block (shown below the eight items, which stay word for word)
+const AUDIO_ITEMS = [
+  ['A1', 'English sounds and words', 'English sounds and words: the letter sounds and words are clear and correctly pronounced.', 'الأصوات والكلمات الإنجليزية: أصوات الحروف والكلمات واضحة ومنطوقة نطقًا صحيحًا.'],
+  ['A2', 'Arabic voice', 'Arabic voice: the Arabic instructions are clear, natural and easy to understand.', 'الصوت العربي: الإرشادات العربية واضحة وطبيعية وسهلة الفهم.'],
+  ['A3', 'Pronunciation compared with version 1.0', 'Compared with version 1.0, the pronunciation is (1 = much worse, 3 = the same, 5 = much better).', 'مقارنة بالإصدار 1.0، النطق الآن (١ = أسوأ بكثير، ٣ = كما هو، ٥ = أفضل بكثير).'],
+];
+
 export function reviewScreen(root) {
-  const data = review.get();
-  const save = () => review.set(data);
-  const items = ITEMS.map(([id, enQ, arQ], k) => {
+  const version = appVersion();
+  const data = review.get(version);   // answers are stored per version; a new version starts empty
+  const save = () => review.set(version, data);
+  const item = (id, number, enQ, arQ, scale) => {
     const name = 'r_' + id;
     const row = h('div.rate', { role: 'radiogroup', 'aria-label': enQ });
     for (let v = 1; v <= 5; v++) {
@@ -171,20 +179,25 @@ export function reviewScreen(root) {
     const ta = h('textarea', { rows: '2', placeholder: t('comment'), 'aria-label': t('comment') + ' – ' + enQ, 'data-test': `comment-${id}` });
     ta.value = (data[id] && data[id].comment) || '';
     ta.addEventListener('input', () => { data[id] = Object.assign({}, data[id], { comment: ta.value }); save(); });
-    return h('div.review-item.stack', { 'data-test': 'review-item' },
-      h('p.q-en', { lang: 'en' }, (k + 1) + '. ' + enQ), h('p.q-ar', { lang: 'ar' }, arQ),
-      row, h('div.rate-scale', h('span', '1 = ' + t('disagree')), h('span', '5 = ' + t('agree'))), ta);
-  });
+    return h('div.review-item.stack', { 'data-test': 'review-item', 'data-item': id },
+      h('p.q-en', { lang: 'en' }, number + '. ' + enQ), h('p.q-ar', { lang: 'ar' }, arQ),
+      row, scale || h('div.rate-scale', h('span', '1 = ' + t('disagree')), h('span', '5 = ' + t('agree'))), ta);
+  };
+  const items = ITEMS.map(([id, enQ, arQ], k) => item(id, k + 1, enQ, arQ));
+  const audioScale = h('div.rate-scale', h('span', getLang() === 'ar' ? '١ = أسوأ بكثير' : '1 = much worse'),
+    h('span', getLang() === 'ar' ? '٣ = كما هو' : '3 = the same'), h('span', getLang() === 'ar' ? '٥ = أفضل بكثير' : '5 = much better'));
+  const audioItems = AUDIO_ITEMS.map(([id, , enQ, arQ]) => item(id, id, enQ, arQ, id === 'A3' ? audioScale : null));
+  const audioBlock = h('section.stack.audio-recheck', { 'data-test': 'audio-recheck' },
+    h('h2', 'Audio re-check (v1.1) / مراجعة الأصوات (الإصدار 1.1)'), audioItems);
   const role = h('input', { type: 'text', placeholder: t('role'), 'aria-label': t('role'), 'data-test': 'review-role' });
   role.value = data.role || '';
   role.addEventListener('input', () => { data.role = role.value; save(); });
+  const line = (label, d) => `${label}: ${d.score ? d.score + '/5' : '–'}${d.comment ? ' – ' + d.comment : ''}`;
   const summary = () => {
-    const lines = ['5 Minutes Together v1.0 – reviewer feedback / ملاحظات المراجع', 'Date: ' + new Date().toISOString().slice(0, 10)];
+    const lines = [`5 Minutes Together v${version} – reviewer feedback / ملاحظات المراجع`, 'Date: ' + new Date().toISOString().slice(0, 10)];
     if (data.role) lines.push('Role: ' + data.role);
-    ITEMS.forEach(([id, enQ], k) => {
-      const d = data[id] || {};
-      lines.push(`${k + 1}. ${enQ.split(':')[0]}: ${d.score ? d.score + '/5' : '–'}${d.comment ? ' – ' + d.comment : ''}`);
-    });
+    ITEMS.forEach(([id, enQ], k) => lines.push(`${k + 1}. ` + line(enQ.split(':')[0], data[id] || {})));
+    AUDIO_ITEMS.forEach(([id, label]) => lines.push(`${id}. ` + line(label, data[id] || {})));
     return lines.join('\n');
   };
   const copy = btn(t('copyFeedback'), { icon: 'copy', cls: 'btn-primary btn-wide', test: 'copy-feedback', onClick: () => { out.value = summary(); out.hidden = false; copyText(out.value); } });
@@ -192,7 +205,7 @@ export function reviewScreen(root) {
   if (!navigator.share) share.hidden = true;
   const out = h('textarea', { readonly: true, rows: '10', hidden: true, 'data-test': 'feedback-out', dir: 'ltr', 'aria-label': t('copyFeedback') });
   root.append(topbar('review'), h('main.screen.stack', { 'data-test': 'review' },
-    parentCard('review_intro'), role, items, copy, share, out, h('p.small.muted.center', frag(icon('shield', 'inline')), t('nothingSent'))));
+    parentCard('review_intro'), role, items, audioBlock, copy, share, out, h('p.small.muted.center', frag(icon('shield', 'inline')), t('nothingSent'))));
 }
 
 // ---------------------------------------------------------------- settings (behind the parent gate)
@@ -224,7 +237,7 @@ export function settingsScreen(root) {
     btn(t('replayOnboarding'), { icon: 'retry', cls: 'btn-sand btn-wide', test: 'replay-onboarding', onClick: () => { settings.set({ onboarded: false }); go('#/onboarding/1'); } }),
     btn(t('reset'), {
       icon: 'trash', cls: 'btn-ghost btn-wide', test: 'reset',
-      onClick: async () => { if (await confirmBox(t('resetConfirm'), t('yesReset'), t('cancel'))) { resetAll(); toast(t('resetDone')); } },
+      onClick: async () => { if (await confirmBox(t('resetConfirm'), t('yesReset'), t('cancel'))) { resetAll(appVersion()); toast(t('resetDone')); } },
     }),
     h('p.footer-note', t('version') + ' · ' + t('noData'))));
 }

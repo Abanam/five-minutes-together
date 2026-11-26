@@ -27,11 +27,12 @@ export function topbar(titleKey, opts = {}) {
     bar.append(iconBtn('back', t('back'), () => (history.length > 1 ? history.back() : go('#/home')), 'btn-ghost flip-rtl back-btn'));
     bar.append(h('h1', t(titleKey)));
   }
-  if (opts.home || opts.badge) bar.append(offlineBadge());
   bar.append(btn(t('langToggle'), {
     icon: 'globe', cls: 'btn-ghost lang-toggle btn-small-text', aria: t('langToggleLabel'), test: 'lang-toggle',
     onClick: () => { setLang(getLang() === 'ar' ? 'en' : 'ar'); render(); },
   }));
+  // the offline badge gets its own line under the title, so it never squeezes or covers it
+  if (opts.home || opts.badge) bar.append(h('div.badge-row', offlineBadge()));
   return bar;
 }
 
@@ -227,6 +228,9 @@ export function howtoScreen(root) {
 }
 
 // ---------------------------------------------------------------- about & privacy
+// v1.1 voices (from tools/voices.json and the letter sounds chosen in the studio page; see deliverables/voices.md)
+const VOICE_CREDITS = { english: 'George', letters: 'Alice for /æ/, /ɪ/ and /n/; George for /s/, /t/ and /p/' };
+
 export function aboutScreen(root) {
   const C = app.content;
   const both = (id) => h('div.section-card', h('p', { lang: 'ar', dir: 'rtl' }, richText(T(id).ar)), h('p', { lang: 'en', dir: 'ltr', class: 'en-block' }, T(id).en));
@@ -235,12 +239,15 @@ export function aboutScreen(root) {
     h('h2', t('learningObjectives')), both('obj_o1'), both('obj_o2'), both('obj_o3'),
     h('h2', t('privacy')), h('div.section-card', { 'data-test': 'privacy' }, h('p', h('b', 'لا تغادر أي بيانات هذا الجهاز — No data leaves this device')), h('p', { lang: 'ar', dir: 'rtl' }, T('about_privacy').ar), h('p', { lang: 'en', dir: 'ltr' }, T('about_privacy').en)),
     parentCard('about_privacy'),
-    h('h2', t('credits')), h('div.section-card', { lang: 'en', dir: 'ltr', style: { textAlign: 'left' } },
+    h('h2', { 'data-test': 'credits-heading' }, h('bdi', { lang: 'en', dir: 'ltr' }, 'Voices: elevenlabs.io'), ' · الأصوات'),
+    h('div.section-card', { lang: 'en', dir: 'ltr', style: { textAlign: 'left' }, 'data-test': 'credits' },
+      h('p', `English words and Sanad's phrases: ElevenLabs (voice "${VOICE_CREDITS.english}"), Multilingual v2.`),
+      h('p', 'Arabic instructions: ElevenLabs (a voice made with Voice Design), Multilingual v2.'),
+      h('p', `Letter sounds: ElevenLabs default voices (${VOICE_CREDITS.letters}), Multilingual v2; each pure sound was cut from a short prompt and checked in code; the blends are built from them.`),
+      h('p', 'ElevenLabs free plan: non-commercial use with attribution.'),
       h('p', 'Fonts: Andika by SIL Global (SIL Open Font License 1.1, official webfonts, unmodified); Baloo Bhaijaan 2 by Ek Type / The Baloo 2 Project Authors (SIL Open Font License 1.1, Arabic subset).'),
-      h('p', 'English voice: Kokoro-82M v1.0 (hexgrad, Apache-2.0), voice "af_heart", run locally with kokoro-onnx. Letter sounds were made from IPA phoneme input and checked acoustically; the /t/ sound comes from espeak-ng\'s phoneme mode (GPL-3.0 engine).'),
-      h('p', 'Arabic voice: Meta MMS-TTS Arabic (facebook/mms-tts-ara, CC BY-NC 4.0), run locally. Used here for non-commercial education.'),
       h('p', 'All pictures, the mascot Sanad, the map and the stickers are original drawings made for this app. Sound effects are synthesised in the browser. No photos, brands or existing characters.'),
-      h('p', 'Full list: CREDITS.md in the project.')),
+      h('p', 'Version 1.0 used other voices (Kokoro-82M, espeak-ng and Meta MMS-TTS); see CREDITS.md in the project for the full list.')),
     h('h2', t('aiNote')), both('about_ai'),
     h('p.footer-note', t('version') + SEP + t('noData')));
   root.append(topbar('about', { badge: true }), main);

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "1.0",
+    "version": "1.1",
     "liveUrl": "https://abanam.github.io/five-minutes-together/",
     "appName": { "ar": "خمس دقائق معًا", "en": "5 Minutes Together" },
     "howToEdit": "Teachers can edit this file. 'sounds' holds the six letters, 'words' the CVC words (built from those letters), and 'days' the five sessions. Arabic text lives in 'texts' (ar = shown, en = English view, say = optional script for the audio generator). If you change an Arabic text, the app notices that its recorded audio no longer matches and reads the new text with the device's Arabic voice instead. Run tools/make_audio.py to record new clips."

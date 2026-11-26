@@ -59,12 +59,26 @@ export const progress = {
   reset() { del('progress'); },
 };
 
+// Reviewer checklist answers are stored per app version ("review.1.1"), so a new version starts
+// empty. (v1.0 stored its answers under "review"; they are kept but no longer shown.)
 export const review = {
-  get() { return get('review', {}); },
-  set(v) { set('review', v); },
+  get(version) { return get('review.' + version, {}); },
+  set(version, v) { set('review.' + version, v); },
 };
 
-export function resetAll() {
+/** The version the device last ran, or null on a device that never ran the app. */
+export const appState = {
+  seenVersion() { return get('seenVersion', null); },
+  setSeenVersion(v) { set('seenVersion', v); },
+  /** True if this device has data from a version before seenVersion existed (v1.0). */
+  hasOldData() {
+    try {
+      return ['settings', 'progress', 'review'].some((k) => localStorage.getItem(NS + k) !== null);
+    } catch (e) { return false; }
+  },
+};
+
+export function resetAll(version) {
   progress.reset();
-  review.set({});
+  if (version) review.set(version, {});
 }
