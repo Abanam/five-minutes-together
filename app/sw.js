@@ -66,6 +66,8 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // the app makes no third-party requests
+  // the archived v1.0 (…/v1.0/) is never cached or answered by this worker – not even the index.html fallback
+  if (url.pathname.indexOf(new URL(self.registration.scope).pathname + 'v1.0/') === 0) return;
   event.respondWith(
     caches.open(CACHE).then((cache) =>
       cache.match(req, { ignoreSearch: true }).then((hit) => {

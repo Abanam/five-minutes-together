@@ -1,0 +1,10 @@
+{
+ "source": "git tag v1.0",
+ "files": 202,
+ "byte_identical": 199,
+ "changed": {
+  "index.html": "removed the manifest link; added the archive banner",
+  "js/main.js": "service-worker registration removed",
+  "js/store.js": "localStorage prefix fmt10."
+ }
+}
